@@ -432,15 +432,60 @@ enemm‰n kuin oltiin osattu odottaa.
 %% \subsection{bootstrapping}
 %% \subsection{cross compiling}
 
-\section{T-kaaviot}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{k‰‰nt‰jien toteutus korkealla abstraktiotasolla}
+
+However one could discuss how an existing compiler could propagate an image of itself to another machine.
+This technique popularly referred to as bootstrapping or cross compiling ~\cite{Reynolds03}.
+
+An interesting problem is finding the simplest subset of the language that enables us to create the next generation of the compiler ~\cite{Reynolds03}.
+
+
+
+if a compiler for language L is implemented in L, then it should be able to
+compile itself.
+
+A conventional C compiler, written in C, is said to be bootstrapped if it compiles itself.
+Now suppose a new version of the compiler source is weirren, that uses different registers for passing arguments.
+The old compiler can compile this source, yelding a new compiler. But Look! The executable version cc'
+of the new compiler uses the old parameter passing style, but generates code that uses the new style.
+onecan use the new compiler however to recompile all the libraries and the new version itself
+and get a new new executable thet both uses and generates the new parameter passing style ~\cite{Appel}.
+
+-Cross compilation has become popular viimeist‰‰n 76.
+-Tarkoittaa sorsan k‰‰nt‰mist‰ masiinalla joka outputtaa toisen masiinan objektikoodia.
+-intermediate language as a tool to reduce duplivaton of effort.
+-aika- ja rautarajotuksista johtuen korkean tason kielten k‰yttˆ on increasingly popular minicomputers on usein ep‰k‰yt‰nnˆllist‰
+-t‰m‰n takia cross compilation saanut paljon huomiota.
+-cc on prosessi of one machine accepting a source program as input and producing an object code thet is executable on another machine.
+-ongelma k‰‰nt‰jien m‰‰rien kanssa, siksi IL.
+-Saanut alkunsa UNCOLsta
+-YMS
+~\cite{Speetjens76}.
+
+
+
+\subsection{T-kaaviot}
 
 K‰‰nt‰jien suunnittelussa ja mallintamisessa on k‰ytetty useita erilaisia kaavioita.
-K‰ytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehottama
+K‰ytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehdottama
 k‰‰nt‰j‰‰ kuvaava kaavio ~\cite{Bratman61}, %cit needed for k‰ytetyin och tunnetuin
 josta k‰y ilmi k‰‰nt‰j‰n ymm‰rt‰m‰ kohde- ja l‰hdekieli sek‰ kieli, jolla k‰‰nt‰j‰ toimii.
 Kaaviota kutsutaan Bratman-kaavioksi tai T-kaavioksi. J‰lkimm‰inen nimi tulee kaavion
-muodosta, jossa T-kirjaimen muotoisessa alueessa vasen p‰‰ty ketoo l‰hdekielen, oikea
-p‰‰ty kohdekielen ja alasakara kertoo mill‰ kielell‰ k‰‰nt‰j‰ toimii.
+muodosta, jossa T-kirjaimen muotoisessa alueessa vasen p‰‰ty kertoo l‰hdekielen, oikea
+p‰‰ty kohdekielen ja alaosa kertoo mill‰ kielell‰ k‰‰nt‰j‰ toimii.
 
 \begin{figure}[h]
 \ \newline
@@ -477,6 +522,62 @@ kuvaamaan myˆs tulkkeja. Lis‰ksi kaavioon sis‰llytettiin suoritusta kuvaava osa
 sek‰ sovellusohjelmaa kuvaava kaavio. Heid‰n kaavioissaan m‰‰ritell‰‰n seuraavan kuvan
 mukaiset elementit.
 
+%huom! virhe kuvassa!
+\begin{figure}[h]
+\ \newline
+\begin{center}
+\includegraphics[scale=0.5]{notations-T.png}
+\caption{Earleyn ja Sturgisin versio T-kaavioista}
+\label{kuvaesimerkki}
+\end{center}
+\end{figure}
+
+Vasemmalta oikealle k‰ytyn‰ ensimm‰inen kuva on Bratmanin alkuper‰isin T-kaavion vastaava elementti.
+Se kuvaa k‰‰nt‰j‰‰ joka k‰‰nt‰‰ kielelt‰ A kielelle B ja toimii kielell‰ C. Suorakaiteen muotoinen
+kahdesta elementist‰ koostuva kaavio kuvaa tulkkia, joka tulkkaa kielt‰ C ja toimii kielell‰ D.
+Jotta k‰‰nnˆs voitaisiin suorittaa, tulee pohjimmaisen kielen olla suoritettavissa jollakin oikealla
+laitteistolla. T‰t‰ suoritusta kuvaamaan lis‰ttiin yksiosainen kolmiomerkint‰. Kolmion sis‰ll‰
+oleva merkint‰ kertoo mit‰ konekielt‰ suoritus ymm‰rt‰‰, esimerkkikuvassa konekieli on D ~\cite{Mogensen10}.
+Esitett‰ess‰ jotakin laskentaongelmaa, joka on ohjelmoitu kielell‰ D merkit‰‰n lampun muotoinen kaavio,
+jonka sis‰ll‰ kyseinen kieli ilmoitetaan.
+Kyseisi‰ kaavioita voi yhdistell‰ hyvinkin monimutkaisiksi rakenteiksi. Esimerkkikuvan viimeinen kohta kuvaa
+siis yksitt‰ist‰ k‰‰nnˆst‰, jossa A-kielinen ohjelma k‰‰nnet‰‰n B kieliseksi ohjelmaksi.
+Huomioitava T-kaavioiden k‰ytˆss‰ on, ett‰ kielten vierekk‰isten kaavioiden kielten tulee t‰sm‰t‰
+toisiinsa. Kuvan esimerkin k‰‰nnˆs ei voi ottaa l‰hdeohjelmakseen muuta kuin kielell‰ A kirjoitetun ohjelman.
+
+
+\subsection{bootstrapping} %laitetaanko t‰h‰n kappaleeseen bootstrapping + cross compiling?
+%aloita kuvaamalla tilanne jossa ei ole k‰‰nt‰ji‰?
+Bootstrapping on tekniikka jonka ydinajatus on k‰‰nt‰‰ jokin k‰‰nt‰j‰ sill‰ itsell‰‰n ~\cite{Mogensen10}.
+Tekniikkaa voidaan k‰ytt‰‰ usealla tavalla, useaan eri ongelmaan ~\cite{Earley70}. %ibid
+%full bootstrap
+Perinteinen ongelma k‰‰nt‰jien kehityksess‰ on tilanne, jossa k‰‰nt‰j‰ pit‰‰ rakentaa
+ilman tai l‰hes ilman muita tyˆkaluja ja k‰‰n‰ji‰. Koska kehittyneen ohjelmointikielen 
+%half bootstrap
+Varsin yleinen ongelma k‰‰nt‰jien suhteen on tilanne, jossa tarvittavan kielen k‰‰nt‰j‰ on olemassa,
+mutta ei kyseisell‰ laitteistolla jossa sit‰ tarvitaan.
+
+%cwl bootstrap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -498,7 +599,6 @@ huomattiin potentiaali niiden tehokkaaseen k‰yttˆˆn varsin pian. T‰m‰n j‰lkeen
 ohjelmointikieli‰ ruvettiin kehitt‰m‰‰n varta vasten automaattisen koodin
 generoinnin takia ja ensimm‰iset oikeasti hyˆdylliset kielet sek‰ niiden
 k‰‰nt‰j‰t kehitettiin. 
-
 
 \begin{table}[h!]
   \centering

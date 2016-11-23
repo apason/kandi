@@ -8,4 +8,4 @@
 \contentsline {subsection}{\numberline {3.2}Kohti ensimm\"aisi\"a k\"a\"ant\"aji\"a}{5}
 \contentsline {section}{\numberline {4}T-kaaviot}{7}
 \contentsline {section}{\numberline {5}Yhteenveto}{8}
-\contentsline {section}{L\"ahteet}{10}
+\contentsline {section}{L\"ahteet}{9}
