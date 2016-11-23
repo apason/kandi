@@ -1,0 +1,552 @@
+\documentclass[finnish]{tktltiki}
+\usepackage[pdftex]{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+\begin{document}
+\onehalfspacing
+
+%lähdeluettelo oikeaan formaattiin
+\makeatletter
+\renewcommand\@biblabel[1]{[#1]}
+\makeatother
+
+
+\title{Historiakatsaus assemblykääntäjistä korkean tason kielten kääntäjiin}
+\author{Arttu Kilpinen}
+\date{\today}
+
+\maketitle
+
+\numberofpagesinformation{\numberofpages\ sivua}
+\classification{\protect{\ \\
+Software and its engineering -> software notations and tools -> Compilers}}
+
+\keywords{Historia, Kääntäjät, Symbolinen konekieli, Ohjelmointikielet}
+
+\begin{abstract}
+
+  Ensimmäiset ohjelmointikielten kääntäjät, assemblykääntäjät, käänsivät symbolisille
+  konekielille kirjoitettuja ohjelmia konekielisiksi ohjelmiksi. Täsmällisten
+  kuvausjärjestelmien kehitys sekä koodin generoinnin teoria mahdollistivat
+  tehokkaampien ohjelmointikielten kehityksen. Nykyisin käytössä olevat
+  korkean tason ohjelmointikielet kehittyivät hiljalleen kuvausjärjestelmien
+  kehittyessä ja syrjäyttivät symbolisella konekielillä ohjelmoinnin lähes
+  kokonaan.
+  Tässä dokumentissa käydään läpi historiallisia vaiheita symbolisten konekielten
+  kääntäjistä nykyaikaisiin korkean tason ohjelmointikielten kääntäjiin. Läpi käydään
+  useita merkittäviä ohjelmointikieliä ja niiden ominaisuuksia.
+  
+\end{abstract}
+
+\mytableofcontents
+
+
+
+\section{Johdanto}
+Kääntäjät ovat tietokoneohjelmia, jotka kääntävät lähdekielisen ohjelmakoodin
+kohdekieliseksi ohjelmaksi~\cite{Bauer74}. Kohdekielenä on usein jonkin prosessoriarkkitehtuurin
+ymmärtämä konekieli.
+
+%
+Ohjelmointikielet sekä niitä ymmärtävät kääntäjät ja tulkit ovat keskeisessä asemassa
+ohjelmistotuotannossa. Kääntäjät mahdollistavat ohjelmien
+kirjoittamisen korkean tason ohjelmointikielillä sekä symbolisilla konekielillä,
+jotka puolestaan tekevät ohjelmoinnista nopeampaa
+sekä helpompaa. Niiden käyttäminen tekee ohjelmakoodista myös ymmärrettävämpää ja
+helpompilukuista. Yleisesti ottaen ohjelmointikielen ymmärrettävyys kasvaa abstraktiotason
+kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset lausekkeet
+ovat ymmärrettävämpiä kuin vastaava symbolisella konekielellä ohjelmoituna.
+Lisäksi useat korkean tason ohjelmointikielet mahdollistavat --- mikäli
+tarvittavat kääntäjät ovat olemassa --- saman ohjelmakoodin käyttämisen useissa eri
+laitteistoissa sekä useilla eri käyttöjärjestelmillä. Koska eri laitteistoissa
+on erilaiset käskykannat, poistuu korkean tason ohjelmointikieliä käyttämällä
+myös tarve uudelleenohjelmoinnille. 
+
+%
+% Jotain introa myös historiasta. Johdannon pitäisi kuitenkin johdattaa tekstiin joka on
+% pääasiassa historiapainotteista. 
+%
+
+Symboliset konekielet sekä korkean tason ohjelmointikielet ovat lähes yhtä vanhoja kuin
+ohjelmointikin. Ensimmäiset korkean tason ohjelmointikielten kääntäjät puolestaan ovat
+ohjelmointikieliä huomattavasti nuorempia, sillä ohjelmointikielten teoriaa kehitettiin
+vuosia ennen kuin ensimmäiset kääntäjät valmistuivat. Esimerkiksi ensimmäisenä korkean
+tason ohjelmointikielenä pidetty Plankalkül kehitettiin jo vuonna 1946, mutta sitä
+ymmärtävä kääntäjä valmistui vasta vuonna 1972~\cite{Knuth76}.
+%
+
+Ennen korkeatasoisille lausekielille kehitettyjä
+kääntäjiä oli pitkään käytössä vain symbolisia konekieliä ymmärtäviä ohjelmia, % pitkään?
+assemblykääntäjiä. Korkean tason ohjelmointikielten kehityttyä saatiin myös niitä
+tukevia kääntäjiä valmistettua. Vuonna 1952 valmistunut AUTOCODEn kääntäjä oli
+yksi ensimmäisiä kaupallisessa ohjelmistotuotannossa käytettyjä korkean tason kielen
+kääntäjiä~\cite{Knuth76}.
+
+\newpage
+
+%vaatii muutosta start
+%Vaikka kääntäjien tuottama kohdekieli on usein laitteiston ymmärtämää konekieltä
+%tai symbolista konekieltä, on myös olemassa kääntäjiä, jotka tuottavat jotakin
+%korkean taso lausekieltä. 
+
+% Tähän myös jotain introa käännöstekniikoista cross, bootstrap, parsereista jne
+% pitäis saada puoltoista sivua tekstiä
+
+%vaatii muutosta end
+
+
+%Tämän kirjoituksen tukena sopii käytettäväksi pian laitoksen
+%www-sivuilla julkaistava \LaTeX-ohje ja \LaTeX-tyyli.
+
+
+
+%tää koko kappale on ihan vitun perseestä :::::D
+\section{Symbolinen konekieli ja assemblykääntäjät}
+%tietojenkäsittelytieteessä ON OSIA jotka ei yhtä täsmällistä...
+Koska tietojenkäsittelytiede ei ole yhtä täsmällistä kuin matematiikka, ovat
+määritelmät usein vähemmän täsmällisiä ja saattavat poiketa toisistaan. 
+Erään määritelmän mukaan assemblykääntäjä on kääntäjä, joka kääntää yksi yhteen
+symbolisella konekielellä kirjoitettuja komentoja konekielisiksi komennoiksi~\cite{Salomon93}.
+%
+Koska jokaisella laitteistolla on oma konekielensä ja tämä konekieli on myös ohjelmointikieli,
+pätee yleinen kääntäjien määritelmä myös assemblykääntäjiin. Lähdekielenä assemblykääntäjän
+ymmärtämä symbolinen konekieli tarkoittaa konekieltä, jossa laitteen ymmärtämät binääriset konekäskyt
+on korvattu ihmisille helpommin muistettavilla sanoilla eli symboleilla.
+%http://www.dcs.warwick.ac.uk/~edsac/Software/EdsacTG.pdf edsac instruction set
+
+
+
+%Aika ennen symbolisia konekieliä. Mainitaan babbagen vehkeet
+%Kerrotaan raudasta HYVIN yksinkertaisesti EDSAC z4
+
+
+
+
+\subsection{Historia ensimmäisistä assemblykääntäjistä}
+%Ensimmäiset ohjelmointia helpottavat ohjelmat olivat assemblerkääntäjiä.
+
+Koska ennen ensimmäisiä assemblykääntäjiä ei ollut mitään ohjelmointia
+helpottavia työkaluja, tuli ne ohjelmoida suoraan konekoodilla
+%% Teoriassa
+%% myös ensimmäiset assemblykääntäjät olisi voitu toteuttaa bootstrap
+%% menetelmällä, kirjoittaen osa assemblyin koodista assemblyin itsensä
+%% ymmärtämällä kielellä.. Vallitseva käytäntö tuohon aikaan oli kuitenkin
+%% toteuttaa assembly-kääntäjät kokonaisuudessaan konekoodilla, kuten
+%
+kuten yksi ensimmäisiä, vuonna 1949 valmistunut EDSAC tietokoneen assemblykääntäjä
+toteutettiin. Vaikka korkean tason kielten kääntäjät alkoivat kehittyä
+lähes heti ensimmäisten assemblykääntäjien valmistuttua, pysyi symbolisilla
+konekielillä ohjelmointi pitkään suosiossa. Alkuun korkean tason kielten
+automaattista käännöstyötä pidettiin lähinnä teoreettisena tutkimisena
+%VITTU EIHÄN TÄÄ KUULU TÄHÄN KAPPALEESEEN!!!
+ja käytännössä kaikki ohjelmoijat uskoivat ettei automaattisesta koodin generoinnista
+tule ikinä tarpeeksi tehokasta oikeaan ohjelmointiin~\cite{Knuth76}.
+
+
+Vaikka nykyaikaiset korkean tason ohjelmointikielien kääntäjät tuottavat
+hyvin optimoitua koodia, on hyvän ohjelmoijan kirjoittama symbolinen
+konekieli silti lähes poikkeuksetta parempaa. Tämän takia symbolisia
+konekieliä käytetään vielä nykyisin matalan tason ohjelmoinnin lisäksi
+suurta laskentatehoa vaativien ohjelmien optimointiin.
+%
+Ennen symbolisten konekielten kehitystä ohjelmointi tapahtui kirjoittamalla
+laitteistoriippuvaista tietyn prosessorin ymmärtämää binäärikoodia. Siitä huolimatta,
+että käskykannat olivat nykyiseen verrattuna suhteellisen yksinkertaisia, 
+oli ohjelmointi hidasta ja työlästä. Tietokoneiden kehittyessä ja ohjelmien
+monimutkaistuessa tarve ohjelmointikielille kasvoi. Symboliset konekielet
+kehitettiin varhain ja nykyisin lähes kaikki sovellusohjelmat kirjoitetaan
+korkean tason ohjelmointikielillä.
+% Missä?
+% Milloin?
+
+\subsection{Assemblykääntäjien toiminnasta ja toteutuksesta}
+%Tämä tekee matalan tason ohjelmointikielistä eli (symbolisista) konekielistä täysin laitteistoriippuvaisia.
+Assemblykääntäjät ymmärtävät jotakin symbolista konekieltä ja osaavat
+tuottaa tästä linkkerin avulla konekielisen suoritettavan ohjelman.
+Symboliset konekielet ovat matalan tason laiteriippuvaisia ohjelmointikieliä
+joille on tyypillistä lähes täysi koodin symbolisuus. Tämä tarkoittaa sitä,
+että suurin osa ohjelmakoodista on käännettävissä yksi yhteen laitteiston
+ymmärtämän konekielen kanssa. Poikkeuksen tekee kuitenkin ohjelman osoitteina
+käytettävät tunnisteet (label), joiden arvot assemblykääntäjä voi
+vapaasti päättää. Tunnisteina voi toimia joko paikat ohjelman koodiosassa
+tai muuttujina käytetyt muistipaikat. Symbolisen konekielen avainsanat
+ovat siis symboleja laitteiston ymmärtämälle binäärille. Konekielellä on
+mahdollista kirjoittaa suoraan suorittimen rekistereihin. Tämä tekee symbolisilla konekielillä ohjelmoimisesta
+yhtä laiteläheistä kuin suoraan konekielillä ohjelmointikin. Laiteläheisyys
+puolestaan tekee ohjelmista laitteistoriippuvaisia, sillä eri suorittimilla
+voi olla erilaiset käskykannat. Symbolien käyttäminen vähentää huomattavasti
+kirjoitusvirheiden määrää ja tekee koodista helpomman kirjoittaa ja käydä läpi.
+Tunnisteiden käyttö puolestaan poistaa tarpeen muistaa muuttujien sekä
+konekäskyjen osoitteita. 
+% Miten?
+
+%jotain direktiiveistä
+% labeleista. Ei täysin yksi yhteen! KUVA! 
+
+
+Kuva 1 selventää symbolisten konekielten ennalta määrättyjen symbolien
+sekä ohjelmoijan määrittelemien tunnisteiden eron. Esimerkkikoodi on TTK91 ~\cite{Ttk91}
+virtuaaliprosessorille tehty ohjelma, joka tulostaa käyttäjälle luvut
+0...5. Keltaisella pohjalla olevat symbolit ovat niin sanottuja tunnisteita,
+joilla voi olla eri arvo käännöskerrasta ja kääntäjästä riippuen.
+Kaikki harmaalla pohjalla oleva koodi käännetään siis yksi yhteen.
+
+
+\begin{figure}[h]
+\ \newline
+\begin{center}
+\includegraphics[scale=0.5]{esimerkkiTTK.png}
+\caption{TTK91 esimerkkikoodi}
+\label{kuvaesimerkki}
+\end{center}
+\end{figure}
+
+\newpage
+\section{Historiaa korkean tason kielten kääntäjistä}
+
+Korkena tason ohjelmointikielellä tarkoiteteen ohjelmointikieltä, % pitäiskö sanoa että tarkoitetaan tässä dokumentissa? ei lähdettä?
+jossa kielen sekä siitä käännettävän konekielen välillä  % nyt vittu poissuljetaan ne kääntäjät jotka ei käännä assyks tai binääriks!
+on selkeä abstraktiotaso ja kääntäminen edellyttää muutakin, kuin mekaanista
+sanojen vaihtamista ennalta määrättyjen sääntöjen perusteella. Tämän määritelmän
+perusteella korkean tason ohjelmointikielillä tarkoitetaan niitä kieliä,
+jotka eivät ole symbolisia konekieliä.
+
+% Kerrotaan korkean tason kielten hyödyistä ja miksi niitä tarvitsee
+\subsection{Täsmällisten kuvausjärjestelmien kehitys}
+
+Tietojenkäsittelytieteilijät ovat jo tietokoneiden alkuajoista lähtien
+yrittäneet kuvailla ohjelmien suoritusta ja algoritmeja konekieltä
+abstraktimmalla tasolla. Alan Turingin julkaisussa vuonna 1936 esitettiin
+määritelmä tietojenkäsittelijöiden hyvin tuntemasta laskentalaitteesta,
+turingin koneesta. Laitteen yhteydessä määriteltiin
+% HMM? eikö laite itse ole jo määritelmä esitystavasta?
+myös matemaattinen esitystapa, jolla sen toimintaa voitiin täsmällisesti
+kuvailla. Vaikka esitystapa oli vaikea eikä kyseisiä Turingin
+esittelemiä laitteita ollut kuin teoreettisella tasolla,
+Turingin esitystapa edusti kehittyneintä formaalia
+kuvausta, 'kieltä', mitä siihen aikaan oli olemassa.
+
+Toisen maailmansodan jälkeen vuonna 1945 saksalainen Konrad Zuse aloitti 
+oman tietokoneohjelmien kuvailuun tarkoitetun kielen Plankalkülin kehittämisen.
+Zusen sanoin Plankalkülin tarkoitus oli luoda puhtaasti formaali esitystapa
+mille tahansa laskentaongelmalle. Tässä hän onnistuikin varsin hyvin.
+Plankalkülissa voidaan määritellä aritmetiikan ja ohjausrakenteiden lisäksi
+rajaton määrä sisäkkäisiä tietorakenteita ja Zusen työhön viitataankin
+usein ensimmäisenä korkean tason ohjelmointikielenä.
+%
+Vaikka kyseessä oli huomattavan edistyksellinen järjestelmä, se ei
+kuitenkaan vaikuttanut ohjelmointikielten kehitykseen juuri lainkaan.
+Zusen artikkelit julkaistiin vasta vuonna 1972 muiden, kehittyneempien
+kielten jo olemassa ollessa. Vaikka Plankalkülille toteutettiinkin
+kääntäjä, ei sitä juuri koskaan käytetty koska silloin oli jo Plankalkülia
+huomattavasti kehittyneempiä ohjelmointikieliä.
+
+%% -''thus  the plankalkul arose purely as a piece of desk-work..''
+%% -45 alkoi plankalkulin kehitys. extension of Hilbert's Aussagenkalkul (propositional calculus) and prädikatenkalkul
+%% (propositional calculus)
+%% -zusen käsuikirjoitus julkaistiin asta 1972,
+%% -k-äsikirjoitus alkaa 'The mission of the plancalculus is to provide a purely formal description of any
+%% computational procedure' -> Ajatuksena ei varsinaisesti ollut kieli vaan notaatio ohjelmille, Ei suunnitellut kääntäjää.
+%% -plankalkul included the important concept of hierarchically structured data going all the way dowen to the bit level. suck
+%% advanced data structures did not enter again int o programming languages until the late 1950 in imbss commercial translator.
+%% %zu45    - zuse marked that the number of possible data types was so large ti would be impiossible to indicate a variables
+%% % type simply by using typographical conventions
+
+
+Samoihin aikoihin Zusen kanssa Yhdysvaltalaiset Herman Goldstine ja
+John von Neumann koittivat ratkaista samaa ongelmaa. Heidän ratkaisunsa
+algoritmien ja tietokoneohjelmien kuvaamiseen oli varsin erilainen.
+Von Neumann ja Goldstine esittivät ratkaisuksi virtausdiagrammia (flow diagram),
+esitystapaa jossa ohjelmat kuvataan nuolien ja laatikoiden avulla.
+
+% VAATII HIOMISTA START
+
+%CU50', CU48, CU50
+Vuonna 1946 Marylandissa työskennellyt Haskell B. Curry kehitti ENIAC
+tietokoneelle aikaansa nähden monimutkaista ohjelmaa. Curryn työ ENIACIN
+parissa sai hänet ehdottamaan formalismia ohjelmistojen toiminnalle.
+Hänen formalisminsa perustui uuteen ajatukseen ohjelman suorituksen
+lohkomaisesta rakenteesta, mitä hän nimitti divisiooniksi. %CU50
+Divisioonien tulisi olla rakennettu niin että niiden laskenta olisi
+toisistaan riippumatonta. Tämän voisikin rinnastaa esimerkiksi
+C-kielen paikallisiin tietorakenteisiin ja käännösyksiköihin perustuvaan
+suoritukseen. Curryn formalismi oli kuitenkin hieman luonnoton %knuth74
+sillä suoritusyksiköillä oli useita lopetuskohtia sekä nykykielistä poiketen
+useita aloituskohtia.
+%
+Historiallisesti työ oli kuitenkin merkittävä, sillä se sisälsi algoritmeja
+joilla kuvauksesta pystyttiin tuottamaan konekoodia. Näitä rekursiivisia
+--- vaikkakin toteuttamatta jääneitä --- algoritmeja voidaankin pitää ensimmäisinä
+koodin generointiin tarkoitettuina algoritmeina.
+
+%% -haskel curryn monimutkaienn työ eniacin kanssa sai hänet esittämään notation for program construction that is more
+%% compact than flowcharts.
+%% -actually the main feature of interest in currys earlier work is not this programming language but rather the algorithms
+%% hediscussed for converting parts of it into machine language. he gave a recursive description of a procedure to convert
+%% faifly general arithmetic
+%% expression into code for a one address compuiter thereby being the first person to describe the code generation phase of a compiler.
+%% syntaksin tarkastusta ei kuitenkaan ollut vaan kääntäjä? oletti sen olevan ok.
+% END
+
+
+
+
+
+\subsection{Kohti ensimmäisiä kääntäjiä}
+
+Millekään aiemmin mainituista ohjelmointikielistä ei tähän mennessä oltu
+toteutettu kääntäjiä. Ne toimivat ohjelmoijien käsitteellisenä apuna auttaen
+ohjelmien suunnittelussa, mutta jättäen toteutuksen ihmisille. Tästä huolimatta
+olivat ne kaikki merkittäviä askeleita kohti parempia ohjelmointikieliä sekä
+niiden kääntäjiä. Ilman täsmällisiä esitystapoja ei koodin generointi ikinä
+olisi tullut mahdolliseksi.
+
+
+
+% MAUCHLY 
+Ensimmäinen korkean tason ohjelmointikieli, jolle toteutettiin tulkki oli Short Code.
+Sitä kehitti John W. Mauchly vuonna 1949 ja William F. Schmitt toteutti sille tulkin.
+Tulkki toimi alkuun BINAC tietokoneella mutta se ohjelmoitiin myöhemmin myös UNIVACille.
+Yksityiskohtia Short Coden toiminnasta ei ikinä julkaistu, joten sen tarkemmasta
+toiminnasta ei ole tietoa. Vuonna 1955 julkaistusta ohjelmoijille tarkoitetussa
+manuaalissa kerrotaan kuitenkin kuinka ohjelmaa voidaan käyttää. % RR55
+Short Code oli siis algebrallinen tulkki, joka osasi suorittaa aritmeettisia
+laskutoimituksia ilman konekielistä ohjelmointia. Ohjelma luki syötettä ja
+suoritti vastaavat toiminnot ajetulla laitteistolla.
+
+% RUTISHAUER & BÖHM
+
+
+1950-luvun alussa Heiniz Rutishauser ja Corrado Böhm työskentelivät Zürichin
+teknillisessä yliopistossa Sveitsissä. Vaikka he työskentelivät samassa paikassa
+ja saman aiheen parissa, eivät he työskennelleet yhdessä. Rutishauser julkaisi
+1952 artikkelin, jossa hän kuvasi hypoteettisen tietokoneen sekä siinä toimivan
+kääntäjän kehittämälleen ohjelmointikielelle. Julkaisu oli merkittävä, sillä
+siinä kuvattiin ensimmäistä kertaa menetelmä kääntäjien toteuttamisesta
+sekä koodin generoinnista. % mitä eroa curryn algoritmeihin nähden?? RU52
+
+
+Rutishauserin kollega Corrado Böhm kehitti myös ohjelmointikieltä sekä
+tämän kääntäjää. Hänen julkaisunsa oli Rutishauserin julkaisua vieläkin
+merkittävämpi, sillä hän oli toteuttanut kääntäjän tämän omalla kielellä.
+Böhmin kieli ei kuitenkaan osannut käsitellä muita kuin positiivisia
+kokonaislukuja, joten sen käyttöarvo jäi melko pieneksi. Kääntäjien
+teorian kehityksen kannalta se oli kuitenkin korvaamaton. Böhmin kääntäjä
+kykeni tarkistamaan koodin syntaksia lineaarisessa ajassa kun Rutishauserin
+kääntäjä toimi suuruusluokassa $n²$. Lisäksi Böhmin kääntäjä hallitsi matemaattisten
+operaattoreiden sidontajärjestyksen, sekä osasi käsitellä sulkeita aritmeettisissa
+lausekkeissa. Lisäksi Böhm oli ensimmäinen tietojenkäsittelijä, joka todisti % oliko ensimmäinen vai ensimmäinen tässä dokumentissa?
+matemaattisesti ohjelmointikielensä voivan laskea minkä tahansa laskettavan funktion. %BO52 universaali. parempi sana??
+%rutishauser and böhm had had a considerable advantage over glennie in that they had designed theri own machine code
+
+
+% VITTU MITÄ PASKAA START
+Vaikka Rutishauser ja Böhm olivat kumpikin valmistaneet %vittu oliko??
+omat kääntäjänsä, pidetään ensimmäisenä 'oikeana' kääntäjänä silti
+Alick E. Glennien 1952 valmistamaa AUTOCODE ohjelmistoa. Aiemmista kääntäjistä poiketen
+AUTOCODE toteutettiin oikealle laitteistolla ja sen tuottama konekieli
+oli oikeasti suoritettavissa. AUTOCODEa pystyttiin siis käyttämään oikeiden,
+käyttökelpoisten ohjelmien tekemiseen.
+
+%% --- vaikka olikin kokeneille ohjelmoijille tarkoitettu ~\cite[Knuth74]
+%% --- käytettiin, kuten tarkoitus oli, oikeaan ohjelmointiin.
+
+%VITTU MITÄ PASKAA END
+
+%Murray käytti ensimmäisenä sanaa compiler
+
+% EHKÄ NÄMÄ VIELÄ OMIKSI LUVUIKSEEN
+
+%maininta IBM!
+Vuoden 1954 alussa John Backus rupesi kehittämään kokoamansa kehittäjätiimin kanssa
+automaattisen ohjelmoinnin järjestelmää. Järjestelmän oli tarkoitus olla hyvin
+kehittynyt, joten suureksi haasteeksi muodostui järjestelmän saaminen tarpeeksi
+tehokkaaksi. Loppuvuodesta 1954 kehittäjäryhmä julkaisi suunnitelman järjestelmästä 'The IBM 
+Mathematical FORmula TRANstating system' --- FORTRAN. Kuten jo aiemmin oli todettu,
+tehokkaan koodin tuottaminen ei ollut lainkaan helppoa. Ryhmän julkaisu alkoikin
+painottamalla sitä tosiasiaa, että FORTRAN oli tehokas. Aiemmin ohjelmoijien tuli
+valita helpon ohjelmoinnin ja hitaan suorituksen tai työlään ohjelmoinnin ja nopean
+suorituksen väliltä, mutta FORTRANin tarjoaisi parhaat puolet molemmista ~\cite{IBM54}. %IB54 EN OO VIEL LUKENU MUT MENKÖÖ
+% fortran oli ensimmäiojnen kieli jossa muuttujan nimi voi olla yli merkin pituinen
+FORTRAN 0 dokumentti esittää myös ensimmäisen yrityksen esittää ohjelmointikielen
+syntaksi täsmällisesti. Tätä voidaan pitää Backuksen myöhemmin esittelemän kielioppimuodon
+Backus Naur Formin (BNF) edeltäjänä.
+%ei oltu vielä implementoitu. Työhen meni 2.5 vuotta!!!
+
+Kun FORTRAN kaksi ja puoli vuotta myöhemmin saatiin toteutettua, oli se
+aikansa tehokkain sekä monipuolisin ohjelmointikieli. FORTRAN tuotti
+kohtuullisen tehokasta koodia ja keittäjät sanoivat sen olevan lähes
+yhtä tehokasta kuin hyvän ohjelmoijan kirjoittama symbolinen konekieli.
+FORTRANissa oli myös paljon ominaisuuksia, joita ei oltu aiemmin nähty.
+Se oli esimerkiksi ensimmäinen ohjelmointikieli, jossa muuttujien nimet
+voivat olla useamman merkin pituisia.
+
+Ensimmäisen julkaisun jälkeen FORTRANissa oli kuitenkin useita ognelmia.
+Bugeja oli paljon ja eräs FORTRANIN kehittäjistä, Saul Rosen, %OLIKO SAUL ROSEN kehittäjä!?
+%OLIKO bugeja edes paljon vai viitattiinko tossa aikaan ennen julkaisua perkele?!
+sanoikin ettei uskonut FORTRANin ikinä tulevan toimimaan~\cite{Rosen64}.
+Vaikeuksista huolimatta FORTRANista tuli hyvin suosittu ja sitä käytetiin
+enemmän kuin oltiin osattu odottaa.
+
+
+
+%% Almost to a ma nthey firmly believed that any mechanical coding method would fail to apply that versatile ...
+%% it was agreed compilers could only turn out code which would be intolerably less efficient than human coding.
+
+%% -57
+%% -paljon tuntemattomia projekteja sillä olivat niin edistyksellisiä ettei tutkimustuloksia ikinä julkaistu.
+
+%% -Alick glennie AUTOCODE 1952
+%% -yleisesti pidetään ensimmäisenä ``oikeana'' ``kunnon'' kääntäjänä.-
+%% - glennie sanoin 1953: to  make it easy one must make coding  comprehensible. this may be done only by improving the
+%% notation of programming., aikaisemmat notaatiot ovat ongelmallisia.
+%% ä- autocode was still very machine oriented.
+%% - autocode oli tärkeä askel eteenpäin  vaikka olikin machine oriented ja tarkoitettu kokeneille ohjelmoijille
+
+%% TÄHÄN MENNESSÄ kukaan ei ollut käyttänyt vielä termiä kääntäjä. terminä oli automaattinen koodausw (automatic coding)
+%% sitten sitä käytettiin
+
+
+%% -1954 John Backus työskenteli ibm tehdäkseen paremman systeemin automaattisesta ohjelmoinnista BA 76
+%% -suuri ongelma oli tehokkuus. Lähes kaikki alalla uskoivat että any mechanical coding method would fail apply that
+%% versatile ingenuity which each programmer felt he possessed and vonstantly neededi nhis gwork.
+%% it was agreed compilers could only turn out code which would be intolerably less efficient than human coding.
+
+%% -by november 1954 bakusin ryhmä oli speksannu the ibm mathematical formula translating system FORTRAN.
+
+%% ensimmäinen paragrafi IB 54 tähdensi että aiemmat systeemit olivat tarjonneet vaihtoehdoiksi helpon ohjelmoinnin ja
+%% hitaan suorituksen tai työlään ohjelmoinnin ja nopean suorituksen. mutta fortranilla molemmat olivat mahdollisia.
+
+%% fortran oli enswimmäinen kieli missä muuttujalla voi olla useamman merkin nimi.
+
+%% -fortran 0 dokumentti esitteli ensimmäisen yrityksen määritellä ohjelmointikielen syntaksi täsmällisesti. bakusin tärkeä huomio
+%% BA 95 mistä tuli BNF voidaan nähdä tulevan täältä.
+
+
+
+%% -assemblyien suosio pysyi esim koska esim x kääntäjän optimointi oli paska. vain 50% tehokas
+
+% ensimmäinen kääntäjä vasta 1975 Joachim Hohmann: Der Plankalkül im Vergleich mit algorithmischen Sprachen. Reihe Informatik und Operations Research, S. Toeche-Mittler Verlag, Darmstadt 1979, ISBN 3-87820-028-5161.
+% ensimmäinen 'useful' 'real' compiler, knuth 77 - sivu 42.
+%% \section{tekniikkaa}
+%% \subsection{bootstrapping}
+%% \subsection{cross compiling}
+
+\section{T-kaaviot}
+
+Kääntäjien suunnittelussa ja mallintamisessa on käytetty useita erilaisia kaavioita.
+Käytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehottama
+kääntäjää kuvaava kaavio ~\cite{Bratman61}, %cit needed for käytetyin och tunnetuin
+josta käy ilmi kääntäjän ymmärtämä kohde- ja lähdekieli sekä kieli, jolla kääntäjä toimii.
+Kaaviota kutsutaan Bratman-kaavioksi tai T-kaavioksi. Jälkimmäinen nimi tulee kaavion
+muodosta, jossa T-kirjaimen muotoisessa alueessa vasen pääty ketoo lähdekielen, oikea
+pääty kohdekielen ja alasakara kertoo millä kielellä kääntäjä toimii.
+
+\begin{figure}[h]
+\ \newline
+\begin{center}
+\includegraphics[scale=0.5]{basic-T.png}
+\caption{T-kaavio, joka kuvaa x86 arkkitehtuurilla toimivaa c-kääntäjää, jonka kohdekieli on x86 konekieli}
+\label{kuvaesimerkki}
+\end{center}
+\end{figure}
+
+Kaavioita toisiinsa liittämällä voidaan havainnollistaa monimutkaisiakin toimintaketjuja,
+joita kääntäjät suorittavat. Oletetaan että käytössä on c-kielellä kirjoitettu
+kääntäjä, joka kääntää ada-kieltä x86 konekielelle. Lisäksi käytössä on edellisen kuvan esimerkissä
+oleva x86 arkkitehtuurilla toimiva c-kääntäjä, jonka kohdekieli on x86 konekieli.
+Näiden kahden kääntäjän avulla voidaan tuottaa x86 alustalla toimiva ada kääntäjä,
+jonka kohdekieli on x86. Kahden ensimmäisen kääntäjän yhteistyöllä saadaan siis kolmas
+kääntäjä.
+Huomattavaa on, että prosessin alimman tasoinen kääntäjä toimii aina jossakin todellisessa
+laitteistossa, eikä täten voi olla muu kuin jonkin laitteiston ymmärtämä konekieli.
+
+\begin{figure}[h]
+\ \newline
+\begin{center}
+\includegraphics[scale=0.5]{multi-T.png}
+\caption{c:llä kirjoitetun ada-kääntäjän ja x86:lla toimivan c kääntäjän avulla voidaan tuottaa x86:lla toimiva ada-kääntäjä}
+\label{kuvaesimerkki}
+\end{center}
+\end{figure}
+
+T-kaavio oli melko yksinkertainen, joten siitä on kehitetty paranneltuja vaihtoehtoja.
+Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lisäämällä siihen ominaisuuksia.
+Alkuperäisen T-kaavion kuvatessa vain kääntäjiä, Earleyn ja Sturgisin kaavioissa pysyi
+kuvaamaan myös tulkkeja. Lisäksi kaavioon sisällytettiin suoritusta kuvaava osa
+sekä sovellusohjelmaa kuvaava kaavio. Heidän kaavioissaan määritellään seuraavan kuvan
+mukaiset elementit.
+
+
+
+
+\section{Yhteenveto}
+
+Tietojenkäsittelytieteessä kääntäjä tarkoittaa ohjelmaa joka kääntää lähdekielisen
+ohjelmakoodin kohdekieliseksi ohjelmakoodiksi. Koska ennen muun kuin konekielten
+kehitystä ohjelmointi tapahtui suoraan laitearkkitehtuurin ymmärtämällä muodolla,
+ei tarvetta kääntäjille ollut. Koska konekoodin ohjelmointi oli varsin työlästä,
+kehitettiin avuksi symbolisia konekieliä, joissa tietyt binäärijonot oli korvattu
+paremmin muistettavilla tekstuaalisilla symboleilla.
+
+Korkeamman tason ohjelmointikielet kehittyivät ohjelmoijien tarpeesta kuvata
+ohjelmistojen toimintaa korkeammilla abstraktiotasoilla. Täsmälliset
+kuvausjärjestelmät kehitettiin alunperin ilman ajatusta kääntäjistä taikka
+automaattisesta koodin generoinnista. Vaikka kuvausjärjestelmien sekä koodia
+generoivien algoritmien kehitys oli alkuun vain teoreettista tutkimista,
+huomattiin potentiaali niiden tehokkaaseen käyttöön varsin pian. Tämän jälkeen
+ohjelmointikieliä ruvettiin kehittämään varta vasten automaattisen koodin
+generoinnin takia ja ensimmäiset oikeasti hyödylliset kielet sekä niiden
+kääntäjät kehitettiin. 
+
+
+\begin{table}[h!]
+  \centering
+  \caption{Yhteenveto ohjelmointikielten ja kuvausjärjestelmien kehityksestä}
+  \label{tab:table1}
+  \begin{tabular}{| l | l | l |}
+    \hline
+    Kieli & Kehittäjä & Ensimmäinen \\ \hline
+    Plankalkül & Zuse & Ohjelmointikieli, Hierarkinen data \\ \hline
+    Virtauskaaviot & Goldstine, Von Neumann & Hyväksytty ohjelmointimetodologia \\ \hline
+    Short Code & Mauchly & Toteutettu korkean tason ohjelmointikieli \\ \hline
+    Formules & Böhm & Samalla kielellä kirjoitettu kääntäjä \\ \hline
+    AUTOCODE & Glennie & Käyttökelpoinen kääntäjä \\ \hline %LÄHDE? löytyy kurssisivulta mulle suositelluista lähteistä
+    FORTRAN I & Backus & I/O formaatti, kommentit, globaali optimointi \\ \hline
+  \end{tabular}
+\end{table}
+
+Taulukko 1 tiivistää kappaleessa 2 esitettyjen ohjelmointikielten merkittävimmät
+piirteet. Lisäksi taulukossa esitetään ohjelmointikielten nimet sekä päätekijät.
+
+
+\newpage
+%
+% Sitten alkaa lähdeluettelo
+%
+
+
+
+
+\nocite{*}
+\bibliographystyle{apalike}
+\bibliography{lahteet}
+
+\lastpage
+
+%\appendices
+
+%\pagestyle{empty}
+
+%\internalappendix{1}{Malli ABC}
+
+%Liitteet ovat tässä vain sisällysluettelon ja esitystavan mallina.
+%Jokainen liite aloitetaan yleensä uudelta sivulta, jonka alkuun tulee
+%liitteen numero ja nimi. Kunkin liitteen sivut numeroidaan erikseen.
+
+%Liite on paitsi dokumenttia täydentävä osuus myös itsenäinen
+%kokonaisuus. Liite ei siten voi olla pelkästään kuva tai ohjelmanpätkä,
+%vaan liitteessä on ilmaistava sen sisällön laatu ja tarkoitus.
+
+
+\end{document}

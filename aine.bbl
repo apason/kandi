@@ -1,0 +1,41 @@
+\begin{thebibliography}{}
+
+\bibitem[Ttk, 1991]{Ttk91}
+ (1991).
+\newblock Ttk91 reference.
+\newblock \url{https://www.cs.helsinki.fi/group/titokone/ttk91_ref_en.html}.
+\newblock Accessed: 2016-10-21.
+
+\bibitem[Bauer, 1974]{Bauer74}
+Bauer, F.~L. (1974).
+\newblock {\em Compiler Construction -- An Advanced Course}.
+\newblock Springer­Verslag, Berlin Heidelberg GmbH.
+
+\bibitem[Bratman, 1961]{Bratman61}
+Bratman, H. (1961).
+\newblock An alternative form of the 'uncol' diagram.
+
+\bibitem[Goldstine and {Von Neumann}, 1947]{Goldstine47}
+Goldstine, H. and {Von Neumann}, J. (1947).
+\newblock Planning and coding problems for an electronic computing instrument.
+
+\bibitem[IBM, 1954]{IBM54}
+IBM (1954).
+\newblock Specifications fot the ibm mathematical formula translating system,
+  fortran {Programming Research Group, I.B.M Applied Science Div}.
+
+\bibitem[Knuth and Pardo, 1976]{Knuth76}
+Knuth, D. and Pardo, L. (1976).
+\newblock {\em The early development of programming languages}.
+\newblock Stanford University.
+
+\bibitem[Rosen, 1964]{Rosen64}
+Rosen, S. (1964).
+\newblock Programming systems and languages, a historical survey.
+
+\bibitem[Salomon, 1993]{Salomon93}
+Salomon, D. (1993).
+\newblock {\em Assemblers and Loaders}.
+\newblock Ellis Horwood Ltd.
+
+\end{thebibliography}
