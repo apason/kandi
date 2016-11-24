@@ -43,6 +43,7 @@ Software and its engineering -> software notations and tools -> Compilers}}
 
 
 
+
 \section{Johdanto}
 K‰‰nt‰j‰t ovat tietokoneohjelmia, jotka k‰‰nt‰v‰t l‰hdekielisen ohjelmakoodin
 kohdekieliseksi ohjelmaksi~\cite{Bauer74}. Kohdekielen‰ on usein jonkin prosessoriarkkitehtuurin
@@ -476,7 +477,7 @@ and get a new new executable thet both uses and generates the new parameter pass
 -YMS
 ~\cite{Speetjens76}.
 
-Tekniikkaa voidaan k‰ytt‰‰ usealla tavalla, useaan eri ongelmaan ~\cite{Earley70}.
+Tekniikkaa voidaan k‰ytt‰‰ usealla tavalla, useaan eri ongelmaan ~\cite{Earley70}. full, incremental ja cross!
 
 %Bootstrapping menetelm‰‰ k‰ytet‰‰n usein myˆs ristiink‰‰nt‰misess‰ (cross compiling)
 %joten kyseinen luku k‰sittelee osittain myˆs sit‰.
@@ -552,6 +553,7 @@ toisiinsa. Kuvan esimerkin k‰‰nnˆs ei voi ottaa l‰hdeohjelmakseen muuta kuin kie
 
 %T‰h‰n lukuun tulee osittain myˆs cross compiling juttuja. Cross compilingiss‰ kerrotaan enemm‰n IL pohjaisesti
 \subsection{bootstrapping}
+%t‰h‰n menness‰ l‰htein‰ l‰hinn‰ Mogensen ja Appel
 Koska k‰‰nt‰jien ohjelmointi matalan tason ohjelmointikielill‰ on eritt‰in vaivalloista,
 suositaan niiden kehitt‰misess‰ korkean tason ohjelmointikielten k‰yttˆ‰  ~\cite{Mogensen10}.
 Yksi vaihtoehto on kirjoittaa laitteistolle k‰‰nt‰j‰, jollakin kyseiselle laitteistolle
@@ -561,28 +563,78 @@ joudutaan ohjelmointi tekem‰‰n jollakin muulla tavalla.
 Haluttaessa k‰‰nt‰j‰n joka sek‰ k‰‰nt‰‰ ett‰ suorittuu kyseisell‰ arkkitehtuurilla er‰s
 yleisesti k‰ytetty menetelm‰ on bootstrapping ~\cite{Mogensen10}. %IBID! Pit‰isikˆ suomentaa?
 
-%aloita kuvaamalla tilanne jossa ei ole k‰‰nt‰ji‰?
 Bootstrapping on tekniikka jonka ydinajatus on k‰‰nt‰‰ jokin k‰‰nt‰j‰ sill‰ itsell‰‰n ~\cite{Mogensen10}
 ja tavanomaisen k‰‰nt‰j‰n sanotaan olevan bootstr‰p‰tty %suomennos?
 jos se k‰‰nt‰‰ itsens‰ ~\cite{Appel94}.
 
-
-
-
 %full bootstrap
+%aloita kuvaamalla tilanne jossa ei ole k‰‰nt‰ji‰?
 Perinteinen ongelma k‰‰nt‰jien kehityksess‰ on tilanne, jossa k‰‰nt‰j‰ pit‰‰ rakentaa
-ilman tai l‰hes ilman muita tyˆkaluja ja k‰‰n‰ji‰. Koska kehittyneen ohjelmointikielen 
-%half bootstrap
-Varsin yleinen ongelma k‰‰nt‰jien suhteen on tilanne, jossa tarvittavan kielen k‰‰nt‰j‰ on olemassa,
-mutta ei kyseisell‰ laitteistolla jossa sit‰ tarvitaan.
+ilman tai l‰hes ilman muita tyˆkaluja ja k‰‰n‰ji‰. Iteratiivisessa bootstrap-
+menetelm‰ss‰ k‰‰nt‰j‰ kehitet‰‰n kahdessa p‰‰vaiheessa. Ensin k‰‰nt‰j‰st‰ tehd‰‰n
+hyvin suppea versio, joka osaa k‰‰nt‰‰ tavoitellusta ohjelmointikielest‰ vain pienen
+osajoukon ~\cite{Mogensen10}. T‰m‰ ensimm‰isen vaiheen k‰‰nt‰j‰ voidaan toteuttaa
+mill‰ tahansa ohjelmointikielell‰, mutta mik‰li muiden ohjelmointikielten k‰‰nt‰ji‰
+ei ole saatavilla se joudutaan kehitt‰m‰‰n konekielell‰. Toisessa vaiheessa k‰‰nt‰j‰
+ohjelmoidaan sen itsens‰ ymm‰rt‰m‰ll‰ kielell‰ eik‰ muita ohjelmointikieli‰ en‰‰ tarvita.
+T‰llˆin jo olemassa oleva k‰‰nt‰j‰ voi k‰‰nt‰‰ seuraavan version itsest‰‰n. 
+Koska kieli on t‰ss‰ vaiheessa viel‰ hyvin vajavainen, olisi valmiin ohjelmointikielen
+toteuttaminen heti ensimm‰isen vaiheen j‰lkeen eritt‰in tyˆl‰st‰ tai mahdotonta. Toista vaihetta 
+suoritetaan useita kertoja siten, ett‰ k‰‰nt‰j‰n tuntemaa ohjelmointikielt‰ kasvatetaan
+ja siit‰ k‰‰nnet‰‰n uusi k‰‰nt‰j‰ jonka avulla kielt‰ taas kasvatetaan ja niin edelleen.
+Huomioitavaa prosessissa on se, ett‰ k‰‰nt‰j‰n uusi versio on kehitett‰v‰ aina k‰ytt‰en
+vanhan version tuntemaa ohjelmointikielt‰.
 
-%cwl bootstrap
+Kuva 5 esitt‰‰ edell‰ mainittua tilannetta. Ensimm‰isess‰ vaiheessa k‰‰nt‰j‰n ensimm‰inen
+versio ohjelmoidaan konekielell‰ (ML) ja t‰m‰n j‰lkeen ohjelmointikielt‰ (PL) laajennetaan
+iteratiivisesti kunnes tavoiteltu laajuus on saavutettu.
+
+\begin{figure}[H]
+	\ \newline
+	\begin{center}
+		\includegraphics[scale=1.0]{iterative-bootstrap-from-scratch.png}
+		\caption{Iteratiivinen bootstr‰pp‰ys ilman muita ohjelmointikieli‰.}
+		\label{kuvaesimerkki}
+	\end{center}
+\end{figure}
+
+
+%half bootstrap
+Bootstrap menetelm‰‰ k‰ytet‰‰n usein myˆs yhdess‰ ristiink‰‰t‰misen (cross compiling) kanssa ~\cite{Reynolds03}.
+T‰llˆin tavoitteena on siirt‰‰ jo olemassa oleva k‰‰nt‰j‰ toimimaan toisessa laitteistossa.
+Oletetaan ett‰ laitteistolle HW1 joka ymm‰rt‰‰ konekielt‰ ML1 on toteutettu kielen PL k‰‰nt‰j‰.
+Haluttaessa kielen PL k‰‰nt‰j‰ toimimaan sek‰ tuottamaan kohdekoodia ML2 laitteistolle HW2, 
+voidaan kielen PL k‰‰nt‰j‰ laitteistolle HW2 ohjelmoida ristiink‰‰nt‰mist‰ ja bootstrapingi‰ k‰ytt‰en
+seuraavalla tavalla: Ensin kielell‰ PL ohjelmoidaan kielen PL k‰‰nt‰j‰ laitteistolle HW2.
+T‰m‰ voidaan k‰‰nt‰‰ laitteistolla HW1. Nyt kielelle PL on olemassa laitteiston HW2 k‰‰nt‰j‰,
+mutta sit‰ ei viel‰ voida suorittaa kyseisess‰ laitteistossa. Nyt K‰‰nt‰j‰n uudella versiolla,
+jonka kohdekieli on ML2, k‰‰nnett‰ess‰ oma l‰hdekoodinsa, saadaan k‰‰nt‰j‰, joka sek‰ toimii
+ett‰ k‰‰nt‰‰ kielelle ML2.
+Kuva 6 havainnollistaa tilannetta. Ensimm‰isess‰ vaiheessa jo olemassa olevalla k‰‰nt‰j‰ll‰
+k‰‰nnet‰‰n uuden k‰‰nt‰j‰n l‰hdekoodi, jolloin tulokseksi saadaan ristiink‰‰nt‰j‰.
+Saadulla uudella k‰‰nt‰j‰ll‰ k‰‰nnet‰‰n sen oma l‰hdekoodi, jolloin tuloksena on haluttu
+HW2 laitteistolla toimiva ja sen konekielt‰ tuottava pl kielen k‰‰nt‰j‰.
+
+\begin{figure}[H]
+	\ \newline
+	\begin{center}
+		\includegraphics[scale=1.0]{cross-bootstrap-T.png}
+		\caption{K‰‰nt‰j‰n porttaus uudelle arkkitehtuurille ristiink‰‰nt‰misen ja bootstrappingin avulla.}
+		\label{kuvaesimerkki}
+	\end{center}
+\end{figure}
+
+%esimerkikksi ibm -> control data cite reynolds
+%t‰ss‰ vois jo mainita intermediate languagen ja puhua front ja backendeist‰
+
+%ir bootstrap
+Edell‰mainittu esimerkki on toimiva, mutta x
 
 %incremental bootstrap
 
 
 
-\subsection{cross compiling ja v‰likielet}
+\subsection{ristiink‰‰nt‰minen ja v‰likielet}
 
 
 

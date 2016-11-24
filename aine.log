@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  24 NOV 2016 14:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  24 NOV 2016 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -168,6 +168,12 @@ LaTeX Warning: Label `kuvaesimerkki' multiply defined.
 
 LaTeX Warning: Label `kuvaesimerkki' multiply defined.
 
+
+LaTeX Warning: Label `kuvaesimerkki' multiply defined.
+
+
+LaTeX Warning: Label `kuvaesimerkki' multiply defined.
+
 )
 \openout1 = `aine.aux'.
 
@@ -306,96 +312,122 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \openout3 = `aine.toc'.
 
  [2]
-Overfull \hbox (5.00719pt too wide) in paragraph at lines 79--85
+Overfull \hbox (5.00719pt too wide) in paragraph at lines 80--86
 \T1/cmr/m/n/12 mis-to-tuo-tan-nos-sa k‰y-tet-ty-j‰ kor-kean ta-son kie-len k‰‰n
 -t‰-ji‰ [[]]. 
  []
 
 [1] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 <esimerkkiTTK.png, id=24, 345.29pt x 315.1775pt>
 File: esimerkkiTTK.png Graphic file (type png)
  <use esimerkkiTTK.png>
-Package pdftex.def Info: esimerkkiTTK.png used on input line 200.
+Package pdftex.def Info: esimerkkiTTK.png used on input line 201.
 (pdftex.def)             Requested size: 172.64456pt x 157.58836pt.
 
 [3 <./esimerkkiTTK.png>] [4] [5]
-Overfull \hbox (15.12282pt too wide) in paragraph at lines 377--384
+Overfull \hbox (15.12282pt too wide) in paragraph at lines 378--385
 \T1/cmr/m/n/12 jos-sa muut-tu-jien ni-met voi-vat ol-la useam-man mer-kin pi-tu
 i-sia  [[]]. 
  []
 
 [6]
-Overfull \hbox (40.84006pt too wide) in paragraph at lines 479--480
+Overfull \hbox (40.84006pt too wide) in paragraph at lines 480--481
 []\T1/cmr/m/n/12 Tekniikkaa voi-daan k‰yt-t‰‰ useal-la ta-val-la, use-aan eri o
-n-gel-maan  [[]]. 
+n-gel-maan  [[]].
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
 <basic-T.png, id=43, 191.21437pt x 115.18031pt>
 File: basic-T.png Graphic file (type png)
  <use basic-T.png>
-Package pdftex.def Info: basic-T.png used on input line 498.
+Package pdftex.def Info: basic-T.png used on input line 499.
 (pdftex.def)             Requested size: 95.60695pt x 57.59pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
 
  []
 
 <multi-T.png, id=45, 469.755pt x 244.48787pt>
 File: multi-T.png Graphic file (type png)
  <use multi-T.png>
-Package pdftex.def Info: multi-T.png used on input line 518.
+Package pdftex.def Info: multi-T.png used on input line 519.
 (pdftex.def)             Requested size: 234.87692pt x 122.24362pt.
  [8 <./basic-T.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
 
  []
 
 <notations-T.png, id=50, 414.04688pt x 86.57344pt>
 File: notations-T.png Graphic file (type png)
  <use notations-T.png>
-Package pdftex.def Info: notations-T.png used on input line 534.
+Package pdftex.def Info: notations-T.png used on input line 535.
 (pdftex.def)             Requested size: 414.04585pt x 86.57321pt.
 
-Overfull \hbox (8.53134pt too wide) in paragraph at lines 540--552
+Overfull \hbox (8.53134pt too wide) in paragraph at lines 541--553
 []\T1/cmr/m/n/12 Vasemmalta oi-keal-le k‰y-ty-n‰ en-sim-m‰i-nen ku-va on Brat-m
 a-nin al-ku-pe-r‰i-sen T-kaavion
  []
 
 [9 <./multi-T.png> <./notations-T.png>]
-Overfull \hbox (51.70413pt too wide) in paragraph at lines 555--563
+Overfull \hbox (51.70413pt too wide) in paragraph at lines 557--565
 \T1/cmr/m/n/12 ta, suo-si-taan nii-den ke-hit-t‰-mi-ses-s‰ kor-kean ta-son oh-j
 el-moin-ti-kiel-ten k‰yt-tˆ‰  [[]].
  []
 
 [10]
-Overfull \hbox (51.55176pt too wide) in paragraph at lines 630--640
+Underfull \hbox (badness 10000) in paragraph at lines 593--594
+
+ []
+
+<iterative-bootstrap-from-scratch.png, id=60, 326.72063pt x 125.71968pt>
+File: iterative-bootstrap-from-scratch.png Graphic file (type png)
+
+<use iterative-bootstrap-from-scratch.png>
+Package pdftex.def Info: iterative-bootstrap-from-scratch.png used on input lin
+e 595.
+(pdftex.def)             Requested size: 326.71982pt x 125.71936pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
+
+ []
+
+<cross-bootstrap-T.png, id=61, 388.45125pt x 155.83218pt>
+File: cross-bootstrap-T.png Graphic file (type png)
+
+<use cross-bootstrap-T.png>
+Package pdftex.def Info: cross-bootstrap-T.png used on input line 621.
+(pdftex.def)             Requested size: 388.45029pt x 155.8318pt.
+ [11 <./iterative-bootstrap-from-scratch.png>]
+Overfull \hbox (51.55176pt too wide) in paragraph at lines 682--692
  [][] 
  []
 
-[11] (./aine.bbl
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 <./cross-bootstrap-T.png>] [13] (./aine.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [12]
-(./aine.aux)
+)) [14] (./aine.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3116 strings out of 494452
- 42095 string characters out of 6167489
- 114182 words of memory out of 5000000
- 6294 multiletter control sequences out of 15000+600000
+ 3126 strings out of 494452
+ 42418 string characters out of 6167489
+ 114183 words of memory out of 5000000
+ 6302 multiletter control sequences out of 15000+600000
  14669 words of font info for 37 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
  38i,7n,25p,270b,267s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -408,10 +440,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 i1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on aine.pdf (15 pages, 291017 bytes).
+Output written on aine.pdf (17 pages, 335972 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
