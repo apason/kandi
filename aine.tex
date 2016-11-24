@@ -2,6 +2,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{subfigure}
 \usepackage{url}
+\usepackage{float}
 \begin{document}
 \onehalfspacing
 
@@ -51,11 +52,11 @@ ymm‰rt‰m‰ konekieli.
 Ohjelmointikielet sek‰ niit‰ ymm‰rt‰v‰t k‰‰nt‰j‰t ja tulkit ovat keskeisess‰ asemassa
 ohjelmistotuotannossa. K‰‰nt‰j‰t mahdollistavat ohjelmien
 kirjoittamisen korkean tason ohjelmointikielill‰ sek‰ symbolisilla konekielill‰,
-jotka puolestaan tekev‰t ohjelmoinnista nopeampaa
-sek‰ helpompaa. Niiden k‰ytt‰minen tekee ohjelmakoodista myˆs ymm‰rrett‰v‰mp‰‰ ja
+jotka puolestaan helpottavat ja nopeuttavat ohjelmointia.
+Niiden k‰ytt‰minen tekee ohjelmakoodista myˆs ymm‰rrett‰v‰mp‰‰ ja
 helpompilukuista. Yleisesti ottaen ohjelmointikielen ymm‰rrett‰vyys kasvaa abstraktiotason
 kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset lausekkeet
-ovat ymm‰rrett‰v‰mpi‰ kuin vastaava symbolisella konekielell‰ ohjelmoituna.
+ovat ymm‰rrett‰v‰mpi‰ kuin vastaava laskenta symbolisella konekielell‰ ohjelmoituna.
 Lis‰ksi useat korkean tason ohjelmointikielet mahdollistavat --- mik‰li
 tarvittavat k‰‰nt‰j‰t ovat olemassa --- saman ohjelmakoodin k‰ytt‰misen useissa eri
 laitteistoissa sek‰ useilla eri k‰yttˆj‰rjestelmill‰. Koska eri laitteistoissa
@@ -103,8 +104,9 @@ k‰‰nt‰ji‰~\cite{Knuth76}.
 %t‰‰ koko kappale on ihan vitun perseest‰ :::::D
 \section{Symbolinen konekieli ja assemblyk‰‰nt‰j‰t}
 %tietojenk‰sittelytieteess‰ ON OSIA jotka ei yht‰ t‰sm‰llist‰...
-Koska tietojenk‰sittelytiede ei ole yht‰ t‰sm‰llist‰ kuin matematiikka, ovat
-m‰‰ritelm‰t usein v‰hemm‰n t‰sm‰llisi‰ ja saattavat poiketa toisistaan. 
+%Koska tietojenk‰sittelytiede ei ole yht‰ t‰sm‰llist‰ kuin matematiikka, ovat
+%m‰‰ritelm‰t usein v‰hemm‰n t‰sm‰llisi‰ ja saattavat poiketa toisistaan.
+Samoille asioille on tietojenk‰sittelytieteess‰ annettu hieman toisistaan poikkeavia m‰‰ritelmi‰.
 Er‰‰n m‰‰ritelm‰n mukaan assemblyk‰‰nt‰j‰ on k‰‰nt‰j‰, joka k‰‰nt‰‰ yksi yhteen
 symbolisella konekielell‰ kirjoitettuja komentoja konekielisiksi komennoiksi~\cite{Salomon93}.
 %
@@ -126,7 +128,7 @@ on korvattu ihmisille helpommin muistettavilla sanoilla eli symboleilla.
 %Ensimm‰iset ohjelmointia helpottavat ohjelmat olivat assemblerk‰‰nt‰ji‰.
 
 Koska ennen ensimm‰isi‰ assemblyk‰‰nt‰ji‰ ei ollut mit‰‰n ohjelmointia
-helpottavia tyˆkaluja, tuli ne ohjelmoida suoraan konekoodilla
+helpottavia tyˆkaluja, tuli ensimm‰iset k‰‰nt‰j‰t ohjelmoida suoraan konekielell‰
 %% Teoriassa
 %% myˆs ensimm‰iset assemblyk‰‰nt‰j‰t olisi voitu toteuttaa bootstrap
 %% menetelm‰ll‰, kirjoittaen osa assemblyin koodista assemblyin itsens‰
@@ -145,8 +147,8 @@ tule ikin‰ tarpeeksi tehokasta oikeaan ohjelmointiin~\cite{Knuth76}.
 
 Vaikka nykyaikaiset korkean tason ohjelmointikielien k‰‰nt‰j‰t tuottavat
 hyvin optimoitua koodia, on hyv‰n ohjelmoijan kirjoittama symbolinen
-konekieli silti l‰hes poikkeuksetta parempaa. T‰m‰n takia symbolisia
-konekieli‰ k‰ytet‰‰n viel‰ nykyisin matalan tason ohjelmoinnin lis‰ksi
+konekieli silti l‰hes poikkeuksetta parempaa. T‰m‰n takia symbolisia %LƒHDE PYYDETTY aiempi lause
+konekieli‰ k‰ytet‰‰n jonkin verran matalan tason ohjelmoinnin lis‰ksi
 suurta laskentatehoa vaativien ohjelmien optimointiin.
 %
 Ennen symbolisten konekielten kehityst‰ ohjelmointi tapahtui kirjoittamalla
@@ -162,20 +164,20 @@ korkean tason ohjelmointikielill‰.
 \subsection{Assemblyk‰‰nt‰jien toiminnasta ja toteutuksesta}
 %T‰m‰ tekee matalan tason ohjelmointikielist‰ eli (symbolisista) konekielist‰ t‰ysin laitteistoriippuvaisia.
 Assemblyk‰‰nt‰j‰t ymm‰rt‰v‰t jotakin symbolista konekielt‰ ja osaavat
-tuottaa t‰st‰ linkkerin avulla konekielisen suoritettavan ohjelman.
-Symboliset konekielet ovat matalan tason laiteriippuvaisia ohjelmointikieli‰
-joille on tyypillist‰ l‰hes t‰ysi koodin symbolisuus. T‰m‰ tarkoittaa sit‰,
-ett‰ suurin osa ohjelmakoodista on k‰‰nnett‰viss‰ yksi yhteen laitteiston
-ymm‰rt‰m‰n konekielen kanssa. Poikkeuksen tekee kuitenkin ohjelman osoitteina
-k‰ytett‰v‰t tunnisteet (label), joiden arvot assemblyk‰‰nt‰j‰ voi
-vapaasti p‰‰tt‰‰. Tunnisteina voi toimia joko paikat ohjelman koodiosassa
+tuottaa t‰st‰ konekielisen suoritettavan ohjelman.
+Symboliset konekielet ovat matalan tason laiteriippuvaisia ohjelmointikieli‰,
+jotka k‰‰nt‰v‰t l‰hdekoodia yksinkertaisin ennalta m‰‰r‰tyin ehdoin kohdekielelle.
+Suurin osa ohjelmakoodista on siis k‰‰nnett‰viss‰ yksi yhteen laitteiston
+ymm‰rt‰m‰n konekielen kanssa. Poikkeuksena on kuitenkin ohjelman osoitteina
+k‰ytett‰v‰t tunnukset (label), joiden arvot assemblyk‰‰nt‰j‰ voi
+vapaasti p‰‰tt‰‰. Tunnuksina ovat joko paikat ohjelman koodiosassa
 tai muuttujina k‰ytetyt muistipaikat. Symbolisen konekielen avainsanat
-ovat siis symboleja laitteiston ymm‰rt‰m‰lle bin‰‰rille. Konekielell‰ on
+ovat siis symboleja laitteiston ymm‰rt‰m‰lle konekielelle. Konekielell‰ on
 mahdollista kirjoittaa suoraan suorittimen rekistereihin. T‰m‰ tekee symbolisilla konekielill‰ ohjelmoimisesta
 yht‰ laitel‰heist‰ kuin suoraan konekielill‰ ohjelmointikin. Laitel‰heisyys
 puolestaan tekee ohjelmista laitteistoriippuvaisia, sill‰ eri suorittimilla
 voi olla erilaiset k‰skykannat. Symbolien k‰ytt‰minen v‰hent‰‰ huomattavasti
-kirjoitusvirheiden m‰‰r‰‰ ja tekee koodista helpomman kirjoittaa ja k‰yd‰ l‰pi.
+kirjoitusvirheiden m‰‰r‰‰ ja tekee koodista helpomman kirjoittaa ja lukea.
 Tunnisteiden k‰yttˆ puolestaan poistaa tarpeen muistaa muuttujien sek‰
 konek‰skyjen osoitteita. 
 % Miten?
@@ -184,15 +186,15 @@ konek‰skyjen osoitteita.
 % labeleista. Ei t‰ysin yksi yhteen! KUVA! 
 
 
-Kuva 1 selvent‰‰ symbolisten konekielten ennalta m‰‰r‰ttyjen symbolien
+Kuva 1 selvent‰‰ symbolisten konekielten m‰‰tittelemien symbolien
 sek‰ ohjelmoijan m‰‰rittelemien tunnisteiden eron. Esimerkkikoodi on TTK91 ~\cite{Ttk91}
 virtuaaliprosessorille tehty ohjelma, joka tulostaa k‰ytt‰j‰lle luvut
 0...5. Keltaisella pohjalla olevat symbolit ovat niin sanottuja tunnisteita,
 joilla voi olla eri arvo k‰‰nnˆskerrasta ja k‰‰nt‰j‰st‰ riippuen.
-Kaikki harmaalla pohjalla oleva koodi k‰‰nnet‰‰n siis yksi yhteen.
+Kaikki harmaalla pohjalla oleva koodi k‰‰nnet‰‰n siis t‰ysin ennalta m‰‰r‰tysti.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \ \newline
 \begin{center}
 \includegraphics[scale=0.5]{esimerkkiTTK.png}
@@ -204,11 +206,11 @@ Kaikki harmaalla pohjalla oleva koodi k‰‰nnet‰‰n siis yksi yhteen.
 \newpage
 \section{Historiaa korkean tason kielten k‰‰nt‰jist‰}
 
-Korkena tason ohjelmointikielell‰ tarkoiteteen ohjelmointikielt‰, % pit‰iskˆ sanoa ett‰ tarkoitetaan t‰ss‰ dokumentissa? ei l‰hdett‰?
-jossa kielen sek‰ siit‰ k‰‰nnett‰v‰n konekielen v‰lill‰  % nyt vittu poissuljetaan ne k‰‰nt‰j‰t jotka ei k‰‰nn‰ assyks tai bin‰‰riks!
-on selke‰ abstraktiotaso ja k‰‰nt‰minen edellytt‰‰ muutakin, kuin mekaanista
+Korkean tason ohjelmointikielell‰ tarkoiteteen t‰ss‰ dokumentissa ohjelmointikielt‰,
+jossa l‰hdekielikieli sek‰ siit‰ k‰‰nnett‰v‰ konekieli ovat  % nyt vittu poissuljetaan ne k‰‰nt‰j‰t jotka ei k‰‰nn‰ assyks tai bin‰‰riks!
+selke‰sti eri abstraktiotasoilla ja k‰‰nt‰minen edellytt‰‰ muutakin, kuin mekaanista
 sanojen vaihtamista ennalta m‰‰r‰ttyjen s‰‰ntˆjen perusteella. T‰m‰n m‰‰ritelm‰n
-perusteella korkean tason ohjelmointikielill‰ tarkoitetaan niit‰ kieli‰,
+perusteella korkean tason ohjelmointikielill‰ tarkoitetaan t‰ss‰ dokumentissa niit‰ kieli‰,
 jotka eiv‰t ole symbolisia konekieli‰.
 
 % Kerrotaan korkean tason kielten hyˆdyist‰ ja miksi niit‰ tarvitsee
@@ -218,18 +220,18 @@ Tietojenk‰sittelytieteilij‰t ovat jo tietokoneiden alkuajoista l‰htien
 yritt‰neet kuvailla ohjelmien suoritusta ja algoritmeja konekielt‰
 abstraktimmalla tasolla. Alan Turingin julkaisussa vuonna 1936 esitettiin
 m‰‰ritelm‰ tietojenk‰sittelijˆiden hyvin tuntemasta laskentalaitteesta,
-turingin koneesta. Laitteen yhteydess‰ m‰‰riteltiin
+Turingin koneesta. Laitteen yhteydess‰ m‰‰riteltiin
 % HMM? eikˆ laite itse ole jo m‰‰ritelm‰ esitystavasta?
-myˆs matemaattinen esitystapa, jolla sen toimintaa voitiin t‰sm‰llisesti
+myˆs matemaattinen esitystapa, jolla sen toimintaa voitiin t‰sm‰llisesti %LƒHTEET turing oma!
 kuvailla. Vaikka esitystapa oli vaikea eik‰ kyseisi‰ Turingin
-esittelemi‰ laitteita ollut kuin teoreettisella tasolla,
+esittelem‰‰ laitetta ollut kuin teoreettisella teoriassa,
 Turingin esitystapa edusti kehittyneint‰ formaalia
-kuvausta, 'kielt‰', mit‰ siihen aikaan oli olemassa.
+kuvausta, 'kielt‰', joka siihen aikaan oli olemassa. %millon tuli lambda?
 
-Toisen maailmansodan j‰lkeen vuonna 1945 saksalainen Konrad Zuse aloitti 
+Toisen maailmansodan j‰lkeen vuonna 1945 saksalainen Konrad Zuse aloitti %LƒHTEET PYYDETTY mul on paperilla!
 oman tietokoneohjelmien kuvailuun tarkoitetun kielen Plankalk¸lin kehitt‰misen.
 Zusen sanoin Plankalk¸lin tarkoitus oli luoda puhtaasti formaali esitystapa
-mille tahansa laskentaongelmalle. T‰ss‰ h‰n onnistuikin varsin hyvin.
+mille tahansa laskentaongelmalle ~\cite{Knuth76}. T‰ss‰ h‰n onnistuikin varsin hyvin.
 Plankalk¸lissa voidaan m‰‰ritell‰ aritmetiikan ja ohjausrakenteiden lis‰ksi
 rajaton m‰‰r‰ sis‰kk‰isi‰ tietorakenteita ja Zusen tyˆhˆn viitataankin
 usein ensimm‰isen‰ korkean tason ohjelmointikielen‰.
@@ -256,12 +258,12 @@ huomattavasti kehittyneempi‰ ohjelmointikieli‰.
 Samoihin aikoihin Zusen kanssa Yhdysvaltalaiset Herman Goldstine ja
 John von Neumann koittivat ratkaista samaa ongelmaa. Heid‰n ratkaisunsa
 algoritmien ja tietokoneohjelmien kuvaamiseen oli varsin erilainen.
-Von Neumann ja Goldstine esittiv‰t ratkaisuksi virtausdiagrammia (flow diagram),
-esitystapaa jossa ohjelmat kuvataan nuolien ja laatikoiden avulla.
+Von Neumann ja Goldstine esittiv‰t ratkaisuksi lohkokaaviota (flow diagram),
+esitystapaa jossa ohjelmat kuvataan nuolien ja laatikoiden avulla. %LƒHTEEEEEEET
 
 % VAATII HIOMISTA START
 
-%CU50', CU48, CU50
+%CU50', CU48, CU50 %VITTU KOKO Tƒƒ CURRY ON WIKLAN MIELEST PASKAA PISTETƒƒ UUSIKS
 Vuonna 1946 Marylandissa tyˆskennellyt Haskell B. Curry kehitti ENIAC
 tietokoneelle aikaansa n‰hden monimutkaista ohjelmaa. Curryn tyˆ ENIACIN
 parissa sai h‰net ehdottamaan formalismia ohjelmistojen toiminnalle.
@@ -297,7 +299,7 @@ koodin generointiin tarkoitettuina algoritmeina.
 Millek‰‰n aiemmin mainituista ohjelmointikielist‰ ei t‰h‰n menness‰ oltu
 toteutettu k‰‰nt‰ji‰. Ne toimivat ohjelmoijien k‰sitteellisen‰ apuna auttaen
 ohjelmien suunnittelussa, mutta j‰tt‰en toteutuksen ihmisille. T‰st‰ huolimatta
-olivat ne kaikki merkitt‰vi‰ askeleita kohti parempia ohjelmointikieli‰ sek‰
+ne kaikki olivat merkitt‰vi‰ askeleita kohti parempia ohjelmointikieli‰ sek‰
 niiden k‰‰nt‰ji‰. Ilman t‰sm‰llisi‰ esitystapoja ei koodin generointi ikin‰
 olisi tullut mahdolliseksi.
 
@@ -305,12 +307,12 @@ olisi tullut mahdolliseksi.
 
 % MAUCHLY 
 Ensimm‰inen korkean tason ohjelmointikieli, jolle toteutettiin tulkki oli Short Code.
-Sit‰ kehitti John W. Mauchly vuonna 1949 ja William F. Schmitt toteutti sille tulkin.
+Sit‰ kehitti John W. Mauchly vuonna 1949 ja William F. Schmitt toteutti sille tulkin ~\cite{Knuth76}.
 Tulkki toimi alkuun BINAC tietokoneella mutta se ohjelmoitiin myˆhemmin myˆs UNIVACille.
 Yksityiskohtia Short Coden toiminnasta ei ikin‰ julkaistu, joten sen tarkemmasta
 toiminnasta ei ole tietoa. Vuonna 1955 julkaistusta ohjelmoijille tarkoitetussa
 manuaalissa kerrotaan kuitenkin kuinka ohjelmaa voidaan k‰ytt‰‰. % RR55
-Short Code oli siis algebrallinen tulkki, joka osasi suorittaa aritmeettisia
+Short Code oli siis algebrallinen tulkki, joka osasi suorittaa aritmeettisia %mik‰ vittu on algebrallinen tulkki t. wikla
 laskutoimituksia ilman konekielist‰ ohjelmointia. Ohjelma luki syˆtett‰ ja
 suoritti vastaavat toiminnot ajetulla laitteistolla.
 
@@ -322,7 +324,7 @@ teknillisess‰ yliopistossa Sveitsiss‰. Vaikka he tyˆskenteliv‰t samassa paikassa
 ja saman aiheen parissa, eiv‰t he tyˆskennelleet yhdess‰. Rutishauser julkaisi
 1952 artikkelin, jossa h‰n kuvasi hypoteettisen tietokoneen sek‰ siin‰ toimivan
 k‰‰nt‰j‰n kehitt‰m‰lleen ohjelmointikielelle. Julkaisu oli merkitt‰v‰, sill‰
-siin‰ kuvattiin ensimm‰ist‰ kertaa menetelm‰ k‰‰nt‰jien toteuttamisesta
+siin‰ kuvattiin ensimm‰ist‰ kertaa menetelm‰ k‰‰nt‰jien toteuttamisesta %LƒHTEET t. wikla
 sek‰ koodin generoinnista. % mit‰ eroa curryn algoritmeihin n‰hden?? RU52
 
 
@@ -331,10 +333,10 @@ t‰m‰n k‰‰nt‰j‰‰. H‰nen julkaisunsa oli Rutishauserin julkaisua viel‰kin
 merkitt‰v‰mpi, sill‰ h‰n oli toteuttanut k‰‰nt‰j‰n t‰m‰n omalla kielell‰.
 Bˆhmin kieli ei kuitenkaan osannut k‰sitell‰ muita kuin positiivisia
 kokonaislukuja, joten sen k‰yttˆarvo j‰i melko pieneksi. K‰‰nt‰jien
-teorian kehityksen kannalta se oli kuitenkin korvaamaton. Bˆhmin k‰‰nt‰j‰
+teorian kehityksen kannalta se oli kuitenkin korvaamaton. Bˆhmin k‰‰nt‰j‰ %LƒHTEET
 kykeni tarkistamaan koodin syntaksia lineaarisessa ajassa kun Rutishauserin
 k‰‰nt‰j‰ toimi suuruusluokassa $n≤$. Lis‰ksi Bˆhmin k‰‰nt‰j‰ hallitsi matemaattisten
-operaattoreiden sidontaj‰rjestyksen, sek‰ osasi k‰sitell‰ sulkeita aritmeettisissa
+operaattoreiden sidontaj‰rjestyksen, sek‰ osasi k‰sitell‰ sulkeita aritmeettisissa %LƒHTEET
 lausekkeissa. Lis‰ksi Bˆhm oli ensimm‰inen tietojenk‰sittelij‰, joka todisti % oliko ensimm‰inen vai ensimm‰inen t‰ss‰ dokumentissa?
 matemaattisesti ohjelmointikielens‰ voivan laskea mink‰ tahansa laskettavan funktion. %BO52 universaali. parempi sana??
 %rutishauser and bˆhm had had a considerable advantage over glennie in that they had designed theri own machine code
@@ -346,7 +348,7 @@ omat k‰‰nt‰j‰ns‰, pidet‰‰n ensimm‰isen‰ 'oikeana' k‰‰nt‰j‰n‰ silti
 Alick E. Glennien 1952 valmistamaa AUTOCODE ohjelmistoa. Aiemmista k‰‰nt‰jist‰ poiketen
 AUTOCODE toteutettiin oikealle laitteistolla ja sen tuottama konekieli
 oli oikeasti suoritettavissa. AUTOCODEa pystyttiin siis k‰ytt‰m‰‰n oikeiden,
-k‰yttˆkelpoisten ohjelmien tekemiseen.
+k‰yttˆkelpoisten ohjelmien tekemiseen ~\cite{Knuth76}.
 
 %% --- vaikka olikin kokeneille ohjelmoijille tarkoitettu ~\cite[Knuth74]
 %% --- k‰ytettiin, kuten tarkoitus oli, oikeaan ohjelmointiin.
@@ -362,12 +364,11 @@ Vuoden 1954 alussa John Backus rupesi kehitt‰m‰‰n kokoamansa kehitt‰j‰tiimin kan
 automaattisen ohjelmoinnin j‰rjestelm‰‰. J‰rjestelm‰n oli tarkoitus olla hyvin
 kehittynyt, joten suureksi haasteeksi muodostui j‰rjestelm‰n saaminen tarpeeksi
 tehokkaaksi. Loppuvuodesta 1954 kehitt‰j‰ryhm‰ julkaisi suunnitelman j‰rjestelm‰st‰ 'The IBM 
-Mathematical FORmula TRANstating system' --- FORTRAN. Kuten jo aiemmin oli todettu,
+Mathematical FORmula TRANstating system' --- FORTRAN. Kuten jo aiemmin oli todettu, %LƒHTEET t. wikla
 tehokkaan koodin tuottaminen ei ollut lainkaan helppoa. Ryhm‰n julkaisu alkoikin
 painottamalla sit‰ tosiasiaa, ett‰ FORTRAN oli tehokas. Aiemmin ohjelmoijien tuli
 valita helpon ohjelmoinnin ja hitaan suorituksen tai tyˆl‰‰n ohjelmoinnin ja nopean
 suorituksen v‰lilt‰, mutta FORTRANin tarjoaisi parhaat puolet molemmista ~\cite{IBM54}. %IB54 EN OO VIEL LUKENU MUT MENK÷÷
-% fortran oli ensimm‰iojnen kieli jossa muuttujan nimi voi olla yli merkin pituinen
 FORTRAN 0 dokumentti esitt‰‰ myˆs ensimm‰isen yrityksen esitt‰‰ ohjelmointikielen
 syntaksi t‰sm‰llisesti. T‰t‰ voidaan pit‰‰ Backuksen myˆhemmin esittelem‰n kielioppimuodon
 Backus Naur Formin (BNF) edelt‰j‰n‰.
@@ -375,14 +376,14 @@ Backus Naur Formin (BNF) edelt‰j‰n‰.
 
 Kun FORTRAN kaksi ja puoli vuotta myˆhemmin saatiin toteutettua, oli se
 aikansa tehokkain sek‰ monipuolisin ohjelmointikieli. FORTRAN tuotti
-kohtuullisen tehokasta koodia ja keitt‰j‰t sanoivat sen olevan l‰hes
+kohtuullisen tehokasta koodia ja kehitt‰j‰t sanoivat sen olevan l‰hes
 yht‰ tehokasta kuin hyv‰n ohjelmoijan kirjoittama symbolinen konekieli.
 FORTRANissa oli myˆs paljon ominaisuuksia, joita ei oltu aiemmin n‰hty.
 Se oli esimerkiksi ensimm‰inen ohjelmointikieli, jossa muuttujien nimet
-voivat olla useamman merkin pituisia.
+voivat olla useamman merkin pituisia ~\cite{Knuth76}. %ent‰ ass kielten tunnukset t. wikla
 
 Ensimm‰isen julkaisun j‰lkeen FORTRANissa oli kuitenkin useita ognelmia.
-Bugeja oli paljon ja er‰s FORTRANIN kehitt‰jist‰, Saul Rosen, %OLIKO SAUL ROSEN kehitt‰j‰!?
+Virheit‰ oli paljon ja er‰s FORTRANIN kehitt‰jist‰, Saul Rosen, %OLIKO SAUL ROSEN kehitt‰j‰!?
 %OLIKO bugeja edes paljon vai viitattiinko tossa aikaan ennen julkaisua perkele?!
 sanoikin ettei uskonut FORTRANin ikin‰ tulevan toimimaan~\cite{Rosen64}.
 Vaikeuksista huolimatta FORTRANista tuli hyvin suosittu ja sit‰ k‰ytetiin
@@ -462,7 +463,7 @@ Now suppose a new version of the compiler source is weirren, that uses different
 The old compiler can compile this source, yelding a new compiler. But Look! The executable version cc'
 of the new compiler uses the old parameter passing style, but generates code that uses the new style.
 onecan use the new compiler however to recompile all the libraries and the new version itself
-and get a new new executable thet both uses and generates the new parameter passing style ~\cite{Appel}.
+and get a new new executable thet both uses and generates the new parameter passing style ~\cite{Appel94}.
 
 -Cross compilation has become popular viimeist‰‰n 76.
 -Tarkoittaa sorsan k‰‰nt‰mist‰ masiinalla joka outputtaa toisen masiinan objektikoodia.
@@ -475,6 +476,10 @@ and get a new new executable thet both uses and generates the new parameter pass
 -YMS
 ~\cite{Speetjens76}.
 
+Tekniikkaa voidaan k‰ytt‰‰ usealla tavalla, useaan eri ongelmaan ~\cite{Earley70}.
+
+%Bootstrapping menetelm‰‰ k‰ytet‰‰n usein myˆs ristiink‰‰nt‰misess‰ (cross compiling)
+%joten kyseinen luku k‰sittelee osittain myˆs sit‰.
 
 
 \subsection{T-kaaviot}
@@ -487,7 +492,7 @@ Kaaviota kutsutaan Bratman-kaavioksi tai T-kaavioksi. J‰lkimm‰inen nimi tulee ka
 muodosta, jossa T-kirjaimen muotoisessa alueessa vasen p‰‰ty kertoo l‰hdekielen, oikea
 p‰‰ty kohdekielen ja alaosa kertoo mill‰ kielell‰ k‰‰nt‰j‰ toimii.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \ \newline
 \begin{center}
 \includegraphics[scale=0.5]{basic-T.png}
@@ -497,16 +502,17 @@ p‰‰ty kohdekielen ja alaosa kertoo mill‰ kielell‰ k‰‰nt‰j‰ toimii.
 \end{figure}
 
 Kaavioita toisiinsa liitt‰m‰ll‰ voidaan havainnollistaa monimutkaisiakin toimintaketjuja,
-joita k‰‰nt‰j‰t suorittavat. Oletetaan ett‰ k‰ytˆss‰ on c-kielell‰ kirjoitettu
+joita k‰‰nt‰j‰t suorittavat. Kuvassa 3 oletetaan ett‰ k‰ytˆss‰ on c-kielell‰ kirjoitettu
 k‰‰nt‰j‰, joka k‰‰nt‰‰ ada-kielt‰ x86 konekielelle. Lis‰ksi k‰ytˆss‰ on edellisen kuvan esimerkiss‰
 oleva x86 arkkitehtuurilla toimiva c-k‰‰nt‰j‰, jonka kohdekieli on x86 konekieli.
 N‰iden kahden k‰‰nt‰j‰n avulla voidaan tuottaa x86 alustalla toimiva ada k‰‰nt‰j‰,
 jonka kohdekieli on x86. Kahden ensimm‰isen k‰‰nt‰j‰n yhteistyˆll‰ saadaan siis kolmas
-k‰‰nt‰j‰.
-Huomattavaa on, ett‰ prosessin alimman tasoinen k‰‰nt‰j‰ toimii aina jossakin todellisessa
+k‰‰nt‰j‰. Huomattavaa on, ett‰ prosessin alimman tasoinen k‰‰nt‰j‰ toimii aina jossakin todellisessa
 laitteistossa, eik‰ t‰ten voi olla muu kuin jonkin laitteiston ymm‰rt‰m‰ konekieli.
 
-\begin{figure}[h]
+%T‰h‰n v‰liin j‰‰ vittumaisesti tyhj‰‰ tilaa
+
+\begin{figure}[H]
 \ \newline
 \begin{center}
 \includegraphics[scale=0.5]{multi-T.png}
@@ -517,22 +523,21 @@ laitteistossa, eik‰ t‰ten voi olla muu kuin jonkin laitteiston ymm‰rt‰m‰ konekie
 
 T-kaavio oli melko yksinkertainen, joten siit‰ on kehitetty paranneltuja vaihtoehtoja.
 Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lis‰‰m‰ll‰ siihen ominaisuuksia.
-Alkuper‰isen T-kaavion kuvatessa vain k‰‰nt‰ji‰, Earleyn ja Sturgisin kaavioissa pysyi
+Alkuper‰isen T-kaavion kuvatessa vain k‰‰nt‰ji‰, Earleyn ja Sturgisin kaavioissa pystyi
 kuvaamaan myˆs tulkkeja. Lis‰ksi kaavioon sis‰llytettiin suoritusta kuvaava osa
-sek‰ sovellusohjelmaa kuvaava kaavio. Heid‰n kaavioissaan m‰‰ritell‰‰n seuraavan kuvan
+sek‰ sovellusohjelmaa kuvaava kaavio. Heid‰n kaavioissaan m‰‰ritell‰‰n kuvan 4
 mukaiset elementit.
 
-%huom! virhe kuvassa!
-\begin{figure}[h]
+\begin{figure}[H]
 \ \newline
 \begin{center}
-\includegraphics[scale=0.5]{notations-T.png}
+\includegraphics[scale=1.0]{notations-T.png}
 \caption{Earleyn ja Sturgisin versio T-kaavioista}
 \label{kuvaesimerkki}
 \end{center}
 \end{figure}
 
-Vasemmalta oikealle k‰ytyn‰ ensimm‰inen kuva on Bratmanin alkuper‰isin T-kaavion vastaava elementti.
+Vasemmalta oikealle k‰ytyn‰ ensimm‰inen kuva on Bratmanin alkuper‰isen T-kaavion vastaava elementti.
 Se kuvaa k‰‰nt‰j‰‰ joka k‰‰nt‰‰ kielelt‰ A kielelle B ja toimii kielell‰ C. Suorakaiteen muotoinen
 kahdesta elementist‰ koostuva kaavio kuvaa tulkkia, joka tulkkaa kielt‰ C ja toimii kielell‰ D.
 Jotta k‰‰nnˆs voitaisiin suorittaa, tulee pohjimmaisen kielen olla suoritettavissa jollakin oikealla
@@ -541,15 +546,29 @@ oleva merkint‰ kertoo mit‰ konekielt‰ suoritus ymm‰rt‰‰, esimerkkikuvassa koneki
 Esitett‰ess‰ jotakin laskentaongelmaa, joka on ohjelmoitu kielell‰ D merkit‰‰n lampun muotoinen kaavio,
 jonka sis‰ll‰ kyseinen kieli ilmoitetaan.
 Kyseisi‰ kaavioita voi yhdistell‰ hyvinkin monimutkaisiksi rakenteiksi. Esimerkkikuvan viimeinen kohta kuvaa
-siis yksitt‰ist‰ k‰‰nnˆst‰, jossa A-kielinen ohjelma k‰‰nnet‰‰n B kieliseksi ohjelmaksi.
+yksitt‰ist‰ k‰‰nnˆst‰, jossa A-kielinen ohjelma k‰‰nnet‰‰n B kieliseksi ohjelmaksi.
 Huomioitava T-kaavioiden k‰ytˆss‰ on, ett‰ kielten vierekk‰isten kaavioiden kielten tulee t‰sm‰t‰
 toisiinsa. Kuvan esimerkin k‰‰nnˆs ei voi ottaa l‰hdeohjelmakseen muuta kuin kielell‰ A kirjoitetun ohjelman.
 
+%T‰h‰n lukuun tulee osittain myˆs cross compiling juttuja. Cross compilingiss‰ kerrotaan enemm‰n IL pohjaisesti
+\subsection{bootstrapping}
+Koska k‰‰nt‰jien ohjelmointi matalan tason ohjelmointikielill‰ on eritt‰in vaivalloista,
+suositaan niiden kehitt‰misess‰ korkean tason ohjelmointikielten k‰yttˆ‰  ~\cite{Mogensen10}.
+Yksi vaihtoehto on kirjoittaa laitteistolle k‰‰nt‰j‰, jollakin kyseiselle laitteistolle
+jo olemassa olevalla ohjelmointikielell‰. T‰m‰ ei kuitenkaan aina ole mahdollista.
+Esimerkiksi jos kyseess‰ on uusi prosessoriarkkitehtuuri, eik‰ t‰lle viel‰ ole k‰‰nt‰ji‰,
+joudutaan ohjelmointi tekem‰‰n jollakin muulla tavalla.
+Haluttaessa k‰‰nt‰j‰n joka sek‰ k‰‰nt‰‰ ett‰ suorittuu kyseisell‰ arkkitehtuurilla er‰s
+yleisesti k‰ytetty menetelm‰ on bootstrapping ~\cite{Mogensen10}. %IBID! Pit‰isikˆ suomentaa?
 
-\subsection{bootstrapping} %laitetaanko t‰h‰n kappaleeseen bootstrapping + cross compiling?
 %aloita kuvaamalla tilanne jossa ei ole k‰‰nt‰ji‰?
-Bootstrapping on tekniikka jonka ydinajatus on k‰‰nt‰‰ jokin k‰‰nt‰j‰ sill‰ itsell‰‰n ~\cite{Mogensen10}.
-Tekniikkaa voidaan k‰ytt‰‰ usealla tavalla, useaan eri ongelmaan ~\cite{Earley70}. %ibid
+Bootstrapping on tekniikka jonka ydinajatus on k‰‰nt‰‰ jokin k‰‰nt‰j‰ sill‰ itsell‰‰n ~\cite{Mogensen10}
+ja tavanomaisen k‰‰nt‰j‰n sanotaan olevan bootstr‰p‰tty %suomennos?
+jos se k‰‰nt‰‰ itsens‰ ~\cite{Appel94}.
+
+
+
+
 %full bootstrap
 Perinteinen ongelma k‰‰nt‰jien kehityksess‰ on tilanne, jossa k‰‰nt‰j‰ pit‰‰ rakentaa
 ilman tai l‰hes ilman muita tyˆkaluja ja k‰‰n‰ji‰. Koska kehittyneen ohjelmointikielen 
@@ -559,7 +578,11 @@ mutta ei kyseisell‰ laitteistolla jossa sit‰ tarvitaan.
 
 %cwl bootstrap
 
+%incremental bootstrap
 
+
+
+\subsection{cross compiling ja v‰likielet}
 
 
 
@@ -607,7 +630,7 @@ k‰‰nt‰j‰t kehitettiin.
   \begin{tabular}{| l | l | l |}
     \hline
     Kieli & Kehitt‰j‰ & Ensimm‰inen \\ \hline
-    Plankalk¸l & Zuse & Ohjelmointikieli, Hierarkinen data \\ \hline
+    Plankalk¸l & Zuse & Ohjelmointikieli, Hierarkkinen data \\ \hline
     Virtauskaaviot & Goldstine, Von Neumann & Hyv‰ksytty ohjelmointimetodologia \\ \hline
     Short Code & Mauchly & Toteutettu korkean tason ohjelmointikieli \\ \hline
     Formules & Bˆhm & Samalla kielell‰ kirjoitettu k‰‰nt‰j‰ \\ \hline
@@ -626,10 +649,8 @@ piirteet. Lis‰ksi taulukossa esitet‰‰n ohjelmointikielten nimet sek‰ p‰‰tekij‰t.
 %
 
 
-
-
 \nocite{*}
-\bibliographystyle{apalike}
+ \bibliographystyle{apalike}
 \bibliography{lahteet}
 
 \lastpage

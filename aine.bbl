@@ -6,6 +6,10 @@
 \newblock \url{https://www.cs.helsinki.fi/group/titokone/ttk91_ref_en.html}.
 \newblock Accessed: 2016-10-21.
 
+\bibitem[Appel, 1994]{Appel94}
+Appel, A. (1994).
+\newblock Axiomatic bootstrapping: A guide for compiler hackers.
+
 \bibitem[Bauer, 1974]{Bauer74}
 Bauer, F.~L. (1974).
 \newblock {\em Compiler Construction -- An Advanced Course}.
@@ -15,9 +19,18 @@ Bauer, F.~L. (1974).
 Bratman, H. (1961).
 \newblock An alternative form of the 'uncol' diagram.
 
+\bibitem[Earley and Sturgis, 1970]{Earley70}
+Earley, J. and Sturgis, H. (1970).
+\newblock A formalism for translator interactions.
+
 \bibitem[Goldstine and {Von Neumann}, 1947]{Goldstine47}
 Goldstine, H. and {Von Neumann}, J. (1947).
 \newblock Planning and coding problems for an electronic computing instrument.
+
+\bibitem[Guilan et~al., 2002]{Guilan02}
+Guilan, D., Jinlan, T., Suqin, Z., Weidu, J., and Jun, D. (2002).
+\newblock Retargetable cross compilation techniques -- comparison and analysis
+  of gcc and zephyr.
 
 \bibitem[IBM, 1954]{IBM54}
 IBM (1954).
@@ -29,6 +42,15 @@ Knuth, D. and Pardo, L. (1976).
 \newblock {\em The early development of programming languages}.
 \newblock Stanford University.
 
+\bibitem[Mogensen, 2010]{Mogensen10}
+Mogensen, T. (2010).
+\newblock {\em Basics of Compiler Design}.
+\newblock lulu.
+
+\bibitem[Reynolds, 2003]{Reynolds03}
+Reynolds, J. (2003).
+\newblock Bootstrapping a self compiling compiler from machine x to machine y.
+
 \bibitem[Rosen, 1964]{Rosen64}
 Rosen, S. (1964).
 \newblock Programming systems and languages, a historical survey.
@@ -37,5 +59,9 @@ Rosen, S. (1964).
 Salomon, D. (1993).
 \newblock {\em Assemblers and Loaders}.
 \newblock Ellis Horwood Ltd.
+
+\bibitem[Speetjens, 1976]{Speetjens76}
+Speetjens, J. (1976).
+\newblock Intermediate language for minicomputer cross-compilation.
 
 \end{thebibliography}

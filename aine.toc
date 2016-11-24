@@ -6,6 +6,9 @@
 \contentsline {section}{\numberline {3}Historiaa korkean tason kielten k\"a\"ant\"ajist\"a}{4}
 \contentsline {subsection}{\numberline {3.1}T\"asm\"allisten kuvausj\"arjestelmien kehitys}{4}
 \contentsline {subsection}{\numberline {3.2}Kohti ensimm\"aisi\"a k\"a\"ant\"aji\"a}{5}
-\contentsline {section}{\numberline {4}T-kaaviot}{7}
-\contentsline {section}{\numberline {5}Yhteenveto}{8}
-\contentsline {section}{L\"ahteet}{9}
+\contentsline {section}{\numberline {4}k\"a\"ant\"ajien toteutus korkealla abstraktiotasolla}{7}
+\contentsline {subsection}{\numberline {4.1}T-kaaviot}{8}
+\contentsline {subsection}{\numberline {4.2}bootstrapping}{10}
+\contentsline {subsection}{\numberline {4.3}cross compiling ja v\"alikielet}{10}
+\contentsline {section}{\numberline {5}Yhteenveto}{10}
+\contentsline {section}{L\"ahteet}{12}
