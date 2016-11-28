@@ -567,7 +567,7 @@ Bootstrapping on tekniikka jonka ydinajatus on k‰‰nt‰‰ jokin k‰‰nt‰j‰ sill‰ itse
 ja tavanomaisen k‰‰nt‰j‰n sanotaan olevan bootstr‰p‰tty %suomennos?
 jos se k‰‰nt‰‰ itsens‰ ~\cite{Appel94}.
 
-%full bootstrap
+%incremental bootstrap
 %aloita kuvaamalla tilanne jossa ei ole k‰‰nt‰ji‰?
 Perinteinen ongelma k‰‰nt‰jien kehityksess‰ on tilanne, jossa k‰‰nt‰j‰ pit‰‰ rakentaa
 ilman tai l‰hes ilman muita tyˆkaluja ja k‰‰n‰ji‰. Iteratiivisessa bootstrap-
@@ -599,7 +599,7 @@ iteratiivisesti kunnes tavoiteltu laajuus on saavutettu.
 \end{figure}
 
 
-%half bootstrap
+%half bootstrap TƒMƒ KOKO KAPPALE ON VƒHƒN HEIKOSTI KIRJOITETTU.
 Bootstrap menetelm‰‰ k‰ytet‰‰n usein myˆs yhdess‰ ristiink‰‰t‰misen (cross compiling) kanssa ~\cite{Reynolds03}.
 T‰llˆin tavoitteena on siirt‰‰ jo olemassa oleva k‰‰nt‰j‰ toimimaan toisessa laitteistossa.
 Oletetaan ett‰ laitteistolle HW1 joka ymm‰rt‰‰ konekielt‰ ML1 on toteutettu kielen PL k‰‰nt‰j‰.
@@ -628,9 +628,38 @@ HW2 laitteistolla toimiva ja sen konekielt‰ tuottava pl kielen k‰‰nt‰j‰.
 %t‰ss‰ vois jo mainita intermediate languagen ja puhua front ja backendeist‰
 
 %ir bootstrap
-Edell‰mainittu esimerkki on toimiva, mutta x
+Edell‰mainittu esimerkki on toimiva, mutta se edellytt‰‰ k‰‰nt‰j‰n kirjoittamisen kokonaan
+alusta loppuun asti sen itsens‰ ymm‰rt‰m‰ll‰ ohjelmointikielell‰. Koska korkean tason ohjelmointikielten
+k‰‰nt‰j‰t voivat olla hyvinkin monimutkaisia ja koostua suuresta m‰‰r‰st‰ l‰hdekoodia,
+on t‰m‰nkaltainen prosessi varsin tyˆl‰s. Mielenkiintoista onkin se miten vastaavan
+prosessin voisi toteuttaa mahdollisimman pienell‰ vaivalla. 
 
-%incremental bootstrap
+Viel‰ 1970-luvulla k‰‰nt‰j‰t kirjoitettiin hyvin tarkasti tietty‰ l‰hdekielt‰ ja laitteistoa varten ~\cite{Guilan02}.
+1980-luvulla ruvettiin kehitt‰m‰‰n enenev‰ss‰ m‰‰rin k‰‰nt‰j‰kokonaisuuksia jotka kykenev‰t 
+k‰‰nt‰m‰‰n useita eri l‰hdekieli‰. T‰llaisissa systeemeiss‰ k‰‰nt‰j‰n sis‰inen rakenne oli 
+jaettu l‰hdekielest‰ riippuvaiseen etuosaan (frontend) sek‰ n‰iden jakamaan takaosaan (backend) ~\cite{Guilan02}. %ibid
+T‰m‰n kaltainen rakenne v‰hensi uuden koodin kirjoittamista ja n‰inollen pienensi k‰‰nt‰jien kehityksest‰
+koituvia kustannuksia. 80-luvun lopulla oli jo hyv‰ksytty ajatus siit‰, ett‰ k‰‰nt‰jien
+kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sek‰ kilpailukykyisemp‰‰.
+
+%t‰‰ nyt ei ihan oo usealle eri kielelle mutta ehk‰ usealle eri laitteistolle
+Er‰s tyypillinen tapa k‰‰nt‰j‰n ohjelmoinnissa onkin jakaa sen sis‰ist‰ rakennetta sek‰
+suorittaa k‰‰nnˆs useassa eri vaiheessa. Apuna k‰ytet‰‰n usein jotakin niinsanottua 
+v‰likielt‰(intermediata language) ~\cite{Speetjens76}. N‰in haluttu l‰hdekieli voidaan k‰‰nt‰‰
+helpommin eri laitteistoille. 
+%t‰‰ ois sit usealle eri laitteistolle.
+Oletettaen, ett‰ jollekin v‰likielle ja jollekin korkean tason ohjelmointikielelle on
+olemassa tietyll‰ laitteistolla toimivat k‰‰nt‰j‰t,
+voidaan halutun l‰hdekielen k‰‰nnˆs suorittaa kaksivaiheisesti toteuttamalla
+korkean tason ohjelmointikielell‰ k‰‰nt‰j‰ l‰hdekielelt‰ v‰likielelle ~\cite{Earley70}.
+Uuden l‰hdekielen toteutus sis‰lt‰‰ siis vain korkean tason ohjelmointikielell‰ tehdyn
+k‰‰nt‰j‰n k‰ytetylle v‰likielelle, eik‰ koodin generointivaihetta tarvitse kirjoittaa uudestaan.
+
+
+
+
+
+%half bootstrap
 
 
 
