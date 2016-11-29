@@ -9,6 +9,6 @@
 \contentsline {section}{\numberline {4}k\"a\"ant\"ajien toteutus korkealla abstraktiotasolla}{7}
 \contentsline {subsection}{\numberline {4.1}T-kaaviot}{8}
 \contentsline {subsection}{\numberline {4.2}bootstrapping}{10}
-\contentsline {subsection}{\numberline {4.3}ristiink\"a\"ant\"aminen ja v\"alikielet}{14}
-\contentsline {section}{\numberline {5}Yhteenveto}{14}
-\contentsline {section}{L\"ahteet}{15}
+\contentsline {subsection}{\numberline {4.3}ristiink\"a\"ant\"aminen ja v\"alikielet}{15}
+\contentsline {section}{\numberline {5}Yhteenveto}{15}
+\contentsline {section}{L\"ahteet}{16}
