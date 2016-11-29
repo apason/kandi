@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  28 NOV 2016 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  29 NOV 2016 01:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -406,19 +406,17 @@ File: cross-bootstrap-T.png Graphic file (type png)
 Package pdftex.def Info: cross-bootstrap-T.png used on input line 621.
 (pdftex.def)             Requested size: 388.45029pt x 155.8318pt.
  [11 <./iterative-bootstrap-from-scratch.png>]
-Overfull \hbox (51.55176pt too wide) in paragraph at lines 682--692
+[12 <./cross-bootstrap-T.png>] [13]
+Overfull \hbox (51.55176pt too wide) in paragraph at lines 752--762
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12 <./cross-bootstrap-T.png>] [13] (./aine.bbl
+[14] (./aine.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
-
-(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [14] (./aine.aux)
+)) [15]
+(./aine.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -440,10 +438,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 i1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on aine.pdf (17 pages, 336248 bytes).
+Output written on aine.pdf (18 pages, 340200 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 115 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

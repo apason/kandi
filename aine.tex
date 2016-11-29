@@ -643,21 +643,64 @@ koituvia kustannuksia. 80-luvun lopulla oli jo hyv‰ksytty ajatus siit‰, ett‰ k‰‰
 kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sek‰ kilpailukykyisemp‰‰.
 
 %t‰‰ nyt ei ihan oo usealle eri kielelle mutta ehk‰ usealle eri laitteistolle
-Er‰s tyypillinen tapa k‰‰nt‰j‰n ohjelmoinnissa onkin jakaa sen sis‰ist‰ rakennetta sek‰
+Er‰s tyypillinen tapa k‰‰nt‰jien ohjelmoinnissa onkin jakaa sen sis‰ist‰ rakennetta sek‰
 suorittaa k‰‰nnˆs useassa eri vaiheessa. Apuna k‰ytet‰‰n usein jotakin niinsanottua 
 v‰likielt‰(intermediata language) ~\cite{Speetjens76}. N‰in haluttu l‰hdekieli voidaan k‰‰nt‰‰
 helpommin eri laitteistoille. 
 %t‰‰ ois sit usealle eri laitteistolle.
-Oletettaen, ett‰ jollekin v‰likielle ja jollekin korkean tason ohjelmointikielelle on
+Oletettaen, ett‰ jollekin v‰likielelle ja jollekin korkean tason ohjelmointikielelle on
 olemassa tietyll‰ laitteistolla toimivat k‰‰nt‰j‰t,
 voidaan halutun l‰hdekielen k‰‰nnˆs suorittaa kaksivaiheisesti toteuttamalla
 korkean tason ohjelmointikielell‰ k‰‰nt‰j‰ l‰hdekielelt‰ v‰likielelle ~\cite{Earley70}.
 Uuden l‰hdekielen toteutus sis‰lt‰‰ siis vain korkean tason ohjelmointikielell‰ tehdyn
 k‰‰nt‰j‰n k‰ytetylle v‰likielelle, eik‰ koodin generointivaihetta tarvitse kirjoittaa uudestaan.
 
+Kuva X demonstroi usein k‰ytetty‰ rakennetta ~\cite{Earley70}, jolla k‰‰nt‰j‰n jatkokehityst‰ voidaan
+helpottaa huomattavasti. Uuden ohjelmointikielen toteuttaminen kyseisen k‰‰nt‰j‰n avulla on mahdollista
+korvaamalla toisen vaiheen ensimm‰inen k‰‰nt‰j‰ (v‰rill‰ x) siten, ett‰ uusi l‰hdekieli (SL2)
+kyet‰‰n k‰‰nt‰m‰‰n v‰likielelle (IL) samalla kielell‰, jolla k‰‰nt‰j‰kompleksi on
+suurimmaksi osaksi kirjoitettu (CWL). Esimerkiksi haluttaessa kyseisell‰ j‰rjestelm‰ll‰
+toteuttaa konekielell‰ (ML1) suoritettava c-k‰‰nt‰j‰, tulee ohjelmoida vain sellainen
+osa, joka on kirjoitettu kielell‰ CWL ja k‰‰nt‰‰ c-kielt‰ v‰likielell‰ IL. Sama p‰tee
+muihinkin toteutettaviin ohjelmointikieliin.
 
+%TƒHƒN KUVA X
 
+Pelkk‰‰ v‰likielt‰ apuna k‰ytt‰en, uuden ohjelmointikielen toteutus ei vaatisi n‰in
+monimutkaista rakennetta. Kyseinen rakenne mahdollistaa kuitenkin sek‰ tehokkaan ristiink‰‰nt‰misen,
+ett‰ itsens‰ bootstr‰pp‰‰misen uudelle laitteistolle. Jos k‰‰nt‰j‰kokonaisuuden halutaan
+k‰‰nt‰v‰n ymm‰rt‰m‰‰ns‰ l‰hdekielt‰ laitteistolle, jonka konekieli on ML2, joudutaan siihen
+edelleen kirjoittamaan vain yksi uusi osa. T‰m‰ osa kirjoitetaan kielell‰ CWL ja
+se k‰‰nt‰‰ v‰likielt‰ IL uuden laitteiston ymm‰rt‰m‰lle konekielelle ML2.  Kun kyseist‰
+osa k‰‰nnte‰‰n jo olemassa olevalla v‰rill‰ Z merkityll‰ k‰‰nt‰j‰ll‰, saadaan tulokseksi
+samassa laitteistossa toimiva k‰‰nt‰j‰ v‰likielelt‰ uudelle konekielelle ML2.
+Saadulla ristiink‰‰nt‰j‰ll‰ on siis mahdollista k‰‰nt‰‰ l‰hdekielt‰
+konekielelle ML2, mutta sen suoritus tapahtuu edelleen kielen alkuper‰ist‰
+konekielt‰ ML1 ymm‰rt‰v‰ss‰ laitteistossa.
 
+Ristiink‰‰nt‰misen mahdollistavan uuden osan avulla myˆs koko k‰‰nt‰j‰rakenteen
+bootstr‰pp‰‰minen uuteen laitteistoon on mahdollista ilman lis‰ohjelmointia ~\cite{Earley70}.
+Kuva X havainnollistaa t‰t‰ prosessia. Ensimm‰isess‰ vaiheessa jo olemassaolevien
+komponenttien sek‰ uuden CWL:ll‰ kirjoitetun v‰likielik‰‰nt‰j‰n avulla v‰likielell‰
+toimiva v‰likielik‰‰nt‰j‰ konekielelle ML2 sek‰ t‰m‰n avulla konekielell‰ ML1 toimiva
+v‰likielik‰‰nt‰j‰ konekielelle ML2. N‰iden komponenttien avulla voidaan toisessa
+toisessa vaiheessa tuottaa ML2 konekielell‰ toimiva ja siihen k‰‰nt‰v‰ v‰likielik‰‰nt‰j‰.
+Kolmannessa vaiheessa tuotetaan ensimm‰isess‰ vaiheessa saadun v‰likielik‰‰nt‰j‰n
+avulla ML2 kielell‰ toimiva CWL k‰‰nt‰j‰, joka tuottaa v‰likielt‰.
+
+%t‰h‰n kuva
+
+Toisessa ja kolmannessa vaiheessa saadut k‰‰nt‰j‰t sijoittamalla alkuper‰iseen
+ohjelmistoon, saadaan sek‰ ML2 kielell‰ toimivat, ett‰ sille k‰‰nt‰v‰t
+komponentit.
+
+K‰sitelty k‰‰nt‰j‰kokonaisuus on monimutkainen mutta myˆs tehokas. Sek‰ uusi
+l‰hdekieli, ett‰ siirt‰misen uuteen laitteistoon voidaan saavuttaa
+vain pienen osan uudelleenohjelmoinnilla. Lis‰ksi uudelleenohjelmointi
+voidaan suorittaa jo aiemmin k‰ytetyll‰ korkean tason ohjelmointikielell‰ CWL:ll‰ ~\cite{Earley70}.
+
+%jos t‰‰ monimutkanen esimerkki tulis cross compiling ja v‰likielie setin loppuun niin t‰st‰ olis
+%luontevaa jatkaa puhumaan front ja backendist‰ ja vaikka gcc rakenteesta. 
 
 %half bootstrap
 
