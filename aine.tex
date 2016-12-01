@@ -487,29 +487,28 @@ Tekniikkaa voidaan käyttää usealla tavalla, useaan eri ongelmaan ~\cite{Earley70
 
 Kääntäjien suunnittelussa ja mallintamisessa on käytetty useita erilaisia kaavioita.
 Käytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehdottama
-kääntäjää kuvaava kaavio ~\cite{Bratman61}, %cit needed for käytetyin och tunnetuin
-josta käy ilmi kääntäjän ymmärtämä kohde- ja lähdekieli sekä kieli, jolla kääntäjä toimii.
+kääntäjää kuvaava kaavio, jonka hän kehitti UNCOL-kaavion korvaajaksi ~\cite{Bratman61}.
+Kaaviosta käy ilmi kääntäjän ymmärtämä kohde- ja lähdekieli sekä kieli, jolla kääntäjä toimii.
 Kaaviota kutsutaan Bratman-kaavioksi tai T-kaavioksi. Jälkimmäinen nimi tulee kaavion
-muodosta, jossa T-kirjaimen muotoisessa alueessa vasen pääty kertoo lähdekielen, oikea
-pääty kohdekielen ja alaosa kertoo millä kielellä kääntäjä toimii.
+muodosta, jossa T-kirjaimen muotoisessa alueessa vasempaan päätyyn merkitään lähdekieli,
+oikeaan päätyyn kohdekieli ja alaosaan kieli jolla kääntäjä toimii.
 
 \begin{figure}[H]
 \ \newline
 \begin{center}
 \includegraphics[scale=0.5]{basic-T.png}
-\caption{T-kaavio, joka kuvaa x86 arkkitehtuurilla toimivaa c-kääntäjää, jonka kohdekieli on x86 konekieli}
+\caption{T-kaavio, joka kuvaa x86-arkkitehtuurilla toimivaa C-kääntäjää, jonka kohdekieli on x86-konekieli.}
 \label{kuvaesimerkki}
 \end{center}
 \end{figure}
 
-Kaavioita toisiinsa liittämällä voidaan havainnollistaa monimutkaisiakin toimintaketjuja,
-joita kääntäjät suorittavat. Kuvassa 3 oletetaan että käytössä on c-kielellä kirjoitettu
-kääntäjä, joka kääntää ada-kieltä x86 konekielelle. Lisäksi käytössä on edellisen kuvan esimerkissä
-oleva x86 arkkitehtuurilla toimiva c-kääntäjä, jonka kohdekieli on x86 konekieli.
-Näiden kahden kääntäjän avulla voidaan tuottaa x86 alustalla toimiva ada kääntäjä,
+Kaavioita toisiinsa liittämällä voidaan havainnollistaa monimutkaisiakin kääntäjillä
+suoritettavia toimintaketjuja. Kuvassa 3 oletetaan että, käytössä on C-kielinen
+kääntäjä, joka kääntää Ada-kieltä x86-konekielelle. Lisäksi käytössä on edellisen kuvan esimerkissä
+oleva x86-arkkitehtuurilla toimiva C-kääntäjä, jonka kohdekieli on x86-konekieli.
+Näiden kahden kääntäjän avulla voidaan tuottaa x86-alustalla suoritettava Ada kääntäjä,
 jonka kohdekieli on x86. Kahden ensimmäisen kääntäjän yhteistyöllä saadaan siis kolmas
-kääntäjä. Huomattavaa on, että prosessin alimman tasoinen kääntäjä toimii aina jossakin todellisessa
-laitteistossa, eikä täten voi olla muu kuin jonkin laitteiston ymmärtämä konekieli.
+kääntäjä. Huomattavaa on, että kaavion alin kääntäjä toimii aina jossakin todellisessa laitteistossa, eikä täten voi olla muu kuin jonkin laitteiston ymmärtämä konekieli.
 
 %Tähän väliin jää vittumaisesti tyhjää tilaa
 
@@ -517,13 +516,13 @@ laitteistossa, eikä täten voi olla muu kuin jonkin laitteiston ymmärtämä konekie
 \ \newline
 \begin{center}
 \includegraphics[scale=0.5]{multi-T.png}
-\caption{c:llä kirjoitetun ada-kääntäjän ja x86:lla toimivan c kääntäjän avulla voidaan tuottaa x86:lla toimiva ada-kääntäjä}
+\caption{C-kielisen Ada-kääntäjän ja x86:lla toimivan C kääntäjän avulla voidaan tuottaa x86:lla toimiva ada-kääntäjä}
 \label{kuvaesimerkki}
 \end{center}
 \end{figure}
 
-T-kaavio oli melko yksinkertainen, joten siitä on kehitetty paranneltuja vaihtoehtoja.
-Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lisäämällä siihen ominaisuuksia.
+T-kaavio on melko yksinkertainen, joten siitä on kehitetty paranneltuja vaihtoehtoja.
+Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lisäämällä siihen ominaisuuksia ~\cite{Earley70}.
 Alkuperäisen T-kaavion kuvatessa vain kääntäjiä, Earleyn ja Sturgisin kaavioissa pystyi
 kuvaamaan myös tulkkeja. Lisäksi kaavioon sisällytettiin suoritusta kuvaava osa
 sekä sovellusohjelmaa kuvaava kaavio. Heidän kaavioissaan määritellään kuvan 4
@@ -533,61 +532,71 @@ mukaiset elementit.
 \ \newline
 \begin{center}
 \includegraphics[scale=1.0]{notations-T.png}
-\caption{Earleyn ja Sturgisin versio T-kaavioista}
+\caption{Earleyn ja Sturgisin T-kaavioelementit. Kuvan lähde ~\cite{Mogensen10}.}
 \label{kuvaesimerkki}
 \end{center}
 \end{figure}
-
-Vasemmalta oikealle käytynä ensimmäinen kuva on Bratmanin alkuperäisen T-kaavion vastaava elementti.
-Se kuvaa kääntäjää joka kääntää kieleltä A kielelle B ja toimii kielellä C. Suorakaiteen muotoinen
-kahdesta elementistä koostuva kaavio kuvaa tulkkia, joka tulkkaa kieltä C ja toimii kielellä D.
+Kuvan vasemman puoleisin elementti vastaa Earleyn ja Sturgisin merkintätavassa alkuperäistä T-kaaviota.
+Se kuvaa C-kielistä kääntäjää joka kääntää kieleltä A kielelle B. Suorakaiteen muotoinen
+kahdesta osasta koostuva kaavio kuvaa tulkkia, joka tulkkaa kieltä C ja toimii kielellä D.
 Jotta käännös voitaisiin suorittaa, tulee pohjimmaisen kielen olla suoritettavissa jollakin oikealla
 laitteistolla. Tätä suoritusta kuvaamaan lisättiin yksiosainen kolmiomerkintä. Kolmion sisällä
-oleva merkintä kertoo mitä konekieltä suoritus ymmärtää, esimerkkikuvassa konekieli on D ~\cite{Mogensen10}.
-Esitettäessä jotakin laskentaongelmaa, joka on ohjelmoitu kielellä D merkitään lampun muotoinen kaavio,
-jonka sisällä kyseinen kieli ilmoitetaan.
-Kyseisiä kaavioita voi yhdistellä hyvinkin monimutkaisiksi rakenteiksi. Esimerkkikuvan viimeinen kohta kuvaa
-yksittäistä käännöstä, jossa A-kielinen ohjelma käännetään B kieliseksi ohjelmaksi.
-Huomioitava T-kaavioiden käytössä on, että kielten vierekkäisten kaavioiden kielten tulee täsmätä
-toisiinsa. Kuvan esimerkin käännös ei voi ottaa lähdeohjelmakseen muuta kuin kielellä A kirjoitetun ohjelman.
+lukee mitä konekieltä suoritus ymmärtää. Esimerkkikuvassa konekieli on D.
+Lampun muotoinen kaavio tarkoittaa jotain sovellusohjelmaa tai määrittelemätöntä laskentaa.
+Kaavion sisällä lukee ohjelmointikieli, jolla sovellus on ohjelmoitu tai jolle se on käännetty.
+Esimerkkikuvassa kieli on D ~\cite{Mogensen10}.
+
+Kyseisiä kaavioita voi yhdistellä hyvinkin monimutkaisiksi rakenteiksi. Kuvan 5 esimerkissä on
+kaavio, joka kuvaa C++-kielisen ohjelman kääntämistä x86-konekielelle. Suoritus tapahtuu
+x86-laitteistolla ja käännöksen tekee pythonilla toimiva kääntäjä, joka tulkataan x86-laitteistossa.
+Huomioitava T-kaavioiden käytössä on, että kaavioiden vierekkäisten osien kielten tulee täsmätä
+toisiinsa. Kuvan esimerkin käännös ei voi ottaa lähdeohjelmakseen muuta kuin C:llä kirjoitetun ohjelman.
+
+\begin{figure}[H]
+	\ \newline
+	\begin{center}
+		\includegraphics[scale=1.0]{example-Earley-T.png}
+		\caption{Esimerkki Earleyn ja Sturgisin kaavioiden yhdistelemisestä.}
+		\label{kuvaesimerkki}
+	\end{center}
+\end{figure}
 
 %Tähän lukuun tulee osittain myös cross compiling juttuja. Cross compilingissä kerrotaan enemmän IL pohjaisesti
 \subsection{bootstrapping}
 %tähän mennessä lähteinä lähinnä Mogensen ja Appel
 Koska kääntäjien ohjelmointi matalan tason ohjelmointikielillä on erittäin vaivalloista ~\cite{Mogensen10},
 suositaan niiden kehittämisessä korkean tason ohjelmointikielten käyttöä.
-Yksi vaihtoehto on kirjoittaa laitteistolle kääntäjä, jollakin kyseiselle laitteistolle
+Yksi vaihtoehto on ohjelmoida laitteistolle kääntäjä jollakin kyseiselle laitteistolle
 jo olemassa olevalla ohjelmointikielellä. Tämä ei kuitenkaan aina ole mahdollista.
-Esimerkiksi jos kyseessä on uusi prosessoriarkkitehtuuri, eikä tälle vielä ole kääntäjiä,
-joudutaan ohjelmointi tekemään jollakin muulla tavalla.
-Haluttaessa kääntäjän joka sekä kääntää että suorittuu kyseisellä arkkitehtuurilla eräs
-yleisesti käytetty menetelmä on bootstrapping ~\cite{Mogensen10}. %IBID! Pitäisikö suomentaa?
+Esimerkiksi, jos kyseessä on uusi prosessoriarkkitehtuuri, eikä tälle vielä ole kääntäjiä,
+on ohjelmointi tehtävä jollakin muulla tavalla.
+Kääntäjän joka sekä kääntää että on suoritettavissa kyseisellä laitteistolla tuottamiseksi, eräs
+yleisesti käytetty menetelmä on ketjutus (bootstrapping) ~\cite{Mogensen10}. %IBID!
 
-Bootstrapping on tekniikka jonka ydinajatus on kääntää jokin kääntäjä sillä itsellään ~\cite{Mogensen10}
-ja tavanomaisen kääntäjän sanotaan olevan bootsträpätty %suomennos?
+Ketjutus on tekniikka, jonka ydinajatus on kääntää jokin kääntäjä sillä itsellään ~\cite{Mogensen10}
+ja tavanomaisen kääntäjän sanotaan olevan ketjutettu %suomennos?
 jos se kääntää itsensä ~\cite{Appel94}.
 
 %incremental bootstrap
 %aloita kuvaamalla tilanne jossa ei ole kääntäjiä?
-Perinteinen ongelma kääntäjien kehityksessä on tilanne, jossa kääntäjä pitää rakentaa
-ilman tai lähes ilman muita työkaluja ja käänäjiä. Iteratiivisessa bootstrap-
-menetelmässä kääntäjä kehitetään kahdessa päävaiheessa. Ensin kääntäjästä tehdään
+Perinteinen ongelma kääntäjien kehityksessä on tilanne, jossa kääntäjä pitää ohjelmoida
+ilman muita työkaluja ja käänäjiä. Iteratiivisessa ketjutus-
+menetelmässä kääntäjä kehitetään kahdessa osassa. Ensin kääntäjästä tehdään
 hyvin suppea versio, joka osaa kääntää tavoitellusta ohjelmointikielestä vain pienen
-osajoukon ~\cite{Mogensen10}. Tämä ensimmäisen vaiheen kääntäjä voidaan toteuttaa
+osajoukon ~\cite{Mogensen10}. Tämä ensimmäisen vaiheen kääntäjä voidaan ohjelmoida
 millä tahansa ohjelmointikielellä, mutta mikäli muiden ohjelmointikielten kääntäjiä
-ei ole saatavilla se joudutaan kehittämään konekielellä. Toisessa vaiheessa kääntäjä
-ohjelmoidaan sen itsensä ymmärtämällä kielellä eikä muita ohjelmointikieliä enää tarvita.
+ei ole saatavilla, se joudutaan tekemään konekielellä. Toisessa osassa kääntäjä
+ohjelmoidaan sen itsensä ymmärtämällä kielellä, eikä muita ohjelmointikieliä enää tarvita.
 Tällöin jo olemassa oleva kääntäjä voi kääntää seuraavan version itsestään. 
 Koska kieli on tässä vaiheessa vielä hyvin vajavainen, olisi valmiin ohjelmointikielen
-toteuttaminen heti ensimmäisen vaiheen jälkeen erittäin työlästä tai mahdotonta. Toista vaihetta 
+toteuttaminen heti ensimmäisen vaiheen jälkeen erittäin työlästä tai mahdotonta. Toista vaihetta %olisko mahdotonta?
 suoritetaan useita kertoja siten, että kääntäjän tuntemaa ohjelmointikieltä kasvatetaan %tähän vois sanoa että mielenkiintoinen
-ja siitä käännetään uusi kääntäjä jonka avulla kieltä taas kasvatetaan ja niin edelleen.%ongelma että mikä on tarpeeksi iso
+ja siitä käännetään uusi kääntäjä, jonka avulla kieltä taas kasvatetaan, ja niin edelleen. %ongelma että mikä on tarpeeksi iso
 Huomioitavaa prosessissa on se, että kääntäjän uusi versio on kehitettävä aina käyttäen %minimiksi. lähde tulostettu
 vanhan version tuntemaa ohjelmointikieltä.
 
 Kuva 5 esittää edellä mainittua tilannetta. Ensimmäisessä vaiheessa kääntäjän ensimmäinen
-versio ohjelmoidaan konekielellä (ML) ja tämän jälkeen ohjelmointikieltä (PL) laajennetaan
-iteratiivisesti kunnes tavoiteltu laajuus on saavutettu.
+versio ohjelmoidaan konekielellä (ML, "Machine Language") ja tämän jälkeen ohjelmointikieltä (PL, "Programming Language") laajennetaan iteratiivisesti, kunnes tavoiteltu kieli on saavutettu.
 
 \begin{figure}[H]
 	\ \newline
@@ -600,12 +609,12 @@ iteratiivisesti kunnes tavoiteltu laajuus on saavutettu.
 
 
 %half bootstrap TÄMÄ KOKO KAPPALE ON VÄHÄN HEIKOSTI KIRJOITETTU.
-Bootstrap menetelmää käytetään usein myös yhdessä ristiinkäätämisen (cross compiling) kanssa ~\cite{Reynolds03}.
+Ketjutus-menetelmää käytetään usein myös yhdessä ristiinkääntämisen (cross compiling) kanssa ~\cite{Reynolds03}.
 Tällöin tavoitteena on siirtää jo olemassa oleva kääntäjä toimimaan toisessa laitteistossa.
-Oletetaan että laitteistolle, joka ymmärtää konekieltä ML1 on toteutettu kielen PL kääntäjä.
-Haluttaessa kielen PL kääntäjä toimimaan sekä tuottamaan uuden laitteiston kohdekoodia ML2, 
-voidaan kielen PL kääntäjä ohjelmoida uudelle laitteistolle ristiinkääntämistä ja bootstrapingiä käyttäen
-seuraavalla tavalla: Ensin kielellä PL ohjelmoidaan kielen PL kääntäjä uudelle laitteistolle.
+Oletetaan, että laitteistolle, joka suorittaa konekieltä ML1 on toteutettu kielen PL kääntäjä.
+Haluttaessa kielen PL kääntäjä toimimaan sekä tuottamaan uuden laitteiston konekieltä ML2, 
+voidaan kielen PL kääntäjä ohjelmoida uudelle laitteistolle ristiinkääntämistä ja ketjuttamista käyttäen
+seuraavalla tavalla. Ensin kielellä PL ohjelmoidaan sen itsensä kääntäjä uudelle laitteistolle.
 Tämä voidaan kääntää alkuperäisellä laitteistolla. Nyt kielelle PL on olemassa uudelle laitteistolle
 koodia tuottava kääntäjä, mutta sen suoritus tapahtuu edelleen vanhassa laitteistossa (ristiin kääntäminen).
 Nyt Kääntäjän uudella versiolla, jonka kohdekieli on ML2, käännettäessä oma lähdekoodinsa,
@@ -619,7 +628,7 @@ uudella laitteistolla toimiva ja sen konekieltä tuottava PL kielen kääntäjä.
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=1.0]{cross-bootstrap-T.png}
-		\caption{Kääntäjän porttaus uudelle arkkitehtuurille ristiinkääntämisen ja bootstrappingin avulla.}
+		\caption{Kääntäjän siirtäminen uudelle laitteistolle ristiinkääntämisen ja ketjutuksen avulla.}
 		\label{kuvaesimerkki}
 	\end{center}
 \end{figure}
@@ -629,27 +638,27 @@ uudella laitteistolla toimiva ja sen konekieltä tuottava PL kielen kääntäjä.
 
 %ir bootstrap
 Edellämainittu esimerkki on toimiva, mutta se edellyttää kääntäjän kirjoittamisen kokonaan
-alusta loppuun asti sen itsensä ymmärtämällä ohjelmointikielellä. Koska korkean tason ohjelmointikielten
-kääntäjät voivat olla hyvinkin monimutkaisia ja koostua suuresta määrästä lähdekoodia,
+alusta loppuun asti sen omalla lähdekielellä. Koska korkean tason ohjelmointikielten
+kääntäjät voivat olla todella monimutkaisia ja koostua suuresta määrästä lähdekoodia,
 on tämänkaltainen prosessi varsin työläs. Vastaavan prosessin voi toteuttaa huomattavasti
 pienemmällä vaivalla, mikäli alkuperäisen kääntäjän rakenne olisi eri tavalla toteutettu.
 
 Vielä 1970-luvulla kääntäjät kirjoitettiin hyvin tarkasti tiettyä lähdekieltä ja laitteistoa varten ~\cite{Guilan02}.
-1980-luvulla ruvettiin kehittämään enenevässä määrin kääntäjäkokonaisuuksia jotka kykenevät 
+1980-luvulla ruvettiin kehittämään enenevässä määrin kääntäjäkokonaisuuksia, jotka kykenevät 
 kääntämään useita eri lähdekieliä. Tällaisissa systeemeissä kääntäjän sisäinen rakenne oli 
 jaettu lähdekielestä riippuvaiseen etuosaan (frontend) sekä näiden jakamaan takaosaan (backend) ~\cite{Guilan02}. %ibid
-Tämän kaltainen rakenne vähensi uuden koodin kirjoittamista ja näinollen pienensi kääntäjien kehityksestä
+Tämän kaltainen rakenne vähensi tarvetta kirjoittaa uutta koodia ja näin ollen pienensi kääntäjien kehityksestä
 koituvia kustannuksia. 80-luvun lopulla oli jo hyväksytty ajatus siitä, että kääntäjien
-kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sekä kilpailukykyisempää. %LÄHDE!
+kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sekä kilpailukykyisempää ~\cite{Guilan02}.
 
 %tää nyt ei ihan oo usealle eri kielelle mutta ehkä usealle eri laitteistolle
 Eräs tyypillinen tapa kääntäjien ohjelmoinnissa onkin jakaa sen sisäistä rakennetta sekä
 suorittaa käännös useassa eri vaiheessa. Apuna käytetään usein jotakin niinsanottua 
-välikieltä (intermediata language) ~\cite{Speetjens76}. Näin haluttu lähdekieli voidaan kääntää
+välikieltä (intermediate language) ~\cite{Speetjens76}. Näin haluttu lähdekieli voidaan kääntää
 helpommin eri laitteistoille.
 
 %tää ois sit usealle eri laitteistolle.
-Oletettaen, että jollekin välikielelle ja jollekin korkean tason ohjelmointikielelle on
+Oletettaen, että jollekin välikielelle IL (Intermediate Language) ja jollekin korkean tason ohjelmointikielelle on
 olemassa tietyllä laitteistolla toimivat kääntäjät,
 voidaan halutun lähdekielen käännös suorittaa kaksivaiheisesti toteuttamalla
 korkean tason ohjelmointikielellä kääntäjä lähdekieleltä välikielelle ~\cite{Earley70}.
@@ -658,11 +667,15 @@ kääntäjän käytetylle välikielelle, eikä koodin generointivaihetta tarvitse kirjo
 
 %antaako tää kappalevaihdos nyt ymmärtää että kuva 7 olisi ylemmän tilanteen kaltainen?
 Kuva 7 demonstroi usein käytettyä rakennetta ~\cite{Earley70}, jolla kääntäjän jatkokehitystä voidaan
-helpottaa huomattavasti. Uuden ohjelmointikielen toteuttaminen kyseisen kääntäjän avulla on mahdollista
-korvaamalla toisen vaiheen ensimmäinen kääntäjä (punaisella) siten, että uusi lähdekieli (SL2)
-kyetään kääntämään välikielelle (IL) samalla kielellä, jolla kääntäjäkompleksi on
-suurimmaksi osaksi kirjoitettu (CWL). Esimerkiksi haluttaessa kyseisellä järjestelmällä
-toteuttaa konekielellä (ML1) suoritettava C-kääntäjä, tulee ohjelmoida vain sellainen
+helpottaa huomattavasti. 
+
+Uuden ohjelmointikielen kääntäjän toteuttaminen kyseisen kääntäjän avulla on mahdollista
+vain yhden komponentin (punainen) uudelleenohjelmoinnilla. Vaihtamalla toisen vaiheen 
+ensimmäinen kääntäjä kääntämään uudelta lähdekieleltä (SL, "Source Language") välikielelle,
+vaihtuu myös seuraavissa komponenteissa olevat lähdekielet uuteen kieleen.
+Uusi kääntäjä tulee toteuttaa samalla, ohjelmointikielellä, jolla aiempi komponentti oli
+toteutettu (CWL, "Compiler Writing Language). Esimerkiksi haluttaessa kyseisellä järjestelmällä
+toteuttaa konekielellä ML1 suoritettava C-kääntäjä, tulee ohjelmoida vain sellainen
 osa, joka on kirjoitettu kielellä CWL ja kääntää C-kieltä välikielellä IL. Sama pätee
 muihinkin toteutettaviin ohjelmointikieliin.
 
@@ -670,53 +683,55 @@ muihinkin toteutettaviin ohjelmointikieliin.
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=0.75]{compiler-complex-color-T.png}
-		\caption{Käänätäkokonaisuus.}
+		\caption{Kääntäjäkokonaisuus.}
 		\label{kuvaesimerkki}
 	\end{center}
 \end{figure}
 
-Pelkkää välikieltä apuna käyttäen, uuden ohjelmointikielen toteutus ei vaatisi näin
+Pelkkää välikieltä apuna käyttäen uuden ohjelmointikielen toteutus ei vaatisi näin
 monimutkaista rakennetta. Kyseinen rakenne mahdollistaa kuitenkin sekä tehokkaan ristiinkääntämisen,
-että itsensä bootsträppäämisen uudelle laitteistolle. Jos kääntäjäkokonaisuuden halutaan
+että itsensä ketjuttamisen uudelle laitteistolle. Jos kääntäjäkokonaisuuden halutaan
 kääntävän ymmärtämäänsä lähdekieltä uudelle laitteistolle, jonka konekieli on ML2, joudutaan siihen
-edelleen kirjoittamaan vain yksi uusi osa. Tämä osa kirjoitetaan kielellä CWL ja
+edelleen kirjoittamaan vain yksi uusi komponentti. Tämä osa kirjoitetaan kielellä CWL ja
 se kääntää välikieltä IL uuden laitteiston ymmärtämälle konekielelle ML2.  Kun kyseinen
-osa käännteään jo olemassa olevalla kääntäjällä, saadaan tulokseksi
-samassa laitteistossa toimiva kääntäjä välikieleltä uudelle konekielelle ML2.
+osa käännetään jo olemassa olevalla kääntäjällä, saadaan tulokseksi
+samassa laitteistossa toimiva kääntäjä välikieleltä uudelle konekielelle.
 Saadulla ristiinkääntäjällä on siis mahdollista kääntää lähdekieltä
 konekielelle ML2, mutta sen suoritus tapahtuu edelleen kielen alkuperäistä
 konekieltä ML1 ymmärtävässä laitteistossa.
 
 Ristiinkääntämisen mahdollistavan uuden osan avulla myös koko kääntäjärakenteen
-bootsträppääminen uuteen laitteistoon on mahdollista ilman lisäohjelmointia ~\cite{Earley70}.
+ketjuttamisen uuteen laitteistoon on mahdollista ilman lisäohjelmointia ~\cite{Earley70}.
 Kuva 8 havainnollistaa tätä prosessia.
 Ensimmäisessä vaiheessa jo olemassaolevien
 komponenttien sekä uuden CWL:llä kirjoitetun välikielikääntäjän (keltainen) avulla
 tuotetaan seuraavissa vaiheissa tarvittavat komponentit.
 
 Näiden komponenttien avulla voidaan
-toisessa vaiheessa tuottaa ML2 konekielellä toimiva ja siihen kääntävä välikielikääntäjä.
+toisessa vaiheessa tuottaa ML2-konekielellä toimiva ja siihen kääntävä välikielikääntäjä.
 Kolmannessa vaiheessa tuotetaan ensimmäisessä vaiheessa saadun välikielikääntäjän
-avulla ML2 kielellä toimiva CWL kääntäjä, joka tuottaa välikieltä.
+avulla ML2-kielellä toimiva CWL-kääntäjä, joka tuottaa välikieltä.
 
 \begin{figure}[H]
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=1.0]{CWL-IL-bootstrap-complex-color-T.png}
-		\caption{Käänätäkokonaisuus bootsträp.}
+		\caption{Käänätäkokonaisuuden ketjutus uudelle laitteistolle.}
 		\label{kuvaesimerkki}
 	\end{center}
 \end{figure}
 
-Toisessa ja kolmannessa vaiheessa saadut kääntäjät (sininen) sijoittamalla alkuperäiseen
-ohjelmistoon, saadaan sekä ML2 kielellä toimivat, että sille kääntävät
-komponentit.
+Toisessa ja kolmannessa vaiheessa saadut kääntäjät (sininen) sijoittamalla alkuperäiseen %ei ihan! pitää vielä saada CWL,ML2,ML2
+ohjelmistoon, saadaan sekä ML2-kielellä toimivat, että sille kääntävät
+komponentit. Ainoa komponentti jota ei saada suoraan sijoittamalla on ensimmäisen vaiheen toinen komponentti.
+Uudella konekielellä toimivat kääntäjät CWL -> IL ja IL -> ML2 
+vastaavat kuitenkin tätä komponenttia.
 
-Käsitelty kääntäjäkokonaisuus on monimutkainen mutta myös tehokas. Sekä uuden
+Käsitelty kääntäjäkokonaisuus on monimutkainen, mutta myös tehokas. Sekä uuden
 lähdekielen toteutus alkuperäisellä laitteistolla, että koko kääntäjäohjelmiston
-siirtämisen uuteen laitteistoon voidaan saavuttaa
+siirtäminen uuteen laitteistoon voidaan saavuttaa
 vain pienen osan uudelleenohjelmoinnilla. Lisäksi uudelleenohjelmointi
-voidaan suorittaa jo aiemmin käytetyllä korkean tason ohjelmointikielellä CWL:llä ~\cite{Earley70}.
+voidaan suorittaa jo aiemmin käytetyllä korkean tason ohjelmointikielellä ~\cite{Earley70}.
 
 %jos tää monimutkanen esimerkki tulis cross compiling ja välikielie setin loppuun niin tästä olis
 %luontevaa jatkaa puhumaan front ja backendistä ja vaikka gcc rakenteesta. 
