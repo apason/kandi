@@ -452,7 +452,7 @@ enemm‰n kuin oltiin osattu odottaa.
 However one could discuss how an existing compiler could propagate an image of itself to another machine.
 This technique popularly referred to as bootstrapping or cross compiling ~\cite{Reynolds03}.
 
-An interesting problem is finding the simplest subset of the language that enables us to create the next generation of the compiler ~\cite{Reynolds03}.
+
 
 
 
@@ -483,12 +483,15 @@ Tekniikkaa voidaan k‰ytt‰‰ usealla tavalla, useaan eri ongelmaan ~\cite{Earley70
 %joten kyseinen luku k‰sittelee osittain myˆs sit‰.
 
 
-\subsection{T-kaaviot}
+\section{T-kaaviot}
 
 K‰‰nt‰jien suunnittelussa ja mallintamisessa on k‰ytetty useita erilaisia kaavioita.
-K‰ytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehdottama
-k‰‰nt‰j‰‰ kuvaava kaavio, jonka h‰n kehitti UNCOL-kaavion korvaajaksi ~\cite{Bratman61}.
-Kaaviosta k‰y ilmi k‰‰nt‰j‰n ymm‰rt‰m‰ kohde- ja l‰hdekieli sek‰ kieli, jolla k‰‰nt‰j‰ toimii.
+K‰ytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehdottama T-kaavio, jonka
+h‰n kehitti UNCOL-kaavion korvaajaksi ~\cite{Bratman61}. 
+
+\subsection{Alkuper‰inen Bratman-kaavio}
+Harvey Bratman esittelem‰ kaavio kuvaa yksitt‰ist‰ k‰‰nt‰j‰‰. 
+Siit‰ k‰y ilmi k‰‰nt‰j‰n ymm‰rt‰m‰ kohde- ja l‰hdekieli sek‰ kieli, jolla k‰‰nt‰j‰ toimii.
 Kaaviota kutsutaan Bratman-kaavioksi tai T-kaavioksi. J‰lkimm‰inen nimi tulee kaavion
 muodosta, jossa T-kirjaimen muotoisessa alueessa vasempaan p‰‰tyyn merkit‰‰n l‰hdekieli,
 oikeaan p‰‰tyyn kohdekieli ja alaosaan kieli jolla k‰‰nt‰j‰ toimii.
@@ -521,6 +524,7 @@ k‰‰nt‰j‰. Huomattavaa on, ett‰ kaavion alin k‰‰nt‰j‰ toimii aina jossakin todell
 \end{center}
 \end{figure}
 
+\subsection{Earleyn ja Sturginsin merkint‰tapa}
 T-kaavio on melko yksinkertainen, joten siit‰ on kehitetty paranneltuja vaihtoehtoja.
 Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lis‰‰m‰ll‰ siihen ominaisuuksia ~\cite{Earley70}.
 Alkuper‰isen T-kaavion kuvatessa vain k‰‰nt‰ji‰, Earleyn ja Sturgisin kaavioissa pystyi
@@ -561,8 +565,9 @@ toisiinsa. Kuvan esimerkin k‰‰nnˆs ei voi ottaa l‰hdeohjelmakseen muuta kuin C:l
 	\end{center}
 \end{figure}
 
+
 %T‰h‰n lukuun tulee osittain myˆs cross compiling juttuja. Cross compilingiss‰ kerrotaan enemm‰n IL pohjaisesti
-\subsection{bootstrapping}
+\section{K‰‰nt‰jien rakenne ja ketjutus}
 %t‰h‰n menness‰ l‰htein‰ l‰hinn‰ Mogensen ja Appel
 Koska k‰‰nt‰jien ohjelmointi matalan tason ohjelmointikielill‰ on eritt‰in vaivalloista ~\cite{Mogensen10},
 suositaan niiden kehitt‰misess‰ korkean tason ohjelmointikielten k‰yttˆ‰.
@@ -577,6 +582,7 @@ Ketjutus on tekniikka, jonka ydinajatus on k‰‰nt‰‰ jokin k‰‰nt‰j‰ sill‰ itsell‰‰
 ja tavanomaisen k‰‰nt‰j‰n sanotaan olevan ketjutettu %suomennos?
 jos se k‰‰nt‰‰ itsens‰ ~\cite{Appel94}.
 
+\subsection{Iteratiivinen ketjutus}
 %incremental bootstrap
 %aloita kuvaamalla tilanne jossa ei ole k‰‰nt‰ji‰?
 Perinteinen ongelma k‰‰nt‰jien kehityksess‰ on tilanne, jossa k‰‰nt‰j‰ pit‰‰ ohjelmoida
@@ -590,10 +596,10 @@ ohjelmoidaan sen itsens‰ ymm‰rt‰m‰ll‰ kielell‰, eik‰ muita ohjelmointikieli‰ en‰
 T‰llˆin jo olemassa oleva k‰‰nt‰j‰ voi k‰‰nt‰‰ seuraavan version itsest‰‰n. 
 Koska kieli on t‰ss‰ vaiheessa viel‰ hyvin vajavainen, olisi valmiin ohjelmointikielen
 toteuttaminen heti ensimm‰isen vaiheen j‰lkeen eritt‰in tyˆl‰st‰ tai mahdotonta. Toista vaihetta %olisko mahdotonta?
-suoritetaan useita kertoja siten, ett‰ k‰‰nt‰j‰n tuntemaa ohjelmointikielt‰ kasvatetaan %t‰h‰n vois sanoa ett‰ mielenkiintoinen
-ja siit‰ k‰‰nnet‰‰n uusi k‰‰nt‰j‰, jonka avulla kielt‰ taas kasvatetaan, ja niin edelleen. %ongelma ett‰ mik‰ on tarpeeksi iso
-Huomioitavaa prosessissa on se, ett‰ k‰‰nt‰j‰n uusi versio on kehitett‰v‰ aina k‰ytt‰en %minimiksi. l‰hde tulostettu
-vanhan version tuntemaa ohjelmointikielt‰.
+suoritetaan useita kertoja siten, ett‰ k‰‰nt‰j‰n tuntemaa ohjelmointikielt‰ kasvatetaan
+ja siit‰ k‰‰nnet‰‰n uusi k‰‰nt‰j‰, jonka avulla kielt‰ taas kasvatetaan, ja niin edelleen.
+Huomioitavaa prosessissa on se, ett‰ k‰‰nt‰j‰n uusi versio on kehitett‰v‰ aina k‰ytt‰en 
+vanhan version tuntemaa ohjelmointikielt‰. 
 
 Kuva 5 esitt‰‰ edell‰ mainittua tilannetta. Ensimm‰isess‰ vaiheessa k‰‰nt‰j‰n ensimm‰inen
 versio ohjelmoidaan konekielell‰ (ML, "Machine Language") ja t‰m‰n j‰lkeen ohjelmointikielt‰ (PL, "Programming Language") laajennetaan iteratiivisesti, kunnes tavoiteltu kieli on saavutettu.
@@ -607,7 +613,12 @@ versio ohjelmoidaan konekielell‰ (ML, "Machine Language") ja t‰m‰n j‰lkeen ohjel
 	\end{center}
 \end{figure}
 
+Er‰s ongelma edell‰ kuvatussa prosessissa on kielen kehitykseen soveltuvan
+sopivan osajoukon lˆyt‰minen ~\cite{Reynolds03}. Mik‰li ohjelmointikielt‰ laajennetaan vain
+v‰h‰n, on p‰ivitys l‰hes hyˆdytˆn. Liian monimutkaisen kielen toteuttaminen
+yksinkertaisella osajoukolla on puolestaan eritt‰in tyˆl‰st‰.
 
+\subsection{Ketjutus olemassa olevien k‰‰nt‰jien avulla}
 %half bootstrap TƒMƒ KOKO KAPPALE ON VƒHƒN HEIKOSTI KIRJOITETTU.
 Ketjutus-menetelm‰‰ k‰ytet‰‰n usein myˆs yhdess‰ ristiink‰‰nt‰misen (cross compiling) kanssa ~\cite{Reynolds03}.
 T‰llˆin tavoitteena on siirt‰‰ jo olemassa oleva k‰‰nt‰j‰ toimimaan toisessa laitteistossa.
@@ -643,6 +654,7 @@ k‰‰nt‰j‰t voivat olla todella monimutkaisia ja koostua suuresta m‰‰r‰st‰ l‰hdeko
 on t‰m‰nkaltainen prosessi varsin tyˆl‰s. Vastaavan prosessin voi toteuttaa huomattavasti
 pienemm‰ll‰ vaivalla, mik‰li alkuper‰isen k‰‰nt‰j‰n rakenne olisi eri tavalla toteutettu.
 
+\subsection{Ketjuttamista helpottava k‰‰nt‰j‰rakenne}
 Viel‰ 1970-luvulla k‰‰nt‰j‰t kirjoitettiin hyvin tarkasti tietty‰ l‰hdekielt‰ ja laitteistoa varten ~\cite{Guilan02}.
 1980-luvulla ruvettiin kehitt‰m‰‰n enenev‰ss‰ m‰‰rin k‰‰nt‰j‰kokonaisuuksia, jotka kykenev‰t 
 k‰‰nt‰m‰‰n useita eri l‰hdekieli‰. T‰llaisissa systeemeiss‰ k‰‰nt‰j‰n sis‰inen rakenne oli 
@@ -682,7 +694,7 @@ muihinkin toteutettaviin ohjelmointikieliin.
 \begin{figure}[H]
 	\ \newline
 	\begin{center}
-		\includegraphics[scale=0.75]{compiler-complex-color-T.png}
+		\includegraphics[scale=1.0]{compiler-complex-color-T.png}
 		\caption{K‰‰nt‰j‰kokonaisuus.}
 		\label{kuvaesimerkki}
 	\end{center}
@@ -739,20 +751,42 @@ voidaan suorittaa jo aiemmin k‰ytetyll‰ korkean tason ohjelmointikielell‰ ~\cite
 %half bootstrap
 
 
-%\subsection{ristiink‰‰nt‰minen ja v‰likielet}
+\section{Ristiink‰‰nt‰minen ja v‰likielet}
+
+%https://www.gnu.org/savannah-checkouts/gnu/automake/manual/html_node/Cross_002dCompilation.html
+Yleisesti tietokonej‰rjestelmiss‰ k‰ytett‰v‰t k‰‰nt‰j‰t tuottavat konekielt‰ samalle
+laitteistolle, jossa niit‰ ajetaa. Ristiink‰‰nt‰misell‰ (cross compiling) tarkoitetaan
+tilannetta, jossa kohdelaitteisto on jokin muu, kuin k‰‰nnˆst‰ suorittava laitteisto. %gcc
+Ristiink‰‰nt‰misen er‰s t‰rke‰ sovellutus on k‰‰nt‰jien siirt‰minen laitteistosta toiseen ~\cite{intro}.
+t‰h‰n jotain viel‰ v‰likielist‰
+
+
+\subsection{asd}
+
+\subsection{V‰likielet}
 
 
 
+Oletetaan, ett‰ jollakin laitteistolla toimivia k‰‰nt‰ji‰ on n eri korkean tason ohjelmointikielelle
+ja ohjelmia halutaan ristiink‰‰nt‰‰ kyseisill‰ kielill‰ m m‰‰r‰lle erilaisia laitteistoja.
+Ilmeisin ratkaisu olisi kirjoitta k‰‰nt‰j‰ jokaiselle ohjelmointikieli-laitteisto-parille.
+T‰llˆin tarvittavien k‰‰nt‰jien m‰‰r‰ on yht‰ suuri kuin ohjelmointikielten ja laitteistojen
+karteesinen tulo, m*n.
 
+\begin{figure}[H]
+	\ \newline
+	\begin{center}
+		\includegraphics[scale=0.85]{UNCOL.png}
+		\caption{Ristiink‰‰nt‰minen ilman v‰likieli‰ ja v‰likielten kanssa. L‰hde: ~\cite{Steel61}.}
+		\label{kuvaesimerkki}
+	\end{center}
+\end{figure} 
 
+%tuleeko t‰lle oma v‰liotsikko?
+UNCOL (UNiversal Computer Oriented Language)  
+Ei kehitt‰j‰‰ ~\cite{Strong58}.
 
-
-
-
-
-
-
-
+Conwayn uncol SML ~\cite{Conway58}.
 
 \section{Yhteenveto}
 
