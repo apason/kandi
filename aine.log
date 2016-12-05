@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  2 DEC 2016 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  5 DEC 2016 02:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -158,7 +158,20 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box27
 \@float@everytoks=\toks19
 \@floatcapt=\box28
+)
+(/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip49
+\bibsep=\skip50
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count99
 ) (./aine.aux
+
+LaTeX Warning: Label `kuvaesimerkki' multiply defined.
+
+
+LaTeX Warning: Label `kuvaesimerkki' multiply defined.
+
 
 LaTeX Warning: Label `kuvaesimerkki' multiply defined.
 
@@ -186,18 +199,18 @@ LaTeX Warning: Label `kuvaesimerkki' multiply defined.
 )
 \openout1 = `aine.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -235,16 +248,16 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
+\scratchcounter=\count100
 \scratchdimen=\dimen116
 \scratchbox=\box29
-\nofMPsegments=\count100
-\nofMParguments=\count101
+\nofMPsegments=\count101
+\nofMParguments=\count102
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count102
+\MPscratchCnt=\count103
 \MPscratchDim=\dimen117
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
 \everyMPtoPDFconversion=\toks21
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -290,7 +303,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Overfull \hbox (10.57036pt too wide) in paragraph at lines 19--19
+Overfull \hbox (10.57036pt too wide) in paragraph at lines 22--22
 []\T1/cmr/bx/n/14.4 Historiakatsaus as-sembly-k‰‰n-t‰-jis-t‰ kor-kean ta-son ki
 el-ten k‰‰n-
  []
@@ -298,7 +311,7 @@ el-ten k‰‰n-
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (153.20865pt too wide) in paragraph at lines 40--40
+Overfull \hbox (153.20865pt too wide) in paragraph at lines 43--43
 [][] 
  []
 
@@ -320,159 +333,150 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \tf@toc=\write3
 \openout3 = `aine.toc'.
 
- [2]
-Overfull \hbox (5.00719pt too wide) in paragraph at lines 80--86
-\T1/cmr/m/n/12 mis-to-tuo-tan-nos-sa k‰y-tet-ty-j‰ kor-kean ta-son kie-len k‰‰n
--t‰-ji‰ [[]]. 
- []
-
-[1] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+ [2] [1]
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
 <esimerkkiTTK.png, id=24, 345.29pt x 315.1775pt>
 File: esimerkkiTTK.png Graphic file (type png)
  <use esimerkkiTTK.png>
-Package pdftex.def Info: esimerkkiTTK.png used on input line 201.
+Package pdftex.def Info: esimerkkiTTK.png used on input line 206.
 (pdftex.def)             Requested size: 172.64456pt x 157.58836pt.
 
-[3 <./esimerkkiTTK.png>] [4] [5]
-Overfull \hbox (15.12282pt too wide) in paragraph at lines 378--385
-\T1/cmr/m/n/12 jos-sa muut-tu-jien ni-met voi-vat ol-la useam-man mer-kin pi-tu
-i-sia  [[]]. 
- []
-
-[6]
-Overfull \hbox (40.84006pt too wide) in paragraph at lines 480--481
-[]\T1/cmr/m/n/12 Tekniikkaa voi-daan k‰yt-t‰‰ useal-la ta-val-la, use-aan eri o
-n-gel-maan  [[]].
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+[3 <./esimerkkiTTK.png>] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
-<basic-T.png, id=43, 191.21437pt x 115.18031pt>
+<NxM.png, id=43, 240.14719pt x 164.11313pt>
+File: NxM.png Graphic file (type png)
+ <use NxM.png>
+Package pdftex.def Info: NxM.png used on input line 529.
+(pdftex.def)             Requested size: 240.14658pt x 164.11272pt.
+ [8 <./NxM.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
+
+ []
+
+<N+M.png, id=49, 240.9pt x 164.11313pt>
+File: N+M.png Graphic file (type png)
+ <use N+M.png>
+Package pdftex.def Info: N+M.png used on input line 559.
+(pdftex.def)             Requested size: 240.8994pt x 164.11272pt.
+ [9 <./N+M.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
+
+ []
+
+<basic-T.png, id=54, 191.21437pt x 115.18031pt>
 File: basic-T.png Graphic file (type png)
  <use basic-T.png>
-Package pdftex.def Info: basic-T.png used on input line 499.
+Package pdftex.def Info: basic-T.png used on input line 627.
 (pdftex.def)             Requested size: 95.60695pt x 57.59pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
 
  []
 
-<multi-T.png, id=45, 469.755pt x 244.48787pt>
+<multi-T.png, id=59, 469.755pt x 244.48787pt>
 File: multi-T.png Graphic file (type png)
  <use multi-T.png>
-Package pdftex.def Info: multi-T.png used on input line 518.
+Package pdftex.def Info: multi-T.png used on input line 646.
 (pdftex.def)             Requested size: 234.87692pt x 122.24362pt.
- [8 <./basic-T.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
+ [11 <./basic-T.png> <./multi-T.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
 
  []
 
-<notations-T.png, id=50, 231.86626pt x 86.57344pt>
+<notations-T.png, id=65, 231.86626pt x 86.57344pt>
 File: notations-T.png Graphic file (type png)
  <use notations-T.png>
-Package pdftex.def Info: notations-T.png used on input line 534.
+Package pdftex.def Info: notations-T.png used on input line 663.
 (pdftex.def)             Requested size: 231.86568pt x 86.57321pt.
 
-[9 <./multi-T.png> <./notations-T.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 556--557
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
 
-<example-Earley-T.png, id=56, 154.32657pt x 126.4725pt>
+<example-Earley-T.png, id=66, 154.32657pt x 126.4725pt>
 File: example-Earley-T.png Graphic file (type png)
 
 <use example-Earley-T.png>
-Package pdftex.def Info: example-Earley-T.png used on input line 558.
+Package pdftex.def Info: example-Earley-T.png used on input line 687.
 (pdftex.def)             Requested size: 154.32617pt x 126.47218pt.
- [10 <./example-Earley-T.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
+ [12 <./notations-T.png>] [13 <./example-Earley-T.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
 
  []
 
-<iterative-bootstrap-from-scratch.png, id=61, 326.72063pt x 125.71968pt>
+<iterative-bootstrap-from-scratch.png, id=74, 326.72063pt x 125.71968pt>
 File: iterative-bootstrap-from-scratch.png Graphic file (type png)
 
 <use iterative-bootstrap-from-scratch.png>
 Package pdftex.def Info: iterative-bootstrap-from-scratch.png used on input lin
-e 604.
+e 734.
 (pdftex.def)             Requested size: 326.71982pt x 125.71936pt.
- [11 <./iterative-bootstrap-from-scratch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 628--629
+ [14 <./iterative-bootstrap-from-scratch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
 
  []
 
-<cross-bootstrap-T.png, id=66, 388.45125pt x 155.83218pt>
+<cross-bootstrap-T.png, id=79, 388.45125pt x 155.83218pt>
 File: cross-bootstrap-T.png Graphic file (type png)
 
 <use cross-bootstrap-T.png>
-Package pdftex.def Info: cross-bootstrap-T.png used on input line 630.
+Package pdftex.def Info: cross-bootstrap-T.png used on input line 765.
 (pdftex.def)             Requested size: 388.45029pt x 155.8318pt.
- [12 <./cross-bootstrap-T.png>]
-Overfull \hbox (0.1474pt too wide) in paragraph at lines 672--681
+ [15 <./cross-bootstrap-T.png>]
+Overfull \hbox (0.1474pt too wide) in paragraph at lines 809--818
 []\T1/cmr/m/n/12 Uuden oh-jel-moin-ti-kie-len k‰‰n-t‰-j‰n to-teut-ta-mi-nen ky-
 sei-sen k‰‰n-t‰-j‰n avul-la on mah-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--684
+Underfull \hbox (badness 10000) in paragraph at lines 820--821
 
  []
 
-<compiler-complex-color-T.png, id=71, 483.30562pt x 187.45032pt>
+<compiler-complex-color-T.png, id=84, 483.30562pt x 187.45032pt>
 File: compiler-complex-color-T.png Graphic file (type png)
 
 <use compiler-complex-color-T.png>
-Package pdftex.def Info: compiler-complex-color-T.png used on input line 685.
-(pdftex.def)             Requested size: 362.47833pt x 140.58737pt.
- [13]
-Overfull \hbox (73.92784pt too wide) in paragraph at lines 703--709
-\T1/cmr/m/n/12 ket-jut-ta-mi-sen uu-teen lait-teis-toon on mah-dol-lis-ta il-ma
-n li-s‰-oh-jel-moin-tia  [[]].
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
+Package pdftex.def Info: compiler-complex-color-T.png used on input line 823.
+(pdftex.def)             Requested size: 483.30444pt x 187.44984pt.
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 854--855
 
  []
 
-<CWL-IL-bootstrap-complex-color-T.png, id=75, 277.035pt x 235.63031pt>
+<CWL-IL-bootstrap-complex-color-T.png, id=89, 277.035pt x 235.63031pt>
 File: CWL-IL-bootstrap-complex-color-T.png Graphic file (type png)
 
 <use CWL-IL-bootstrap-complex-color-T.png>
 Package pdftex.def Info: CWL-IL-bootstrap-complex-color-T.png used on input lin
-e 718.
+e 856.
 (pdftex.def)             Requested size: 277.03432pt x 235.62973pt.
- [14 <./compiler-complex-color-T.png>] [15 <./CWL-IL-bootstrap-complex-color-T.
-png>]
-Overfull \hbox (51.55176pt too wide) in paragraph at lines 780--790
- [][] 
- []
-
-[16] (./aine.bbl
+ [17 <./compiler-complex-color-T.png>] [18 <./CWL-IL-bootstrap-complex-color-T.
+png>] [19] (./aine.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [17]
-(./aine.aux)
+) [20]) [21] (./aine.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3151 strings out of 494452
- 43033 string characters out of 6167489
- 114183 words of memory out of 5000000
- 6324 multiletter control sequences out of 15000+600000
+ 3529 strings out of 494452
+ 47721 string characters out of 6167489
+ 120207 words of memory out of 5000000
+ 6696 multiletter control sequences out of 15000+600000
  14669 words of font info for 37 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 38i,7n,25p,270b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,29p,279b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/c
@@ -482,10 +486,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 i1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on aine.pdf (20 pages, 371701 bytes).
+Output written on aine.pdf (24 pages, 444590 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

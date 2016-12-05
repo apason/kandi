@@ -4,54 +4,59 @@ The top-level auxiliary file: aine.aux
 The style file: apalike.bst
 Database file #1: lahteet.bib
 Warning--to sort, need author or key in Ttk91
+Warning--to sort, need author or key in GNU16
 Warning--empty journal in Appel94
 Warning--empty journal in Bratman61
+Warning--empty journal in Brown72
+Warning--empty journal in Conway58
 Warning--empty journal in Earley70
 Warning--empty journal in Goldstine47
 Warning--empty journal in Guilan02
 Warning--empty journal in IBM54
+Warning--empty journal in Steel61
 Warning--empty journal in Reynolds03
 Warning--empty journal in Rosen64
 Warning--empty journal in Speetjens76
-You've used 14 entries,
+Warning--empty journal in Strong58
+You've used 19 entries,
             1935 wiz_defined-function locations,
-            550 strings with 5299 characters,
-and the built_in function-call counts, 3965 in all, are:
-= -- 360
-> -- 130
-< -- 12
-+ -- 46
-- -- 40
-* -- 281
-:= -- 737
-add.period$ -- 34
-call.type$ -- 14
-change.case$ -- 86
-chr.to.int$ -- 14
-cite$ -- 25
-duplicate$ -- 183
-empty$ -- 291
-format.name$ -- 59
-if$ -- 744
+            574 strings with 5807 characters,
+and the built_in function-call counts, 5397 in all, are:
+= -- 490
+> -- 184
+< -- 15
++ -- 68
+- -- 58
+* -- 390
+:= -- 1001
+add.period$ -- 46
+call.type$ -- 19
+change.case$ -- 120
+chr.to.int$ -- 19
+cite$ -- 36
+duplicate$ -- 245
+empty$ -- 389
+format.name$ -- 81
+if$ -- 1007
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 17
-newline$ -- 65
-num.names$ -- 39
-pop$ -- 106
+missing$ -- 21
+newline$ -- 87
+num.names$ -- 51
+pop$ -- 143
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 124
 quote$ -- 0
-skip$ -- 146
+skip$ -- 196
 stack$ -- 0
-substring$ -- 175
+substring$ -- 240
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
-warning$ -- 10
-while$ -- 26
+type$ -- 106
+warning$ -- 15
+while$ -- 34
 width$ -- 0
-write$ -- 153
-(There were 10 warnings)
+write$ -- 206
+(There were 15 warnings)

@@ -6,6 +6,13 @@
 \newblock \url{https://www.cs.helsinki.fi/group/titokone/ttk91_ref_en.html}.
 \newblock Accessed: 2016-10-21.
 
+\bibitem[GNU, 2016]{GNU16}
+ (2016).
+\newblock Cross-compilation.
+\newblock
+  \url{https://www.gnu.org/savannah-checkouts/gnu/automake/manual/html_node/Cross_002dCompilation.html}.
+\newblock Accessed: 2016-12-02.
+
 \bibitem[Appel, 1994]{Appel94}
 Appel, A. (1994).
 \newblock Axiomatic bootstrapping: A guide for compiler hackers.
@@ -18,6 +25,14 @@ Bauer, F.~L. (1974).
 \bibitem[Bratman, 1961]{Bratman61}
 Bratman, H. (1961).
 \newblock An alternative form of the 'uncol' diagram.
+
+\bibitem[Brown, 1972]{Brown72}
+Brown, P.~J. (1972).
+\newblock Levels of language for portable software.
+
+\bibitem[Conway, 1958]{Conway58}
+Conway, M. (1958).
+\newblock Proposal for an uncol.
 
 \bibitem[Earley and Sturgis, 1970]{Earley70}
 Earley, J. and Sturgis, H. (1970).
@@ -36,6 +51,10 @@ Guilan, D., Jinlan, T., Suqin, Z., Weidu, J., and Jun, D. (2002).
 IBM (1954).
 \newblock Specifications fot the ibm mathematical formula translating system,
   fortran {Programming Research Group, I.B.M Applied Science Div}.
+
+\bibitem[Jr., 1961]{Steel61}
+Jr., T. B.~S. (1961).
+\newblock A first version of uncol.
 
 \bibitem[Knuth and Pardo, 1976]{Knuth76}
 Knuth, D. and Pardo, L. (1976).
@@ -63,5 +82,11 @@ Salomon, D. (1993).
 \bibitem[Speetjens, 1976]{Speetjens76}
 Speetjens, J. (1976).
 \newblock Intermediate language for minicomputer cross-compilation.
+
+\bibitem[Strong et~al., 1958]{Strong58}
+Strong, J., Wegstein, J., Tritter, A., Olsztyn, J., Mock, O., and Steel, T.
+  (1958).
+\newblock The problem of programming communication with changing machines: a
+  proposed solution.
 
 \end{thebibliography}

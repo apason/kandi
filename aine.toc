@@ -6,8 +6,14 @@
 \contentsline {section}{\numberline {3}Historiaa korkean tason kielten k\"a\"ant\"ajist\"a}{4}
 \contentsline {subsection}{\numberline {3.1}T\"asm\"allisten kuvausj\"arjestelmien kehitys}{4}
 \contentsline {subsection}{\numberline {3.2}Kohti ensimm\"aisi\"a k\"a\"ant\"aji\"a}{5}
-\contentsline {section}{\numberline {4}k\"a\"ant\"ajien toteutus korkealla abstraktiotasolla}{7}
-\contentsline {subsection}{\numberline {4.1}T-kaaviot}{8}
-\contentsline {subsection}{\numberline {4.2}bootstrapping}{10}
-\contentsline {section}{\numberline {5}Yhteenveto}{15}
-\contentsline {section}{L\"ahteet}{17}
+\contentsline {section}{\numberline {4}V\"alikielet ja ristiink\"a\"ant\"aminen}{7}
+\contentsline {subsection}{\numberline {4.1}Ristiink\"a\"ant\"aminen}{8}
+\contentsline {subsection}{\numberline {4.2}V\"alikielet}{8}
+\contentsline {section}{\numberline {5}T-kaaviot}{10}
+\contentsline {subsection}{\numberline {5.1}Alkuper\"ainen Bratman-kaavio}{10}
+\contentsline {subsection}{\numberline {5.2}Earleyn ja Sturginsin merkint\"atapa}{11}
+\contentsline {section}{\numberline {6}K\"a\"ant\"ajien rakenne ja ketjutus}{13}
+\contentsline {subsection}{\numberline {6.1}Iteratiivinen ketjutus}{13}
+\contentsline {subsection}{\numberline {6.2}Ketjutus olemassa olevien k\"a\"ant\"ajien avulla}{14}
+\contentsline {subsection}{\numberline {6.3}Ketjuttamista helpottava k\"a\"ant\"aj\"arakenne}{16}
+\contentsline {section}{\numberline {7}Yhteenveto}{18}
