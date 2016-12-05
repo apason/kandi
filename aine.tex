@@ -484,7 +484,7 @@ viimeist‰‰n viiden vuoden v‰lein (ibid). Vaikka korkean tason ohjelmointikielten
 k‰yttˆ v‰hensi tarvetta sovellusten uudelleenohjelmoinnille, muodostui k‰‰nt‰jien
 kehitys merkitt‰v‰ksi ongelmaksi. Tehokkaan k‰‰nt‰j‰n kehitt‰miseen kuluva
 aika oli samaa suuruusluokkaa laitteistojen k‰yttˆi‰n kanssa,
-joten hyvien k‰‰nt‰jien valmistuttua oli laitteisto jo vanhentunut (ibid).
+joten hyvien k‰‰nt‰jien valmistuttua oli laitteisto usein jo vanhentunut (ibid).
 Onglmaa koitettiin v‰ltt‰‰ erilaisilla k‰‰nnˆstekniikoilla. Yleiseksi tavaksi
 muodostui ristiink‰‰nt‰minen uusille laitteistoille.
 
@@ -534,7 +534,7 @@ jonka avulla k‰‰nt‰ji‰ voisi toteuttaa pienemm‰ll‰ vaivalla. Siit‰ puhuttiin jo 
 Mik‰li jonkinlainen UNCOL --- kaikkien k‰‰nt‰jien tuntema v‰likieli --- olisi olemassa,
 v‰henisi ristiink‰‰nt‰miseen tarvittavien k‰‰nt‰jien m‰‰r‰ huomattavasti. Jos
 ohjelmointikielten m‰‰r‰ on N ja laitteistojen m‰‰r‰ M, tarvittaisiin t‰llaisessa
-v‰likieliratkaisussa vain N+M uutta k‰‰nt‰j‰‰ ~\cite[15]{Speetjens76}. Toisin sanoen k‰‰nt‰jien m‰‰r‰ kasvaisi
+v‰likieliratkaisussa vain N+M k‰‰nt‰j‰‰ ~\cite[15]{Speetjens76}. Toisin sanoen k‰‰nt‰jien m‰‰r‰ kasvaisi
 lineaarisesti ohjelmointikielten ja laitteistojen suhteen. Kuvassa X esitet‰‰n
 tilanne v‰likielen avulla. 
 
@@ -549,9 +549,10 @@ tilanne v‰likielen avulla.
 
 UNCOL:ksi on ehdotettu useita eri v‰likieli‰, mutta yhdest‰k‰‰n ei ole tullut
 niin k‰ytetty‰, ett‰ sit‰ voitaisiin sanoa universaaliksi. Er‰s UNCOL:ksi ehdotettu
-kieli oli Melvin Conwayn 1958 julkaisema v‰likieli. Conwayn julkaisussa "Proposal for an
-UNCOL" m‰‰ritell‰‰n matalan tason v‰likieli, jota h‰n kutsuu SML:ksi (Simple Machine Language) ~\cite[5]{Conway58}.
-Myˆhemmin
+kieli oli Melvin Conwayn 1958 julkaisema v‰likieli. Conwayn julkaisussa
+\emph{Proposal for an UNCOL}
+m‰‰ritell‰‰n matalan tason v‰likieli, jota h‰n kutsuu SML:ksi (Simple Machine Language) ~\cite[5]{Conway58}.
+%miks vitus toho ei tuu v‰lii
 
 Kaikilla laitteilla toimivan v‰likielen tulisi olla t‰ysin laitteistoriippumaton. 
 Laitteistoriippumattomalla kielell‰ tarkoitetaan, ett‰ se voidaan k‰‰nt‰‰ tehokkaasti
@@ -559,8 +560,10 @@ mille tahansa laitteistolle ~\cite[1060]{Brown72}. Koska erilaisia laitteistoja
 on hyvin suuri m‰‰r‰, ei mik‰‰n kieli ole t‰ysin laitteistoriippumaton (ibid).
 N‰in ollen kaikille laitteistoille k‰‰nnett‰v‰n v‰likielen toteutus on
 melko ep‰realistista. Useat laitteistot ovat kuitenkin tarpeeksi samankaltaisia,
-tehokkaan v‰likielen kehitt‰miseksi, eik‰ joukosta puutu kovin moni
-oikeassa k‰ytˆss‰ oleva tietokone (ibid). % very few machines will be lost, kankeesti sanottu!
+tehokkaan v‰likielen kehitt‰miseksi, mik‰li tavoiteltujen kohdelaitteistojen
+m‰‰r‰‰ pienennet‰‰n. Suurin osa eniten k‰ytetyist‰ tietokoneista toimii
+niin samankaltaisesti, ett‰ hyv‰ v‰likieli kykenee kattamaan niist‰ suurimman osan (ibid).
+
 
 %t‰h‰n v‰liin ett‰ speetjens ehdotti UMCOLia.
 
@@ -864,6 +867,10 @@ voidaan suorittaa jo aiemmin k‰ytetyll‰ korkean tason ohjelmointikielell‰ ~\cite
 
 
 \section{Yhteenveto}
+
+K‰‰nt‰j‰ll‰ tarkoitetaan ohjelmaa, joka k‰‰nt‰‰ l‰hdekielisen ohjelmakoodin
+kohdekieliseksi ohjelmakoodiksi. 
+
 
 Tietojenk‰sittelytieteess‰ k‰‰nt‰j‰ tarkoittaa ohjelmaa joka k‰‰nt‰‰ l‰hdekielisen
 ohjelmakoodin kohdekieliseksi ohjelmakoodiksi. Koska ennen muun kuin konekielten
