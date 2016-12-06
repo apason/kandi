@@ -6,57 +6,61 @@ Database file #1: lahteet.bib
 Warning--to sort, need author or key in Ttk91
 Warning--to sort, need author or key in GNU16
 Warning--empty journal in Appel94
+Warning--empty journal in IBM56
 Warning--empty journal in Bratman61
 Warning--empty journal in Brown72
+Warning--empty journal in Church36
 Warning--empty journal in Conway58
+Warning--empty journal in Curry50
 Warning--empty journal in Earley70
 Warning--empty journal in Goldstine47
 Warning--empty journal in Guilan02
 Warning--empty journal in IBM54
-Warning--empty journal in Steel61
 Warning--empty journal in Reynolds03
 Warning--empty journal in Rosen64
 Warning--empty journal in Speetjens76
+Warning--empty journal in Steel61
 Warning--empty journal in Strong58
-You've used 19 entries,
+Warning--empty journal in Turing36
+You've used 23 entries,
             1935 wiz_defined-function locations,
-            574 strings with 5807 characters,
-and the built_in function-call counts, 5397 in all, are:
-= -- 490
-> -- 184
-< -- 15
-+ -- 68
-- -- 58
-* -- 390
-:= -- 1001
-add.period$ -- 46
-call.type$ -- 19
-change.case$ -- 120
-chr.to.int$ -- 19
-cite$ -- 36
-duplicate$ -- 245
-empty$ -- 389
-format.name$ -- 81
-if$ -- 1007
+            594 strings with 6396 characters,
+and the built_in function-call counts, 6841 in all, are:
+= -- 611
+> -- 273
+< -- 18
++ -- 106
+- -- 90
+* -- 512
+:= -- 1273
+add.period$ -- 54
+call.type$ -- 23
+change.case$ -- 156
+chr.to.int$ -- 23
+cite$ -- 44
+duplicate$ -- 297
+empty$ -- 469
+format.name$ -- 117
+if$ -- 1264
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 87
-num.names$ -- 51
-pop$ -- 143
+missing$ -- 25
+newline$ -- 103
+num.names$ -- 63
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 124
+purify$ -- 160
 quote$ -- 0
-skip$ -- 196
+skip$ -- 239
 stack$ -- 0
-substring$ -- 240
+substring$ -- 294
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 15
-while$ -- 34
+type$ -- 130
+warning$ -- 19
+while$ -- 42
 width$ -- 0
-write$ -- 206
-(There were 15 warnings)
+write$ -- 246
+(There were 19 warnings)

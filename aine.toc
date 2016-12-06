@@ -8,12 +8,12 @@
 \contentsline {subsection}{\numberline {3.2}Kohti ensimm\"aisi\"a k\"a\"ant\"aji\"a}{5}
 \contentsline {section}{\numberline {4}V\"alikielet ja ristiink\"a\"ant\"aminen}{7}
 \contentsline {subsection}{\numberline {4.1}Ristiink\"a\"ant\"aminen}{8}
-\contentsline {subsection}{\numberline {4.2}V\"alikielet}{8}
-\contentsline {section}{\numberline {5}T-kaaviot}{10}
-\contentsline {subsection}{\numberline {5.1}Alkuper\"ainen Bratman-kaavio}{10}
-\contentsline {subsection}{\numberline {5.2}Earleyn ja Sturginsin merkint\"atapa}{11}
+\contentsline {subsection}{\numberline {4.2}V\"alikielet}{9}
+\contentsline {section}{\numberline {5}T-kaaviot}{11}
+\contentsline {subsection}{\numberline {5.1}Alkuper\"ainen Bratman-kaavio}{11}
+\contentsline {subsection}{\numberline {5.2}Earleyn ja Sturginsin merkint\"atapa}{12}
 \contentsline {section}{\numberline {6}K\"a\"ant\"ajien rakenne ja ketjutus}{13}
-\contentsline {subsection}{\numberline {6.1}Iteratiivinen ketjutus}{13}
-\contentsline {subsection}{\numberline {6.2}Ketjutus olemassa olevien k\"a\"ant\"ajien avulla}{14}
+\contentsline {subsection}{\numberline {6.1}Iteratiivinen ketjutus}{14}
+\contentsline {subsection}{\numberline {6.2}Ketjutus olemassa olevien k\"a\"ant\"ajien avulla}{15}
 \contentsline {subsection}{\numberline {6.3}Ketjuttamista helpottava k\"a\"ant\"aj\"arakenne}{16}
-\contentsline {section}{\numberline {7}Yhteenveto}{18}
+\contentsline {section}{\numberline {7}Yhteenveto}{19}

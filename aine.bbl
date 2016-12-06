@@ -17,6 +17,12 @@
 Appel, A. (1994).
 \newblock Axiomatic bootstrapping: A guide for compiler hackers.
 
+\bibitem[Backus et~al., 1956]{IBM56}
+Backus, J.~W., Beeber, R.~J., Best, S., Goldberg, R., Herrick, H.~L., Hughes,
+  R.~A., Mitchell, L.~B., Nelson, R.~A., Nutt, R., Sayre, D., Sheridan, P.~B.,
+  Stern, H., and Ziller, I. (1956).
+\newblock The fortran automatic coding system for the ibm 704 edpm.
+
 \bibitem[Bauer, 1974]{Bauer74}
 Bauer, F.~L. (1974).
 \newblock {\em Compiler Construction -- An Advanced Course}.
@@ -24,15 +30,23 @@ Bauer, F.~L. (1974).
 
 \bibitem[Bratman, 1961]{Bratman61}
 Bratman, H. (1961).
-\newblock An alternative form of the 'uncol' diagram.
+\newblock An alternative form of the '{UNCOL}' diagram.
 
 \bibitem[Brown, 1972]{Brown72}
 Brown, P.~J. (1972).
 \newblock Levels of language for portable software.
 
+\bibitem[church, 1936]{Church36}
+church, A. (1936).
+\newblock An unsolvable problem of elementary number theory.
+
 \bibitem[Conway, 1958]{Conway58}
 Conway, M. (1958).
-\newblock Proposal for an uncol.
+\newblock Proposal for an {UNCOL}.
+
+\bibitem[Curry, 1950]{Curry50}
+Curry, H. (1950).
+\newblock A program composition techniques as applied to inverse interpolation.
 
 \bibitem[Earley and Sturgis, 1970]{Earley70}
 Earley, J. and Sturgis, H. (1970).
@@ -44,17 +58,13 @@ Goldstine, H. and {Von Neumann}, J. (1947).
 
 \bibitem[Guilan et~al., 2002]{Guilan02}
 Guilan, D., Jinlan, T., Suqin, Z., Weidu, J., and Jun, D. (2002).
-\newblock Retargetable cross compilation techniques -- comparison and analysis
-  of gcc and zephyr.
+\newblock Retargetable cross compilation techniques -- {C}omparison and
+  analysis of {GCC} and {Zephyr}.
 
 \bibitem[IBM, 1954]{IBM54}
 IBM (1954).
 \newblock Specifications fot the ibm mathematical formula translating system,
   fortran {Programming Research Group, I.B.M Applied Science Div}.
-
-\bibitem[Jr., 1961]{Steel61}
-Jr., T. B.~S. (1961).
-\newblock A first version of uncol.
 
 \bibitem[Knuth and Pardo, 1976]{Knuth76}
 Knuth, D. and Pardo, L. (1976).
@@ -68,7 +78,8 @@ Mogensen, T. (2010).
 
 \bibitem[Reynolds, 2003]{Reynolds03}
 Reynolds, J. (2003).
-\newblock Bootstrapping a self compiling compiler from machine x to machine y.
+\newblock Bootstrapping a self compiling compiler from machine {X} to machine
+  {Y}.
 
 \bibitem[Rosen, 1964]{Rosen64}
 Rosen, S. (1964).
@@ -83,10 +94,19 @@ Salomon, D. (1993).
 Speetjens, J. (1976).
 \newblock Intermediate language for minicomputer cross-compilation.
 
+\bibitem[Steel, 1961]{Steel61}
+Steel, T. B.~J. (1961).
+\newblock A first version of {UNCOL}.
+
 \bibitem[Strong et~al., 1958]{Strong58}
 Strong, J., Wegstein, J., Tritter, A., Olsztyn, J., Mock, O., and Steel, T.
   (1958).
-\newblock The problem of programming communication with changing machines: a
+\newblock The problem of programming communication with changing machines: A
   proposed solution.
+
+\bibitem[Turing, 1936]{Turing36}
+Turing, A. (1936).
+\newblock On computable numbers, with an application to the
+  entscheidungsproblem.
 
 \end{thebibliography}

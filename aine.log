@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.12.2)  5 DEC 2016 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.11.20)  6 DEC 2016 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -127,20 +127,33 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
+(/usr/share/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen114
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen115
+\subfiglabelskip=\skip46
+\c@subfigure=\count94
+\c@lofdepth=\count95
+\c@subtable=\count96
+\c@lotdepth=\count97
 
-! LaTeX Error: File `subfigure.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count94
+\c@float@type=\count98
 \float@exts=\toks18
 \float@box=\box27
 \@float@everytoks=\toks19
@@ -148,10 +161,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip43
-\bibsep=\skip44
+\bibhang=\skip49
+\bibsep=\skip50
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count95
+\c@NAT@ctr=\count99
 ) (./aine.aux
 
 LaTeX Warning: Label `kuvaesimerkki' multiply defined.
@@ -235,16 +248,16 @@ LaTeX Font Info:    ... okay on input line 10.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count96
-\scratchdimen=\dimen114
+\scratchcounter=\count100
+\scratchdimen=\dimen116
 \scratchbox=\box29
-\nofMPsegments=\count97
-\nofMParguments=\count98
+\nofMPsegments=\count101
+\nofMParguments=\count102
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count99
-\MPscratchDim=\dimen115
-\MPnumerator=\count100
-\makeMPintoPDFobject=\count101
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen117
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
 \everyMPtoPDFconversion=\toks21
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -322,91 +335,98 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
  [2] [1]
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 <esimerkkiTTK.png, id=24, 345.29pt x 315.1775pt>
 File: esimerkkiTTK.png Graphic file (type png)
  <use esimerkkiTTK.png>
-Package pdftex.def Info: esimerkkiTTK.png used on input line 206.
+Package pdftex.def Info: esimerkkiTTK.png used on input line 191.
 (pdftex.def)             Requested size: 172.64456pt x 157.58836pt.
 
-[3 <./esimerkkiTTK.png>] [4] [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 527--528
+[3 <./esimerkkiTTK.png>] [4]
+Overfull \hbox (10.04211pt too wide) in paragraph at lines 247--262
+[]\T1/cmr/m/n/12 Vuonna 1946 Ma-ry-lan-dis-sa työs-ken-nel-lyt Has-kell B. Cur-
+ry ke-hit-ti ENIAC-tietokoneelle
+ []
+
+[5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
-<NxM.png, id=43, 240.14719pt x 164.11313pt>
+<NxM.png, id=41, 240.14719pt x 164.11313pt>
 File: NxM.png Graphic file (type png)
  <use NxM.png>
-Package pdftex.def Info: NxM.png used on input line 529.
+Package pdftex.def Info: NxM.png used on input line 493.
 (pdftex.def)             Requested size: 240.14658pt x 164.11272pt.
- [8 <./NxM.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
-<N+M.png, id=49, 240.9pt x 164.11313pt>
+<N+M.png, id=48, 240.9pt x 164.11313pt>
 File: N+M.png Graphic file (type png)
  <use N+M.png>
-Package pdftex.def Info: N+M.png used on input line 559.
+Package pdftex.def Info: N+M.png used on input line 523.
 (pdftex.def)             Requested size: 240.8994pt x 164.11272pt.
- [9 <./N+M.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 628--629
+ [9 <./NxM.png>] [10 <./N+M.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
 
  []
 
-<basic-T.png, id=55, 191.21437pt x 115.18031pt>
+<basic-T.png, id=60, 191.21437pt x 115.18031pt>
 File: basic-T.png Graphic file (type png)
  <use basic-T.png>
-Package pdftex.def Info: basic-T.png used on input line 630.
+Package pdftex.def Info: basic-T.png used on input line 596.
 (pdftex.def)             Requested size: 95.60695pt x 57.59pt.
- [10]
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
 
  []
 
-<multi-T.png, id=60, 469.755pt x 244.48787pt>
+<multi-T.png, id=61, 469.755pt x 244.48787pt>
 File: multi-T.png Graphic file (type png)
  <use multi-T.png>
-Package pdftex.def Info: multi-T.png used on input line 649.
+Package pdftex.def Info: multi-T.png used on input line 616.
 (pdftex.def)             Requested size: 234.87692pt x 122.24362pt.
- [11 <./basic-T.png> <./multi-T.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+ [11 <./basic-T.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
 <notations-T.png, id=66, 231.86626pt x 86.57344pt>
 File: notations-T.png Graphic file (type png)
  <use notations-T.png>
-Package pdftex.def Info: notations-T.png used on input line 666.
+Package pdftex.def Info: notations-T.png used on input line 633.
 (pdftex.def)             Requested size: 231.86568pt x 86.57321pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 688--689
+[12 <./multi-T.png> <./notations-T.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
 
  []
 
-<example-Earley-T.png, id=67, 154.32657pt x 126.4725pt>
+<example-Earley-T.png, id=72, 154.32657pt x 126.4725pt>
 File: example-Earley-T.png Graphic file (type png)
 
 <use example-Earley-T.png>
-Package pdftex.def Info: example-Earley-T.png used on input line 690.
+Package pdftex.def Info: example-Earley-T.png used on input line 658.
 (pdftex.def)             Requested size: 154.32617pt x 126.47218pt.
- [12 <./notations-T.png>] [13 <./example-Earley-T.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 735--736
+ [13 <./example-Earley-T.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
-<iterative-bootstrap-from-scratch.png, id=75, 326.72063pt x 125.71968pt>
+<iterative-bootstrap-from-scratch.png, id=76, 326.72063pt x 125.71968pt>
 File: iterative-bootstrap-from-scratch.png Graphic file (type png)
 
 <use iterative-bootstrap-from-scratch.png>
 Package pdftex.def Info: iterative-bootstrap-from-scratch.png used on input lin
-e 737.
+e 706.
 (pdftex.def)             Requested size: 326.71982pt x 125.71936pt.
- [14 <./iterative-bootstrap-from-scratch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 766--767
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
 
  []
 
@@ -414,69 +434,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 766--767
 File: cross-bootstrap-T.png Graphic file (type png)
 
 <use cross-bootstrap-T.png>
-Package pdftex.def Info: cross-bootstrap-T.png used on input line 768.
+Package pdftex.def Info: cross-bootstrap-T.png used on input line 737.
 (pdftex.def)             Requested size: 388.45029pt x 155.8318pt.
- [15 <./cross-bootstrap-T.png>]
-Overfull \hbox (0.1474pt too wide) in paragraph at lines 812--821
+ [15 <./iterative-bootstrap-from-scratch.png>]
+[16 <./cross-bootstrap-T.png>]
+
+LaTeX Warning: Reference `compiler-complex' on page 17 undefined on input line 
+778.
+
+
+Overfull \hbox (0.1474pt too wide) in paragraph at lines 781--791
 []\T1/cmr/m/n/12 Uuden oh-jel-moin-ti-kie-len kään-tä-jän to-teut-ta-mi-nen ky-
 sei-sen kään-tä-jän avul-la on mah-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+Underfull \hbox (badness 10000) in paragraph at lines 793--794
 
  []
 
-<compiler-complex-color-T.png, id=85, 483.30562pt x 187.45032pt>
+<compiler-complex-color-T.png, id=90, 483.30562pt x 187.45032pt>
 File: compiler-complex-color-T.png Graphic file (type png)
 
 <use compiler-complex-color-T.png>
-Package pdftex.def Info: compiler-complex-color-T.png used on input line 826.
+Package pdftex.def Info: compiler-complex-color-T.png used on input line 795.
 (pdftex.def)             Requested size: 483.30444pt x 187.44984pt.
- [16]
-Underfull \hbox (badness 10000) in paragraph at lines 857--858
+ [17 <./compiler-complex-color-T.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 826--827
 
  []
 
-<CWL-IL-bootstrap-complex-color-T.png, id=90, 277.035pt x 235.63031pt>
+<CWL-IL-bootstrap-complex-color-T.png, id=95, 277.035pt x 235.63031pt>
 File: CWL-IL-bootstrap-complex-color-T.png Graphic file (type png)
 
 <use CWL-IL-bootstrap-complex-color-T.png>
 Package pdftex.def Info: CWL-IL-bootstrap-complex-color-T.png used on input lin
-e 859.
+e 828.
 (pdftex.def)             Requested size: 277.03432pt x 235.62973pt.
- [17 <./compiler-complex-color-T.png>] [18 <./CWL-IL-bootstrap-complex-color-T.
-png>] [19] (./aine.bbl
+ [18] [19 <./CWL-IL-bootstrap-complex-color-T.png>] [20] (./aine.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
-
-(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [20]) [21] (./aine.aux)
+) [21]) [22] (./aine.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3372 strings out of 494452
- 45576 string characters out of 6167490
- 118335 words of memory out of 5000000
- 6544 multiletter control sequences out of 15000+600000
+ 3553 strings out of 494452
+ 48063 string characters out of 6167489
+ 120417 words of memory out of 5000000
+ 6720 multiletter control sequences out of 15000+600000
  14669 words of font info for 37 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 38i,7n,27p,279b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,29p,279b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx144
-0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/f
-onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
-i1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on aine.pdf (24 pages, 446010 bytes).
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1
+200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
+frm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></u
+sr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on aine.pdf (25 pages, 451846 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
