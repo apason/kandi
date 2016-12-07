@@ -15,7 +15,7 @@
 \makeatother
 
 
-\title{Historiakatsaus assemblyk‰‰nt‰jist‰ korkean tason kielten k‰‰nt‰jiin}
+\title{Otsikko}
 \author{Arttu Kilpinen}
 \date{\today}
 
@@ -48,44 +48,45 @@ Software and its engineering -> software notations and tools -> Compilers}}
 
 
 \section{Johdanto}
-K‰‰nt‰j‰t ovat tietokoneohjelmia, jotka k‰‰nt‰v‰t l‰hdekielisen ohjelmakoodin
-kohdekieliseksi ohjelmaksi~\citep[1]{Bauer74}. Kohdekielen‰ on usein jonkin prosessoriarkkitehtuurin
-ymm‰rt‰m‰ konekieli.
+Johdanto.
+%% K‰‰nt‰j‰t ovat tietokoneohjelmia, jotka k‰‰nt‰v‰t l‰hdekielisen ohjelmakoodin
+%% kohdekieliseksi ohjelmaksi~\citep[1]{Bauer74}. Kohdekielen‰ on usein jonkin prosessoriarkkitehtuurin
+%% ymm‰rt‰m‰ konekieli.
 
-%
-Ohjelmointikielet sek‰ niit‰ ymm‰rt‰v‰t k‰‰nt‰j‰t ja tulkit ovat keskeisess‰ asemassa
-ohjelmistotuotannossa. K‰‰nt‰j‰t mahdollistavat ohjelmien
-kirjoittamisen korkean tason ohjelmointikielill‰ sek‰ symbolisilla konekielill‰,
-jotka puolestaan helpottavat ja nopeuttavat ohjelmointia.
-Niiden k‰ytt‰minen tekee ohjelmakoodista myˆs ymm‰rrett‰v‰mp‰‰ ja
-helpompilukuista. Yleisesti ottaen ohjelmointikielen ymm‰rrett‰vyys kasvaa abstraktiotason
-kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset lausekkeet
-ovat ymm‰rrett‰v‰mpi‰ kuin vastaava laskenta symbolisella konekielell‰ ohjelmoituna.
-Lis‰ksi useat korkean tason ohjelmointikielet mahdollistavat --- mik‰li
-tarvittavat k‰‰nt‰j‰t ovat olemassa --- saman ohjelmakoodin k‰ytt‰misen useissa eri
-laitteistoissa sek‰ useilla eri k‰yttˆj‰rjestelmill‰. Koska eri laitteistoissa
-on erilaiset k‰skykannat, poistuu korkean tason ohjelmointikieli‰ k‰ytt‰m‰ll‰
-myˆs tarve uudelleenohjelmoinnille. 
+%% %
+%% Ohjelmointikielet sek‰ niit‰ ymm‰rt‰v‰t k‰‰nt‰j‰t ja tulkit ovat keskeisess‰ asemassa
+%% ohjelmistotuotannossa. K‰‰nt‰j‰t mahdollistavat ohjelmien
+%% kirjoittamisen korkean tason ohjelmointikielill‰ sek‰ symbolisilla konekielill‰,
+%% jotka puolestaan helpottavat ja nopeuttavat ohjelmointia.
+%% Niiden k‰ytt‰minen tekee ohjelmakoodista myˆs ymm‰rrett‰v‰mp‰‰ ja
+%% helpompilukuista. Yleisesti ottaen ohjelmointikielen ymm‰rrett‰vyys kasvaa abstraktiotason
+%% kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset lausekkeet
+%% ovat ymm‰rrett‰v‰mpi‰ kuin vastaava laskenta symbolisella konekielell‰ ohjelmoituna.
+%% Lis‰ksi useat korkean tason ohjelmointikielet mahdollistavat --- mik‰li
+%% tarvittavat k‰‰nt‰j‰t ovat olemassa --- saman ohjelmakoodin k‰ytt‰misen useissa eri
+%% laitteistoissa sek‰ useilla eri k‰yttˆj‰rjestelmill‰. Koska eri laitteistoissa
+%% on erilaiset k‰skykannat, poistuu korkean tason ohjelmointikieli‰ k‰ytt‰m‰ll‰
+%% myˆs tarve uudelleenohjelmoinnille. 
 
-%
-% Jotain introa myˆs historiasta. Johdannon pit‰isi kuitenkin johdattaa tekstiin joka on
-% p‰‰asiassa historiapainotteista. 
-%
+%% %
+%% % Jotain introa myˆs historiasta. Johdannon pit‰isi kuitenkin johdattaa tekstiin joka on
+%% % p‰‰asiassa historiapainotteista. 
+%% %
 
-Symboliset konekielet sek‰ korkean tason ohjelmointikielet ovat l‰hes yht‰ vanhoja kuin
-ohjelmointikin. Ensimm‰iset korkean tason ohjelmointikielten k‰‰nt‰j‰t puolestaan ovat
-ohjelmointikieli‰ huomattavasti nuorempia, sill‰ ohjelmointikielten teoriaa kehitettiin
-vuosia ennen kuin ensimm‰iset k‰‰nt‰j‰t valmistuivat. Esimerkiksi ensimm‰isen‰ korkean
-tason ohjelmointikielen‰ pidetty Plankalk¸l kehitettiin jo vuonna 1945, mutta sit‰
-ymm‰rt‰v‰ k‰‰nt‰j‰ valmistui vasta vuonna 1972~\cite[????]{Knuth76}. %EI L÷YDY??? 
-%vois laittaa et "yritettiin valmistaa" tms.
+%% Symboliset konekielet sek‰ korkean tason ohjelmointikielet ovat l‰hes yht‰ vanhoja kuin
+%% ohjelmointikin. Ensimm‰iset korkean tason ohjelmointikielten k‰‰nt‰j‰t puolestaan ovat
+%% ohjelmointikieli‰ huomattavasti nuorempia, sill‰ ohjelmointikielten teoriaa kehitettiin
+%% vuosia ennen kuin ensimm‰iset k‰‰nt‰j‰t valmistuivat. Esimerkiksi ensimm‰isen‰ korkean
+%% tason ohjelmointikielen‰ pidetty Plankalk¸l kehitettiin jo vuonna 1945, mutta sit‰
+%% ymm‰rt‰v‰ k‰‰nt‰j‰ valmistui vasta vuosikymmenien p‰‰st‰. % vuonna 1972~\cite[????]{Knuth76}. %EI L÷YDY??? 
+%% %vois laittaa et "yritettiin valmistaa" tms.
 
-Ennen korkeatasoisille lausekielille kehitettyj‰
-k‰‰nt‰ji‰ oli pitk‰‰n k‰ytˆss‰ vain symbolisia konekieli‰ ymm‰rt‰vi‰ ohjelmia, % pitk‰‰n?
-assemblyk‰‰nt‰ji‰. Korkean tason ohjelmointikielten kehitytty‰ saatiin myˆs niit‰
-tukevia k‰‰nt‰ji‰ valmistettua. Vuonna 1952 valmistunut AUTOCODEn k‰‰nt‰j‰ oli
-yksi ensimm‰isi‰ kaupallisessa ohjelmistotuotannossa k‰ytettyj‰ korkean tason kielen
-k‰‰nt‰ji‰ ~\cite[42]{Knuth76}. % v‰h‰n irrallaan t‰‰ autocode t‰ss‰..
+%% Ennen korkeatasoisille lausekielille kehitettyj‰
+%% k‰‰nt‰ji‰ oli pitk‰‰n k‰ytˆss‰ vain symbolisia konekieli‰ ymm‰rt‰vi‰ ohjelmia, % pitk‰‰n?
+%% assemblyk‰‰nt‰ji‰. Korkean tason ohjelmointikielten kehitytty‰ saatiin myˆs niit‰
+%% tukevia k‰‰nt‰ji‰ valmistettua. Vuonna 1952 valmistunut AUTOCODEn k‰‰nt‰j‰ oli
+%% yksi ensimm‰isi‰ kaupallisessa ohjelmistotuotannossa k‰ytettyj‰ korkean tason kielen
+%% k‰‰nt‰ji‰ ~\cite[42]{Knuth76}. % v‰h‰n irrallaan t‰‰ autocode t‰ss‰..
 
 \newpage
 
@@ -100,7 +101,7 @@ k‰‰nt‰ji‰ ~\cite[42]{Knuth76}. % v‰h‰n irrallaan t‰‰ autocode t‰ss‰..
 
 %t‰‰ koko kappale on ihan vitun perseest‰ :::::D
 \section{Symbolinen konekieli ja assemblyk‰‰nt‰j‰t}
-Er‰‰n m‰‰ritelm‰n mukaan assemblyk‰‰nt‰j‰ on k‰‰nt‰j‰, joka k‰‰nt‰‰ yksi yhteen
+Er‰‰n m‰‰ritelm‰n mukaan assemblyk‰‰nt‰j‰ on k‰‰nt‰j‰, joka k‰‰nt‰‰
 symbolisella konekielell‰ kirjoitettuja komentoja konekielisiksi komennoiksi~\cite[1]{Salomon93}.
 %
 Koska jokaisella laitteistolla on oma konekielens‰ ja t‰m‰ konekieli on myˆs ohjelmointikieli,
@@ -849,29 +850,29 @@ voidaan suorittaa jo aiemmin k‰ytetyll‰ korkean tason ohjelmointikielell‰ ~\cite
 %half bootstrap
 
 
-
+\newpage
 \section{Yhteenveto}
+Yhteenveto.
+%% K‰‰nt‰j‰ll‰ tarkoitetaan ohjelmaa, joka k‰‰nt‰‰ l‰hdekielisen ohjelmakoodin
+%% kohdekieliseksi ohjelmakoodiksi. 
 
-K‰‰nt‰j‰ll‰ tarkoitetaan ohjelmaa, joka k‰‰nt‰‰ l‰hdekielisen ohjelmakoodin
-kohdekieliseksi ohjelmakoodiksi. 
 
+%% Tietojenk‰sittelytieteess‰ k‰‰nt‰j‰ tarkoittaa ohjelmaa joka k‰‰nt‰‰ l‰hdekielisen
+%% ohjelmakoodin kohdekieliseksi ohjelmakoodiksi. Koska ennen muun kuin konekielten
+%% kehityst‰ ohjelmointi tapahtui suoraan laitearkkitehtuurin ymm‰rt‰m‰ll‰ muodolla,
+%% ei tarvetta k‰‰nt‰jille ollut. Koska konekoodin ohjelmointi oli varsin tyˆl‰st‰,
+%% kehitettiin avuksi symbolisia konekieli‰, joissa tietyt bin‰‰rijonot oli korvattu
+%% paremmin muistettavilla tekstuaalisilla symboleilla.
 
-Tietojenk‰sittelytieteess‰ k‰‰nt‰j‰ tarkoittaa ohjelmaa joka k‰‰nt‰‰ l‰hdekielisen
-ohjelmakoodin kohdekieliseksi ohjelmakoodiksi. Koska ennen muun kuin konekielten
-kehityst‰ ohjelmointi tapahtui suoraan laitearkkitehtuurin ymm‰rt‰m‰ll‰ muodolla,
-ei tarvetta k‰‰nt‰jille ollut. Koska konekoodin ohjelmointi oli varsin tyˆl‰st‰,
-kehitettiin avuksi symbolisia konekieli‰, joissa tietyt bin‰‰rijonot oli korvattu
-paremmin muistettavilla tekstuaalisilla symboleilla.
-
-Korkeamman tason ohjelmointikielet kehittyiv‰t ohjelmoijien tarpeesta kuvata
-ohjelmistojen toimintaa korkeammilla abstraktiotasoilla. T‰sm‰lliset
-kuvausj‰rjestelm‰t kehitettiin alunperin ilman ajatusta k‰‰nt‰jist‰ taikka
-automaattisesta koodin generoinnista. Vaikka kuvausj‰rjestelmien sek‰ koodia
-generoivien algoritmien kehitys oli alkuun vain teoreettista tutkimista,
-huomattiin potentiaali niiden tehokkaaseen k‰yttˆˆn varsin pian. T‰m‰n j‰lkeen
-ohjelmointikieli‰ ruvettiin kehitt‰m‰‰n varta vasten automaattisen koodin
-generoinnin takia ja ensimm‰iset oikeasti hyˆdylliset kielet sek‰ niiden
-k‰‰nt‰j‰t kehitettiin. 
+%% Korkeamman tason ohjelmointikielet kehittyiv‰t ohjelmoijien tarpeesta kuvata
+%% ohjelmistojen toimintaa korkeammilla abstraktiotasoilla. T‰sm‰lliset
+%% kuvausj‰rjestelm‰t kehitettiin alunperin ilman ajatusta k‰‰nt‰jist‰ taikka
+%% automaattisesta koodin generoinnista. Vaikka kuvausj‰rjestelmien sek‰ koodia
+%% generoivien algoritmien kehitys oli alkuun vain teoreettista tutkimista,
+%% huomattiin potentiaali niiden tehokkaaseen k‰yttˆˆn varsin pian. T‰m‰n j‰lkeen
+%% ohjelmointikieli‰ ruvettiin kehitt‰m‰‰n varta vasten automaattisen koodin
+%% generoinnin takia ja ensimm‰iset oikeasti hyˆdylliset kielet sek‰ niiden
+%% k‰‰nt‰j‰t kehitettiin. 
 
 
 \newpage
