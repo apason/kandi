@@ -1,70 +1,79 @@
 \begin{thebibliography}{}
 
-\bibitem[Ttk, 1991]{Ttk91}
- (1991).
-\newblock Ttk91 reference.
-\newblock \url{https://www.cs.helsinki.fi/group/titokone/ttk91_ref_en.html}.
-\newblock Accessed: 2016-10-21.
-
-\bibitem[GNU, 2016]{GNU16}
- (2016).
-\newblock Cross-compilation.
-\newblock
-  \url{https://www.gnu.org/savannah-checkouts/gnu/automake/manual/html_node/Cross_002dCompilation.html}.
-\newblock Accessed: 2016-12-02.
-
 \bibitem[Appel, 1994]{Appel94}
-Appel, A. (1994).
+Appel, A.~W. (1994).
 \newblock Axiomatic bootstrapping: A guide for compiler hackers.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 16(6):1699--1718.
 
 \bibitem[Backus et~al., 1956]{IBM56}
 Backus, J.~W., Beeber, R.~J., Best, S., Goldberg, R., Herrick, H.~L., Hughes,
   R.~A., Mitchell, L.~B., Nelson, R.~A., Nutt, R., Sayre, D., Sheridan, P.~B.,
   Stern, H., and Ziller, I. (1956).
-\newblock The fortran automatic coding system for the ibm 704 edpm.
-
-\bibitem[Bauer, 1974]{Bauer74}
-Bauer, F.~L. (1974).
-\newblock {\em Compiler Construction -- An Advanced Course}.
-\newblock Springer­Verslag, Berlin Heidelberg GmbH.
+\newblock {\em The {F}ortran automatic coding system for the {IBM 704 EDPM}}.
+\newblock IBM Corporation.
 
 \bibitem[Bratman, 1961]{Bratman61}
 Bratman, H. (1961).
-\newblock An alternative form of the '{UNCOL}' diagram.
+\newblock An alternate form of the {UNCOL Diagram}.
+\newblock {\em Commun.~ACM}, 4(3):142.
 
 \bibitem[Brown, 1972]{Brown72}
 Brown, P.~J. (1972).
 \newblock Levels of language for portable software.
+\newblock {\em Commun.~ACM}, 15(12):1059--1062.
 
-\bibitem[church, 1936]{Church36}
-church, A. (1936).
+\bibitem[Church, 1936]{Church36}
+Church, A. (1936).
 \newblock An unsolvable problem of elementary number theory.
+\newblock {\em American Journal of Mathematics}, 58(2):345--363.
 
 \bibitem[Conway, 1958]{Conway58}
-Conway, M. (1958).
+Conway, M.~E. (1958).
 \newblock Proposal for an {UNCOL}.
+\newblock {\em Commun.~ACM}, 1(10):5--8.
 
 \bibitem[Curry, 1950]{Curry50}
 Curry, H. (1950).
-\newblock A program composition techniques as applied to inverse interpolation.
+\newblock {\em A program composition technique as applied to inverse
+  interpolation}.
+\newblock U.S.~Naval Ordnance Laboratory.
 
 \bibitem[Earley and Sturgis, 1970]{Earley70}
 Earley, J. and Sturgis, H. (1970).
 \newblock A formalism for translator interactions.
+\newblock {\em Commun.~ACM}, 13(10):607--617.
 
-\bibitem[Goldstine and {Von Neumann}, 1947]{Goldstine47}
-Goldstine, H. and {Von Neumann}, J. (1947).
-\newblock Planning and coding problems for an electronic computing instrument.
+\bibitem[{Free Software Foundation, Inc.}, 2016]{GNU16}
+{Free Software Foundation, Inc.} (2016).
+\newblock Cross-compilation.
+\newblock
+  \url{https://www.gnu.org/savannah-checkouts/gnu/automake/manual/html_node/Cross_002dCompilation.html}.
+\newblock Accessed: 2016-12-02.
+
+\bibitem[Goldstine and {von Neumann}, 1947]{Goldstine47}
+Goldstine, H.~H. and {von Neumann}, J. (1947).
+\newblock {\em Planning and coding problems for an electronic computing
+  instrument}.
+\newblock Institute for Advanced Study, Princeton, New Jersey.
 
 \bibitem[Guilan et~al., 2002]{Guilan02}
 Guilan, D., Jinlan, T., Suqin, Z., Weidu, J., and Jun, D. (2002).
-\newblock Retargetable cross compilation techniques -- {C}omparison and
-  analysis of {GCC} and {Zephyr}.
+\newblock Retargetable cross compilation techniques: {C}omparison and analysis
+  of {GCC} and {Zephyr}.
+\newblock {\em SIGPLAN Not.}, 37(6):38--44.
 
-\bibitem[IBM, 1954]{IBM54}
-IBM (1954).
-\newblock Specifications fot the ibm mathematical formula translating system,
-  fortran {Programming Research Group, I.B.M Applied Science Div}.
+\bibitem[{Helsingin yliopisto, Tietojenk\"{a}sittelytieteen laitos},
+  1991]{Ttk91}
+{Helsingin yliopisto, Tietojenk\"{a}sittelytieteen laitos} (1991).
+\newblock Ttk91 reference.
+\newblock \url{https://www.cs.helsinki.fi/group/titokone/ttk91_ref_en.html}.
+\newblock Accessed: 2016-10-21.
+
+\bibitem[{IBM Corporation}, 1954]{IBM54}
+{IBM Corporation} (1954).
+\newblock {\em Specifications for the {IBM} Mathematical {FOR}mula
+  {TRAN}slating System, {FORTRAN}}.
+\newblock IBM Corporation.
 
 \bibitem[Knuth and Pardo, 1976]{Knuth76}
 Knuth, D. and Pardo, L. (1976).
@@ -74,16 +83,18 @@ Knuth, D. and Pardo, L. (1976).
 \bibitem[Mogensen, 2010]{Mogensen10}
 Mogensen, T. (2010).
 \newblock {\em Basics of Compiler Design}.
-\newblock lulu.
+\newblock lulu.com.
 
 \bibitem[Reynolds, 2003]{Reynolds03}
-Reynolds, J. (2003).
-\newblock Bootstrapping a self compiling compiler from machine {X} to machine
+Reynolds, J.~H. (2003).
+\newblock Bootstrapping a self-compiling compiler from machine {X} to machine
   {Y}.
+\newblock {\em J. Comput. Sci. Coll.}, 19(2):175--181.
 
 \bibitem[Rosen, 1964]{Rosen64}
 Rosen, S. (1964).
-\newblock Programming systems and languages, a historical survey.
+\newblock Programming systems and languages: A historical survey.
+\newblock In {\em Proc.~AFIPS '64 (Spring)}, pages 1--15. ACM.
 
 \bibitem[Salomon, 1993]{Salomon93}
 Salomon, D. (1993).
@@ -91,22 +102,28 @@ Salomon, D. (1993).
 \newblock Ellis Horwood Ltd.
 
 \bibitem[Speetjens, 1976]{Speetjens76}
-Speetjens, J. (1976).
+Speetjens, J.~K. (1976).
 \newblock Intermediate language for minicomputer cross-compilation.
+\newblock In {\em Proc.~ACM-SE 14}, pages 15--18. ACM.
 
-\bibitem[Steel, 1961]{Steel61}
-Steel, T. B.~J. (1961).
+\bibitem[{Steel, Jr.}, 1961]{Steel61}
+{Steel, Jr.}, T.~B. (1961).
 \newblock A first version of {UNCOL}.
+\newblock In {\em Papers Presented at IRE-AIEE-ACM '61 (Western)}, pages
+  371--378. ACM.
 
 \bibitem[Strong et~al., 1958]{Strong58}
 Strong, J., Wegstein, J., Tritter, A., Olsztyn, J., Mock, O., and Steel, T.
   (1958).
 \newblock The problem of programming communication with changing machines: A
   proposed solution.
+\newblock {\em Commun.~ACM}, 1(8):12--18.
 
-\bibitem[Turing, 1936]{Turing36}
-Turing, A. (1936).
+\bibitem[Turing, 1937]{Turing36}
+Turing, A.~M. (1936--1937).
 \newblock On computable numbers, with an application to the
-  entscheidungsproblem.
+  {E}ntscheidungsproblem.
+\newblock {\em Proceedings of the London Mathematical Society},
+  s2-42(1):230--265.
 
 \end{thebibliography}

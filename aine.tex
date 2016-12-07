@@ -4,16 +4,15 @@
 \usepackage{url}
 \usepackage{float}
 
-\usepackage[round]{natbib}
+\usepackage[round,authoryear,sort]{natbib}
 \setcitestyle{notesep={: }}
 
 \begin{document}
 \onehalfspacing
 %l‰hdeluettelo oikeaan formaattiin
-\makeatletter
-\renewcommand\@biblabel[1]{[#1]}
-\makeatother
-
+%\makeatletter
+%\renewcommand\@biblabel[1]{[#1]}
+%\makeatother
 
 \title{Otsikko}
 \author{Arttu Kilpinen}
@@ -88,7 +87,7 @@ Johdanto.
 %% yksi ensimm‰isi‰ kaupallisessa ohjelmistotuotannossa k‰ytettyj‰ korkean tason kielen
 %% k‰‰nt‰ji‰ ~\cite[42]{Knuth76}. % v‰h‰n irrallaan t‰‰ autocode t‰ss‰..
 
-\newpage
+
 
 %vaatii muutosta start
 %Vaikka k‰‰nt‰jien tuottama kohdekieli on usein laitteiston ymm‰rt‰m‰‰ konekielt‰
@@ -118,15 +117,14 @@ on korvattu ihmisille helpommin muistettavilla sanoilla eli symboleilla.
 
 
 
-\subsection{Historia ensimm‰isist‰ assemblyk‰‰nt‰jist‰}
+\subsection{Ensimm‰iset assemblyk‰‰nt‰j‰t}
 %Ensimm‰iset ohjelmointia helpottavat ohjelmat olivat assemblerk‰‰nt‰ji‰.
 
 Koska ennen ensimm‰isi‰ assemblyk‰‰nt‰ji‰ ei ollut mit‰‰n ohjelmointia
 helpottavia tyˆkaluja, tuli ensimm‰iset k‰‰nt‰j‰t ohjelmoida suoraan konekielell‰.
 Esimerkiksi yksi ensimm‰isist‰ assemblyk‰‰nt‰jist‰, vuonna 1949 valmistunut EDSAC-tietokoneen
 assemblyk‰‰nt‰j‰ toteutettiin t‰ll‰ tavalla. % VIITE
-kuten yksi ensimm‰isi‰, vuonna 1949 valmistunut EDSAC tietokoneen assemblyk‰‰nt‰j‰
-toteutettiin. Vaikka korkean tason kielten k‰‰nt‰j‰t alkoivat kehitty‰
+Vaikka korkean tason kielten k‰‰nt‰j‰t alkoivat kehitty‰
 l‰hes heti ensimm‰isten assemblyk‰‰nt‰jien valmistuttua, pysyi symbolisilla
 konekielill‰ ohjelmointi pitk‰‰n suosiossa. Alkuun korkean tason kielten
 automaattista k‰‰nnˆstyˆt‰ pidettiin l‰hinn‰ teoreettisena tutkimisena
@@ -195,27 +193,27 @@ Harmaalla pohjalla oleva koodi k‰‰nnet‰‰n siis t‰ysin ennalta m‰‰r‰tysti.
 \end{center}
 \end{figure}
 
-\newpage
-\section{Historiaa korkean tason kielten k‰‰nt‰jist‰}
 
+\section{Historiaa korkean tason kielten k‰‰nt‰jist‰}
 Korkean tason ohjelmointikielell‰ tarkoitetaan t‰ss‰ tutkielmassa ohjelmointikielt‰,
-jossa l‰hdekieli sek‰ siit‰ k‰‰nnett‰v‰ konekieli ovat 
-selke‰sti eri abstraktiotasoilla. Kokean tason ohjelmointikielten k‰‰nt‰minen edellytt‰‰
+jossa l‰hdekieli ja siit‰ k‰‰nnett‰v‰ konekieli ovat 
+selke‰sti eri abstraktiotasoilla.
+Toisin sanoen korkean tason ohjelmointikielell‰ viitataan kieleen, joka ei ole (symbolinen) konekieli.
+Korkean tason ohjelmointikielten k‰‰nt‰minen edellytt‰‰
 siis muutakin, kuin mekaanista sanojen vaihtamista ennalta m‰‰r‰ttyjen s‰‰ntˆjen perusteella.
-T‰m‰n m‰‰ritelm‰n perusteella korkean tason ohjelmointikielill‰ tarkoitetaan t‰ss‰ tutkielmassa
-ohjelmointikieli‰, jotka eiv‰t ole symbolisia konekieli‰.
+
 
 % Kerrotaan korkean tason kielten hyˆdyist‰ ja miksi niit‰ tarvitsee
 \subsection{T‰sm‰llisten kuvausj‰rjestelmien kehitys}
 Tietojenk‰sittelytieteess‰ on aina koitettu kuvailla ohjelmien suoritusta
 ja algoritmeja t‰sm‰llisesti. Ennen formaaleja merkint‰tapoja ja korkean tason ohjelmointikieli‰ ainoa
 t‰sm‰llinen tapa algoritmien kuvaamiseksi oli niiden kirjoittaminen konekielell‰.
-Alan Turingin tunnetussa julkaisussa ~\cite{Turing36} esitettiin 
+Alan Turingin tunnetussa julkaisussa ~\cite[]{Turing36} esitettiin 
 m‰‰ritelm‰ laskenta-automaatista, joka paremmin tunnetaan Turingin koneena.
 Sen yhteydess‰ m‰‰riteltiin myˆs matemaattinen formalismi, jolla automaatin
 toimintaa voitiin t‰sm‰llisesti kuvailla. Vaikka esitystapa oli vaikea ja esitelty
 automaatti hypoteettinen,
-se edusti Alonzo Churchin merkint‰tavan ~\cite{Church36} ohella kehittyneint‰ formaalia
+se edusti Alonzo Churchin merkint‰tavan ~\cite[]{Church36} ohella kehittyneint‰ formaalia
 kuvausta, 'kielt‰', joka siihen aikaan oli olemassa.
 
 %PLANKAK‹L
@@ -230,7 +228,7 @@ usein ensimm‰isen‰ korkean tason ohjelmointikielen‰.
 Vaikka kyseess‰ oli huomattavan edistyksellinen j‰rjestelm‰, se ei
 kuitenkaan vaikuttanut ohjelmointikielten kehitykseen juuri lainkaan,
 sill‰ artikkeli julkaistiin vasta vuonna 1972. Vaikka Plankalk¸lille toteutettiinkin
-k‰‰nt‰j‰, ei sit‰ juuri koskaan k‰ytetty koska, silloin oli jo Plankalk¸lia
+k‰‰nt‰j‰, ei sit‰ juuri koskaan k‰ytetty, koska silloin oli jo Plankalk¸lia
 huomattavasti kehittyneempi‰ ohjelmointikieli‰. %err? oliks sit‰ k‰‰nt‰j‰‰ nyt vai ei??
 
 %LOHKOKAAVIO
@@ -794,7 +792,7 @@ muihinkin toteutettaviin ohjelmointikieliin.
 	\ \newline
 	\begin{center}
 	    \hbox{\hspace{-0.6cm} \includegraphics[scale=1.0]{compiler-complex-color-T.png}}
-	  \caption{K‰‰nt‰j‰kokonaisuus. \label{compiler-compÂlex}}
+	  \caption{K‰‰nt‰j‰kokonaisuus. \label{compiler-complex}}
 	  \label{kuvaesimerkki}
 	\end{center}
 \end{figure}
@@ -850,7 +848,7 @@ voidaan suorittaa jo aiemmin k‰ytetyll‰ korkean tason ohjelmointikielell‰ ~\cite
 %half bootstrap
 
 
-\newpage
+
 \section{Yhteenveto}
 Yhteenveto.
 %% K‰‰nt‰j‰ll‰ tarkoitetaan ohjelmaa, joka k‰‰nt‰‰ l‰hdekielisen ohjelmakoodin
@@ -882,8 +880,8 @@ Yhteenveto.
 
 
 %ONKO LƒHDELUETTELO OK? MIKSI [1] jne?
-\nocite{*}
- \bibliographystyle{apalike}
+%\nocite{*}
+\bibliographystyle{apalike}
 \bibliography{lahteet}
 
 \lastpage
