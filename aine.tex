@@ -24,20 +24,30 @@
 \classification{\protect{\ \\
 Software and its engineering -> software notations and tools -> Compilers}}
 
-\keywords{Historia, K‰‰nt‰j‰t, Symbolinen konekieli, Ohjelmointikielet}
+\keywords{Historia, K‰‰nt‰j‰t, Symbolinen konekieli, Ohjelmointikielet, Ketjutus, Ristiink‰‰nt‰minen, V‰likielet}
 
+
+%BURKS 51 MAININTA INTERMEDIATESTA
+%KNUTH 64 backus naur form
+%RA 73
+%ROSEN 64
 \begin{abstract}
 
-  Ensimm‰iset ohjelmointikielten k‰‰nt‰j‰t, assemblyk‰‰nt‰j‰t, k‰‰nsiv‰t symbolisille
-  konekielille kirjoitettuja ohjelmia konekielisiksi ohjelmiksi. T‰sm‰llisten
-  kuvausj‰rjestelmien kehitys sek‰ koodin generoinnin teoria mahdollistivat
-  tehokkaampien ohjelmointikielten kehityksen. Nykyisin k‰ytˆss‰ olevat
-  korkean tason ohjelmointikielet kehittyiv‰t hiljalleen kuvausj‰rjestelmien
-  kehittyess‰ ja syrj‰yttiv‰t symbolisella konekielill‰ ohjelmoinnin l‰hes
-  kokonaan.
-  T‰ss‰ dokumentissa k‰yd‰‰n l‰pi historiallisia vaiheita symbolisten konekielten
-  k‰‰nt‰jist‰ nykyaikaisiin korkean tason ohjelmointikielten k‰‰nt‰jiin. L‰pi k‰yd‰‰n
-  useita merkitt‰vi‰ ohjelmointikieli‰ ja niiden ominaisuuksia.
+Symboliset konekielet olivat ensimm‰isi‰ laitteistojen ymm‰rt‰mist‰ konekielist‰ 
+poikkeavia ohjelmointikieli‰. Niiden k‰‰nt‰j‰t, assemblyk‰‰nt‰j‰t, k‰‰nt‰v‰t symbolisille
+konekielille kirjoitettuja ohjelmia konekielisiksi ohjelmiksi. T‰sm‰llisten
+kuvausj‰rjestelmien kehitys sek‰ koodin generointi mahdollistivat
+tehokkaampien ohjelmointikielten k‰ytˆn ohjelmoinnissa. Nykyisin k‰ytˆss‰ olevat
+korkean tason ohjelmointikielet kehittyiv‰t hiljalleen kuvausj‰rjestelmien
+kehittyess‰ ja syrj‰yttiv‰t symbolisella konekielill‰ ohjelmoinnin l‰hes
+kokonaan. 
+
+Ensimm‰iset k‰‰nt‰j‰t tehtiin tarkasti tietylle l‰hde- ja kohdekielelle.
+Myˆhemmin yleistyi k‰yt‰ntˆ, jossa k‰‰nnˆs toteutetaan jonkin v‰likielen
+kautta. V‰likieli‰ k‰ytt‰en k‰‰nt‰j‰n rakenne on jaettu v‰likielen
+k‰‰nnˆksest‰ vastaavaan etuosaan sek‰ konekielen tuottamisesta
+vastaavaan takaosaan. Kehittyneet k‰‰nt‰j‰rakenteet mahdollistavat
+myˆs niiden ketjuttamisen uusille laitteistoille.
   
 \end{abstract}
 
@@ -45,33 +55,32 @@ Software and its engineering -> software notations and tools -> Compilers}}
 
 
 
-
+% mit‰ k‰sitell‰‰n, miten ja mit‰ tuloksia on saatu?
+%johdanto aloitetaan asettelemalla tutkimus asiayhteyteens‰
+%mink‰laisessa yhteydess‰ tarkasteluun otettavat haasteet esiintyy.
+%kerro yleistajuisessa muodossa koko kirjoitelman kysymyksenasettelu juoni tulokset ja johtop‰‰tˆkset.
 \section{Johdanto}
-Johdanto.
-%% K‰‰nt‰j‰t ovat tietokoneohjelmia, jotka k‰‰nt‰v‰t l‰hdekielisen ohjelmakoodin
-%% kohdekieliseksi ohjelmaksi~\citep[1]{Bauer74}. Kohdekielen‰ on usein jonkin prosessoriarkkitehtuurin
-%% ymm‰rt‰m‰ konekieli.
+Ohjelmointikielet sek‰ niit‰ ymm‰rt‰v‰t k‰‰nt‰j‰t ja tulkit ovat keskeisess‰ asemassa
+ohjelmistotuotannossa. K‰‰nt‰j‰t mahdollistavat ohjelmien
+kirjoittamisen korkean tason ohjelmointikielill‰ sek‰ symbolisilla konekielill‰.
 
-%% %
-%% Ohjelmointikielet sek‰ niit‰ ymm‰rt‰v‰t k‰‰nt‰j‰t ja tulkit ovat keskeisess‰ asemassa
-%% ohjelmistotuotannossa. K‰‰nt‰j‰t mahdollistavat ohjelmien
-%% kirjoittamisen korkean tason ohjelmointikielill‰ sek‰ symbolisilla konekielill‰,
-%% jotka puolestaan helpottavat ja nopeuttavat ohjelmointia.
-%% Niiden k‰ytt‰minen tekee ohjelmakoodista myˆs ymm‰rrett‰v‰mp‰‰ ja
-%% helpompilukuista. Yleisesti ottaen ohjelmointikielen ymm‰rrett‰vyys kasvaa abstraktiotason
-%% kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset lausekkeet
-%% ovat ymm‰rrett‰v‰mpi‰ kuin vastaava laskenta symbolisella konekielell‰ ohjelmoituna.
-%% Lis‰ksi useat korkean tason ohjelmointikielet mahdollistavat --- mik‰li
-%% tarvittavat k‰‰nt‰j‰t ovat olemassa --- saman ohjelmakoodin k‰ytt‰misen useissa eri
-%% laitteistoissa sek‰ useilla eri k‰yttˆj‰rjestelmill‰. Koska eri laitteistoissa
-%% on erilaiset k‰skykannat, poistuu korkean tason ohjelmointikieli‰ k‰ytt‰m‰ll‰
-%% myˆs tarve uudelleenohjelmoinnille. 
 
-%% %
-%% % Jotain introa myˆs historiasta. Johdannon pit‰isi kuitenkin johdattaa tekstiin joka on
-%% % p‰‰asiassa historiapainotteista. 
-%% %
+%eiks t‰‰ nyt oo v‰h‰ irrallaan.
+K‰‰nt‰j‰t ovat tietokoneohjelmia, jotka k‰‰nt‰v‰t l‰hdekielisen ohjelmakoodin
+kohdekieliseksi ohjelmaksi~\citep[1]{Bauer74}.
 
+Korkean tason ohjelmointikielten sek‰ symbolisten konekielten k‰yttˆ helpottavat ja nopeuttavat ohjelmointia.
+Niiden k‰ytt‰minen tekee ohjelmakoodista myˆs ymm‰rrett‰v‰mp‰‰ ja
+helpompilukuista. Yleisesti ottaen ohjelmointikielen ymm‰rrett‰vyys kasvaa abstraktiotason
+kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset lausekkeet
+ovat ymm‰rrett‰v‰mpi‰ kuin vastaava laskenta symbolisella konekielell‰ ohjelmoituna.
+Lis‰ksi useat korkean tason ohjelmointikielet mahdollistavat --- mik‰li
+tarvittavat k‰‰nt‰j‰t ovat olemassa --- saman ohjelmakoodin k‰ytt‰misen useissa eri
+laitteistoissa. Koska eri laitteistoissa on erilaiset k‰skykannat, poistuu korkean
+tason ohjelmointikieli‰ k‰ytt‰m‰ll‰ tarve uudelleenohjelmoinnille. 
+
+Symboliset konekielet sek‰ korkean tason ohjelmointikielet ovat l‰hes yht‰ vanhoja kuin 
+ohjelmointikin. 
 %% Symboliset konekielet sek‰ korkean tason ohjelmointikielet ovat l‰hes yht‰ vanhoja kuin
 %% ohjelmointikin. Ensimm‰iset korkean tason ohjelmointikielten k‰‰nt‰j‰t puolestaan ovat
 %% ohjelmointikieli‰ huomattavasti nuorempia, sill‰ ohjelmointikielten teoriaa kehitettiin
@@ -87,8 +96,6 @@ Johdanto.
 %% yksi ensimm‰isi‰ kaupallisessa ohjelmistotuotannossa k‰ytettyj‰ korkean tason kielen
 %% k‰‰nt‰ji‰ ~\cite[42]{Knuth76}. % v‰h‰n irrallaan t‰‰ autocode t‰ss‰..
 
-
-
 %vaatii muutosta start
 %Vaikka k‰‰nt‰jien tuottama kohdekieli on usein laitteiston ymm‰rt‰m‰‰ konekielt‰
 %tai symbolista konekielt‰, on myˆs olemassa k‰‰nt‰ji‰, jotka tuottavat jotakin
@@ -96,6 +103,24 @@ Johdanto.
 
 % T‰h‰n myˆs jotain introa k‰‰nnˆstekniikoista cross, bootstrap, parsereista jne
 % pit‰is saada puoltoista sivua teksti‰
+
+%rakenne
+T‰ss‰ tutkielmassa k‰sitell‰‰n k‰‰nt‰jien ja ohjelmointikielten historiaa. K‰‰nt‰jien
+toteutusta k‰sitell‰‰n karkealla tasolla. Luvut kaksi ja kolme k‰sittelev‰t l‰hinn‰ historiaa.
+Ensin k‰sitell‰‰n symbolisia konekieli‰ sek‰ assemblyk‰‰nt‰ji‰. Kolmannessa luvussa 
+k‰yd‰‰n l‰pi korkean tason ohjelmointikielten historiaa noin kahden vuosikymmenen
+ajalta. Luvussa l‰pik‰yd‰‰n useita kuvausj‰rjestelmi‰ Turingin formalismita FORTRAN:n julkaisuun.
+Luvusta nelj‰ alkaen painopisteen‰ on k‰‰nt‰jien toteutus karkealla tasolla. Ensin k‰sitell‰‰n
+Ristiink‰‰nt‰mist‰ ja v‰likieli‰. Luvussa viisi tutustutaan T-kaavioihin, joita apuna k‰ytt‰en
+luvussa kuusi k‰sitell‰‰n ketjutusta sek‰ k‰‰nt‰jien rakennetta.
+K‰‰nt‰jien tarkempi toteutus ja vaihejako, kuten syntaktinen ja semanttinen
+analyysi j‰‰v‰t t‰m‰n tutkielman ulkopuolelle.
+
+
+
+
+
+
 
 
 %t‰‰ koko kappale on ihan vitun perseest‰ :::::D
@@ -853,7 +878,8 @@ voidaan suorittaa jo aiemmin k‰ytetyll‰ korkean tason ohjelmointikielell‰ ~\cite
 %k‰‰nt‰j‰n m‰‰ritelm‰, symbolinen konekieli
 K‰‰nt‰j‰ll‰ tarkoitetaan tietokoneohjelmaa, joka k‰‰nt‰‰ l‰hdekielisen ohjelman
 kohdekieliseksi ohjelmaksi. Jokaisella laitteistolla on oma konekielens‰, jota
-se kykenee suorittamaan. Aluksi ohjelmointi oli mahdollista vain konekielell‰, sill‰ muita ohjelmointikieli‰ ei viel‰ ollut.
+se kykenee suorittamaan. Aluksi ohjelmointi oli mahdollista vain t‰ll‰
+konekielell‰, koska muita ohjelmointikieli‰ ei viel‰ ollut.
 Koska konekielen ohjelmointi oli tyˆl‰st‰ ja virhealtista, kehitettiin
 avuksi symbolisia konekieli‰, joissa tietyt bin‰‰rijonot oli korvattu
 paremmin muistettavilla tekstuaalisilla symboleilla. Assemblyk‰‰nt‰j‰t
@@ -867,29 +893,28 @@ kuvausj‰rjestelmien eli korkean tason ohjelmointikielten kehittyess‰
 kokeiltiin myˆs konekielen tuottamista automaattisesti korkean
 tason kielen mukaan. T‰m‰ automaattiseksi ohjelmoinniksi
 ja myˆhemmin k‰‰nt‰miseksi kutsuttu prosessi oli alkuun melko tehotonta.
-Moni tutkija pitikin sit‰ vain teoreettisena tutkimuksena.
+Moni tutkija pitikin sit‰ vain teoreettisena tutkimuksena, mutta
+potentiaali niiden tehokkaaseen k‰yttˆˆn selvisi varsin nopeasti.
 Ohjelmointikielten ja k‰‰nnˆstekniikan kehittyess‰ generoidun koodin
-laatu parani, ja korkean tason ohjelmointikieli‰ ruvettiin k‰ytt‰m‰‰n
-oikeaan ohjelmointiin. Viimeist‰‰n FORTRAN:n julkaisun j‰lkeen
+laatu parani, ja korkean tason ohjelmointikieli‰ ruvettiin kehitt‰m‰‰n
+automaattisen koodin generoinnin takia. Viimeist‰‰n FORTRAN:n julkaisun j‰lkeen
 korkean tason ohjelmointikielten hyˆdyt olivat laajasti hyv‰ksytty.
 
 %k‰‰nt‰jien rakenne ja v‰likielet
 Ensimm‰iset k‰‰nt‰j‰t kehitettiin vartavasten tietyn l‰hde- ja
 kohdekieliparin k‰‰nt‰miseen. Kielten ja laitteistojen monipuolistuessa
-syntyi ajatus v‰likielest‰. V‰likielien avulla tarvittavien k‰‰nt‰jien
-m‰‰r‰‰ voitiin pienent‰‰ ja ohjelmien tuottaminen uusille laitteistoille
-nopeutui. Nykyisin l‰hes kaikki k‰‰nt‰j‰t toteutetaan rakenteella,
-joka mahdollistaa uusien l‰hdekielten sek‰ kohdelaitteistojen
-nopean implementoinnin. 
+tarvittavien k‰‰nt‰jien m‰‰r‰ lis‰‰ntyi. Syntyi ajatus universaalista
+l‰likielest‰, jonka avulla tarvittavien k‰‰nt‰jien
+m‰‰r‰‰ voitaisiin pienent‰‰ ja ohjelmien tuottaminen uusille laitteistoille
+nopeutuisi. Vaikka mik‰‰n v‰likieli ei ikin‰ saanut universaalia asemaa,
+k‰ytet‰‰n silti l‰hes kaikissa k‰‰nt‰jiss‰ jotakin v‰likielt‰ k‰‰nnˆksen v‰livaiheena.
+T‰llaiset k‰‰nt‰j‰t on jaettu etuosaan, joka k‰‰nt‰‰ l‰hdekielen v‰likielelle,
+sek‰ takaosaan, joka k‰‰nt‰‰ v‰likielen halutulle laitteistolle.
+Lis‰ksi useat k‰‰nt‰j‰t toteutetaan rakenteella,
+joka mahdollistaa niiden ketjuttamisen uusille tietokoneille mahdollisimman
+v‰h‰ll‰ uudelleenohjelmoinnilla.
 
 
-
-%% automaattisesta koodin generoinnista. Vaikka kuvausj‰rjestelmien sek‰ koodia
-%% generoivien algoritmien kehitys oli alkuun vain teoreettista tutkimista,
-%% huomattiin potentiaali niiden tehokkaaseen k‰yttˆˆn varsin pian. T‰m‰n j‰lkeen
-%% ohjelmointikieli‰ ruvettiin kehitt‰m‰‰n varta vasten automaattisen koodin
-%% generoinnin takia ja ensimm‰iset oikeasti hyˆdylliset kielet sek‰ niiden
-%% k‰‰nt‰j‰t kehitettiin. 
 
 
 \newpage
