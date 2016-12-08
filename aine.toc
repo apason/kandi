@@ -16,4 +16,4 @@
 \contentsline {subsection}{\numberline {6.1}Iteratiivinen ketjutus}{13}
 \contentsline {subsection}{\numberline {6.2}Ketjutus olemassa olevien k\"a\"ant\"ajien avulla}{14}
 \contentsline {subsection}{\numberline {6.3}Ketjuttamista helpottava k\"a\"ant\"aj\"arakenne}{15}
-\contentsline {section}{\numberline {7}Yhteenveto}{18}
+\contentsline {section}{\numberline {7}Yhteenveto}{19}

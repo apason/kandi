@@ -302,7 +302,7 @@ Böhmin kieli ei kuitenkaan osannut käsitellä muita kuin positiivisia
 kokonaislukuja, joten sen käyttöarvo jäi melko pieneksi. Kääntäjien
 teorian kehityksen kannalta se oli kuitenkin korvaamaton. Böhmin kääntäjä
 kykeni tarkistamaan koodin syntaksia lineaarisessa ajassa kun Rutishauserin
-kääntäjä puolestaan toimi neliöllisessä ajassa ~\cite[40]{Knuth76}. Lisäksi Böhmin kääntäjä hallitsi matemaattisten
+kääntäjä puolestaan toimi neliöisessä ajassa ~\cite[40]{Knuth76}. Lisäksi Böhmin kääntäjä hallitsi matemaattisten
 operaattoreiden sidontajärjestyksen, sekä osasi käsitellä sulkeita aritmeettisissa 
 lausekkeissa. Böhm oli myös ensimmäinen, joka todisti 
 matemaattisesti ohjelmointikielensä voivan laskea minkä tahansa laskettavan funktion ~\cite[42]{Knuth76}.
@@ -361,7 +361,7 @@ piirteet. Lisäksi taulukossa esitellään ohjelmointikielten nimet sekä päätekijät
 
 \begin{table}[h!]
   \centering
-  \caption{Yhteenveto ohjelmointikielten ja kuvausjärjestelmien kehityksestä}
+  \caption{Yhteenveto ohjelmointikielten ja kuvausjärjestelmien kehityksestä.} %tämä teksti pitää muuttaa
   \label{tab:table1}
   \begin{tabular}{| l | l | l |}
     \hline
@@ -481,7 +481,7 @@ Ongelmana edellä mainitussa menetelmässä on suuri sekä kasvava joukko lähde- ja
 kohdekieliä. Jo yhden uuden kääntäjän toteuttaminen on varsin työlästä, joten uuden kääntäjän
 tekeminen kaikille halutuille laitteistoille vaatisi valtavasti aikaa ja resursseja.
 Oletetaan, että korkean tason ohjelmointikielten määrä on $N$ ja laitteistojen määrä on $M$.
-Tällöin tarvittavien kääntäjien määrä on $N \cdot M$ ja se kasvaa neliöllisesti kohde- ja lähdekielien
+Tällöin tarvittavien kääntäjien määrä on $N \cdot M$ ja se kasvaa neliöisesti kohde- ja lähdekielien
 kasvaessa. Kuva ~\ref{nxm} esittää tilannetta jossa on kääntäjät kuudelle eri ohjelmointikielelle
 viiteen eri laitteistoon. 
 %loppuuko tää kappale vähän tönkösti?
@@ -490,7 +490,7 @@ viiteen eri laitteistoon.
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=1.0]{NxM.png}
-		\caption{Ristiinkääntäminen usealta lähdekieleltä usealle kohdekielelle. Lähde: ~\cite[378]{Steel61} \label{nxm}.}
+		\caption{Ristiinkääntäminen usealta lähdekieleltä usealle kohdekielelle. ~\cite[378]{Steel61} \label{nxm}}
 		\label{kuvaesimerkki} % tää lähde on päin helvettiä? jr??
 	\end{center}
 \end{figure} 
@@ -520,7 +520,7 @@ tilanne välikielen avulla.
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=1.0]{N+M.png}
-		\caption{Ristiinkääntäminen välikielillä. Lähde: ~\cite[378]{Steel61}. \label{n+m}}
+		\caption{Ristiinkääntäminen välikielillä. ~\cite[378]{Steel61} \label{n+m}}
 		\label{kuvaesimerkki}
 	\end{center}
 \end{figure} 
@@ -613,7 +613,7 @@ eikä täten voi olla muu kuin laitteiston ymmärtämä konekieli.
   \ \newline
   \begin{center}
     \includegraphics[scale=0.5]{multi-T.png}
-    \caption{C-kielisen Ada-kääntäjän ja x86:lla toimivan C kääntäjän avulla voidaan tuottaa x86:lla toimiva ada-kääntäjä \label{multi-t}}
+    \caption{C-kielisen Ada-kääntäjän ja x86:lla toimivan C kääntäjän avulla voidaan tuottaa x86:lla toimiva ada-kääntäjä. \label{multi-t}}
     \label{kuvaesimerkki}
   \end{center}
 \end{figure}
@@ -630,7 +630,7 @@ mukaiset elementit.
   \ \newline
   \begin{center}
     \includegraphics[scale=1.0]{notations-T.png}
-    \caption{Earleyn ja Sturgisin T-kaavioelementit. Kuvan lähde ~\cite[282]{Mogensen10}. \label{t-laajennos}}
+    \caption{Earleyn ja Sturgisin T-kaavioelementit. ~\cite[282]{Mogensen10} \label{t-laajennos}}
     \label{kuvaesimerkki}
   \end{center}
 \end{figure}
@@ -842,29 +842,48 @@ siirtäminen uuteen laitteistoon voidaan saavuttaa
 vain pienen osan uudelleenohjelmoinnilla. Lisäksi uudelleenohjelmointi
 voidaan suorittaa jo aiemmin käytetyllä korkean tason ohjelmointikielellä ~\cite[610]{Earley70}.
 
-%jos tää monimutkanen esimerkki tulis cross compiling ja välikielie setin loppuun niin tästä olis
-%luontevaa jatkaa puhumaan front ja backendistä ja vaikka gcc rakenteesta. 
-
-%half bootstrap
 
 
 
+\newpage
 \section{Yhteenveto}
-Yhteenveto.
-%% Kääntäjällä tarkoitetaan ohjelmaa, joka kääntää lähdekielisen ohjelmakoodin
-%% kohdekieliseksi ohjelmakoodiksi. 
 
 
-%% Tietojenkäsittelytieteessä kääntäjä tarkoittaa ohjelmaa joka kääntää lähdekielisen
-%% ohjelmakoodin kohdekieliseksi ohjelmakoodiksi. Koska ennen muun kuin konekielten
-%% kehitystä ohjelmointi tapahtui suoraan laitearkkitehtuurin ymmärtämällä muodolla,
-%% ei tarvetta kääntäjille ollut. Koska konekoodin ohjelmointi oli varsin työlästä,
-%% kehitettiin avuksi symbolisia konekieliä, joissa tietyt binäärijonot oli korvattu
-%% paremmin muistettavilla tekstuaalisilla symboleilla.
 
-%% Korkeamman tason ohjelmointikielet kehittyivät ohjelmoijien tarpeesta kuvata
-%% ohjelmistojen toimintaa korkeammilla abstraktiotasoilla. Täsmälliset
-%% kuvausjärjestelmät kehitettiin alunperin ilman ajatusta kääntäjistä taikka
+%kääntäjän määritelmä, symbolinen konekieli
+Kääntäjällä tarkoitetaan tietokoneohjelmaa, joka kääntää lähdekielisen ohjelman
+kohdekieliseksi ohjelmaksi. Jokaisella laitteistolla on oma konekielensä, jota
+se kykenee suorittamaan. Aluksi ohjelmointi oli mahdollista vain konekielellä, sillä muita ohjelmointikieliä ei vielä ollut.
+Koska konekielen ohjelmointi oli työlästä ja virhealtista, kehitettiin
+avuksi symbolisia konekieliä, joissa tietyt binäärijonot oli korvattu
+paremmin muistettavilla tekstuaalisilla symboleilla. Assemblykääntäjät
+tuottivat symbolisista konekielistä yksinkertaisten sääntöjen mukaan
+laitteiston ymmärtämää konekieltä.
+
+%korkean tason ohjelmointikieli, syntyi vahingossa, historia lyhyt tiivistelmä
+Korkean tason ohjelmointikielet kehittyivät ohjelmoijien tarpeesta kuvata
+tietokoneiden toimintaa korkeammalla abstraktiotasolla. Formaalien
+kuvausjärjestelmien eli korkean tason ohjelmointikielten kehittyessä
+kokeiltiin myös konekielen tuottamista automaattisesti korkean
+tason kielen mukaan. Tämä automaattiseksi ohjelmoinniksi
+ja myöhemmin kääntämiseksi kutsuttu prosessi oli alkuun melko tehotonta.
+Moni tutkija pitikin sitä vain teoreettisena tutkimuksena.
+Ohjelmointikielten ja käännöstekniikan kehittyessä generoidun koodin
+laatu parani, ja korkean tason ohjelmointikieliä ruvettiin käyttämään
+oikeaan ohjelmointiin. Viimeistään FORTRAN:n julkaisun jälkeen
+korkean tason ohjelmointikielten hyödyt olivat laajasti hyväksytty.
+
+%kääntäjien rakenne ja välikielet
+Ensimmäiset kääntäjät kehitettiin vartavasten tietyn lähde- ja
+kohdekieliparin kääntämiseen. Kielten ja laitteistojen monipuolistuessa
+syntyi ajatus välikielestä. Välikielien avulla tarvittavien kääntäjien
+määrää voitiin pienentää ja ohjelmien tuottaminen uusille laitteistoille
+nopeutui. Nykyisin lähes kaikki kääntäjät toteutetaan rakenteella,
+joka mahdollistaa uusien lähdekielten sekä kohdelaitteistojen
+nopean implementoinnin. 
+
+
+
 %% automaattisesta koodin generoinnista. Vaikka kuvausjärjestelmien sekä koodia
 %% generoivien algoritmien kehitys oli alkuun vain teoreettista tutkimista,
 %% huomattiin potentiaali niiden tehokkaaseen käyttöön varsin pian. Tämän jälkeen
@@ -874,31 +893,12 @@ Yhteenveto.
 
 
 \newpage
-%
+
 % Sitten alkaa lähdeluettelo
-%
-
-
-%ONKO LÄHDELUETTELO OK? MIKSI [1] jne?
 %\nocite{*}
 \bibliographystyle{apalike}
 \bibliography{lahteet}
 
 \lastpage
-
-%\appendices
-
-%\pagestyle{empty}
-
-%\internalappendix{1}{Malli ABC}
-
-%Liitteet ovat tässä vain sisällysluettelon ja esitystavan mallina.
-%Jokainen liite aloitetaan yleensä uudelta sivulta, jonka alkuun tulee
-%liitteen numero ja nimi. Kunkin liitteen sivut numeroidaan erikseen.
-
-%Liite on paitsi dokumenttia täydentävä osuus myös itsenäinen
-%kokonaisuus. Liite ei siten voi olla pelkästään kuva tai ohjelmanpätkä,
-%vaan liitteessä on ilmaistava sen sisällön laatu ja tarkoitus.
-
 
 \end{document}
