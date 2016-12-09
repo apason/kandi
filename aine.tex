@@ -155,16 +155,6 @@ on korvattu ihmisille helpommin muistettavilla sanoilla eli symboleilla.
 
 
 \subsection{Ensimmäiset assemblykääntäjät}
-%Ensimmäiset ohjelmointia helpottavat ohjelmat olivat assemblerkääntäjiä.
-
--ibm 704 oli floatit  ja index rekisteri 1956 ja sen eka assembleri UASAP-1  -sivyu 8
-     se oli yksinkertainen ja teki vain 1:1 kääntöä, tuki myöhemmin makroja
-
-- samana vuonna 56  ibm 702 kone asembler tuki ensimmäisenä makroja
-
--conwayn 58 julkasema UNISAP assembleri univac 1 ja 2 koneelle  oli eka joka käytti paikallisia labeleita.
-  -idea se että paikallisen nimen ei tarvi olla kuvaava  s37
-
 Ensimmäiseet assemblykääntäjät olivat niin sanottuja assemble-go kääntäjiä. Ainoa
 mitä ne osasivat tehdä oli lähdekoodin kääntäminen suoraan muistiin ja sen suorittaminen ~\cite[2]{Salomon93}.
 Pian ymmärrettiin kuitenkin tarve kohdekoodin kirjoittamiseksi tiedostoon. Tämä mahdollisti
@@ -184,7 +174,14 @@ käyttöä symbolisten konekielten kääntäjiin ~\cite[7]{Salomon93}. Tunnusten avull
 joita hän kutsui liukuviksi osoitteiksi, ohjelmoijan ei enää tarvinnut
 pitää kirjaa koodirivien osoitteista.
 
+IMB 704/702 tietokoneet valmistuivat 1956. Niiden ensimmäinen assemblykääntäjä
+UASAP-1 oli alkuun hyvin yksinkertainen. Se kykeni kääntämään vain
+tekstuaalisia symbolisia konekäskyjä yksi yhteen, ennalta määrättyjen
+sääntöjen perusteella. Myöhemmin UASAP:iin ohjelmoitiin tuki myös tunnusten
+ja makrojen käyttämiseksi ~\cite[8]{Salomon93}.
 
+Melwin Conwayn julkaisema UNISAP kääntäjä oli ensimmäinen, joka mahdollisti %univacille
+kahden erilaisen tunnuksen käytön, paikallisen sekä globaalin ~\cite[37]{Salomon93}.
 
 Vaikka korkean tason kielten kääntäjät alkoivat kehittyä
 lähes heti ensimmäisten assemblykääntäjien valmistuttua, pysyi symbolisilla
