@@ -12,6 +12,12 @@ Backus, J.~W., Beeber, R.~J., Best, S., Goldberg, R., Herrick, H.~L., Hughes,
 \newblock {\em The {F}ortran automatic coding system for the {IBM 704 EDPM}}.
 \newblock IBM Corporation.
 
+\bibitem[Bauer et~al., 1974]{Bauer74}
+Bauer, F.~L., De~Remer, F.~L., Griffiths, M., Hill, U., Horning, J.~J., Koster,
+  C. H.~A., McKeeman, W.~M., Poole, P.~C., and Waite, W.~M. (1974).
+\newblock {\em Compiler Construction: {A}n Advanced Course}.
+\newblock Springer-Verlag Berlin Heidelberg.
+
 \bibitem[Bratman, 1961]{Bratman61}
 Bratman, H. (1961).
 \newblock An alternate form of the {UNCOL Diagram}.

@@ -117,17 +117,9 @@ Kääntäjien tarkempi toteutus ja vaihejako, kuten syntaktinen ja semanttinen
 analyysi jäävät tämän tutkielman ulkopuolelle.
 
 
-
-
-
-
-
-
-%tää koko kappale on ihan vitun perseestä :::::D
 \section{Symbolinen konekieli ja assemblykääntäjät}
 Erään määritelmän mukaan assemblykääntäjä on kääntäjä, joka kääntää
 symbolisella konekielellä kirjoitettuja komentoja konekielisiksi komennoiksi~\cite[1]{Salomon93}.
-%
 Koska jokaisella laitteistolla on oma konekielensä ja tämä konekieli on myös ohjelmointikieli,
 pätee yleinen kääntäjien määritelmä myös assemblykääntäjiin. Lähdekielenä assemblykääntäjän
 ymmärtämä symbolinen konekieli tarkoittaa konekieltä, jossa laitteen ymmärtämät binääriset konekäskyt
@@ -139,40 +131,78 @@ on korvattu ihmisille helpommin muistettavilla sanoilla eli symboleilla.
 %Aika ennen symbolisia konekieliä. Mainitaan babbagen vehkeet
 %Kerrotaan raudasta HYVIN yksinkertaisesti EDSAC z4
 
+-ei ole täsmällinen  määritelmä koska kykenevät myös direktiiveihin (pseudokäsky) -sivu 1
+-operation of assembler reflects the architecture of the computer. -sivu 2
+-direktiivejä ei käännetä.
+-object file sivu 3
 
+-one pass, two pass sivu 3-4
+
+
+-jokainen rivi lähdekoodissa on joko käsky tai direktiivi - situ 13 kun label käytetään operandiana niin sitä kutsutaan symboliksi
+
+-opcode table sivu 17 staattinen
+
+-symboli määritellään kirjoittamalla se labeliksi ja käytetään kirjoittamalla operandiksi -s 17
+
+-literal table 43
+
+-direktiivit on suoritettu by assembler not assembled by it
+- makrot jo 50 luvulla s 109 makrot on direktiivejä mutta monimutkaisia joten ajatellaan ominaisuuksina
+
+- s110
+-0 pass meinaa makrojen suoritusta. 121
 
 
 \subsection{Ensimmäiset assemblykääntäjät}
 %Ensimmäiset ohjelmointia helpottavat ohjelmat olivat assemblerkääntäjiä.
 
+-ibm 704 oli floatit  ja index rekisteri 1956 ja sen eka assembleri UASAP-1  -sivyu 8
+     se oli yksinkertainen ja teki vain 1:1 kääntöä, tuki myöhemmin makroja
+
+- samana vuonna 56  ibm 702 kone asembler tuki ensimmäisenä makroja
+
+-conwayn 58 julkasema UNISAP assembleri univac 1 ja 2 koneelle  oli eka joka käytti paikallisia labeleita.
+  -idea se että paikallisen nimen ei tarvi olla kuvaava  s37
+
+Ensimmäiseet assemblykääntäjät olivat niin sanottuja assemble-go kääntäjiä. Ainoa
+mitä ne osasivat tehdä oli lähdekoodin kääntäminen suoraan muistiin ja sen suorittaminen ~\cite[2]{Salomon93}.
+Pian ymmärrettiin kuitenkin tarve kohdekoodin kirjoittamiseksi tiedostoon. Tämä mahdollisti
+ohjelmoinnin jakamisen useaan tiedostoon sekä aiemmin kirjoitettujen kirjastojen käyttämisen (ibid).
+
+EDSAC (electronic delay storage automatic calculator) oli yksi ensimmäisiä sähköisiä
+tietokoneita. Sen kehitettiin Cambridgen yliopistossa ja saatiin käyttövalmiiksi vuonna 1949 ~\cite[7]{Salomon93}.
+EDSAC:lle kehitettiin assemblykääntäjä Initial Order, joka toimi laitteiston lukumuistissa (ROM) (ibid).
+
 Koska ennen ensimmäisiä assemblykääntäjiä ei ollut mitään ohjelmointia
-helpottavia työkaluja, tuli ensimmäiset kääntäjät ohjelmoida suoraan konekielellä.
-Esimerkiksi yksi ensimmäisistä assemblykääntäjistä, vuonna 1949 valmistunut EDSAC-tietokoneen
-assemblykääntäjä toteutettiin tällä tavalla. % VIITE
+helpottavia työkaluja, tuli ne ohjelmoida suoraan konekielellä.
+Myöhemmin kääntäjiä pystyttiin ohjelmoimaan aiempia kääntäjiä apuna käyttäen ja
+niihin oli helpompi lisätä ominaisuuksia.
+
+EDSAC:n kehittäjä Maurice Wilkes ehdotti myös tunnusten (label) sekä makrojen
+käyttöä symbolisten konekielten kääntäjiin ~\cite[7]{Salomon93}. Tunnusten avulla,
+joita hän kutsui liukuviksi osoitteiksi, ohjelmoijan ei enää tarvinnut
+pitää kirjaa koodirivien osoitteista.
+
+
+
 Vaikka korkean tason kielten kääntäjät alkoivat kehittyä
 lähes heti ensimmäisten assemblykääntäjien valmistuttua, pysyi symbolisilla
-konekielillä ohjelmointi pitkään suosiossa. Alkuun korkean tason kielten
-automaattista käännöstyötä pidettiin lähinnä teoreettisena tutkimisena
-%VITTU EIHÄN TÄÄ KUULU TÄHÄNN KAPPALEESEEN!!!
-ja käytännössä kaikki ohjelmoijat uskoivat ettei automaattisesta koodin generoinnista
-tule ikinä tarpeeksi tehokasta oikeaan ohjelmointiin~\cite[61]{Knuth76}.
-
-
+konekielillä ohjelmointi pitkään suosiossa. 
 Vaikka nykyaikaiset korkean tason ohjelmointikielien kääntäjät tuottavat
 hyvin optimoitua koodia, on hyvän ohjelmoijan kirjoittama symbolinen
-konekieli silti lähes poikkeuksetta parempaa. Tämän takia symbolisia %LÄHDE PYYDETTY aiempi lause, MUTTA TYÖLÄÄMPÄÄ
+konekieli silti usein tehokkaampaa. Tämän takia symbolisia %LÄHDE PYYDETTY aiempi lause, MUTTA TYÖLÄÄMPÄÄ
 konekieliä käytetään jonkin verran matalan tason ohjelmoinnin lisäksi
 suurta laskentatehoa vaativien ohjelmien optimointiin.
 %
+
 Ennen symbolisten konekielten kehitystä ohjelmointi tapahtui kirjoittamalla
-laitteistoriippuvaista tietyn prosessorin ymmärtämää binäärikoodia. Siitä huolimatta,
+laitteistoriippuvaista tietyn prosessorin ymmärtämää konekieltä. Siitä huolimatta,
 että käskykannat olivat nykyiseen verrattuna suhteellisen yksinkertaisia, 
 oli ohjelmointi hidasta ja työlästä. Tietokoneiden kehittyessä ja ohjelmien
 monimutkaistuessa tarve ohjelmointikielille kasvoi. Symboliset konekielet
 kehitettiin varhain ja nykyisin lähes kaikki sovellusohjelmat kirjoitetaan
 korkean tason ohjelmointikielillä.
-% Missä?
-% Milloin?
 
 \subsection{Assemblykääntäjien toiminnasta ja toteutuksesta}
 %Tämä tekee matalan tason ohjelmointikielistä eli (symbolisista) konekielistä täysin laitteistoriippuvaisia.
@@ -318,7 +348,7 @@ ja saman aiheen parissa, eivät he työskennelleet yhdessä. Rutishauser julkaisi
 vuonna 1952 artikkelin, jossa hän kuvasi hypoteettisen tietokoneen sekä siinä toimivan
 kääntäjän kehittämälleen ohjelmointikielelle ~\cite[30]{Knuth76} . Julkaisu oli merkittävä, sillä
 siinä kuvattiin ensimmäistä kertaa menetelmä kääntäjien toteuttamisesta
-sekä koodin generoinnista (Ibid). % mitä eroa curryn algoritmeihin nähden?? RU52
+sekä koodin generoinnista (ibid). % mitä eroa curryn algoritmeihin nähden?? RU52
 
 Myös Corrando Böhm kehitti samaan aikaan itsenäisest ohjelmointikieltä sekä
 tämän kääntäjää. Hänen julkaisunsa oli Rutishauserin julkaisua vieläkin
@@ -482,11 +512,11 @@ Jo 1950-luvun lopulla sekä käytettävissä olevien ohjelmointikielten että erilais
 määrä oli kasvanut merkittävästi. Korkean tason ohjelmointikielillä
 ohjelmoinnista oli tullut yleistä ja sen hyödyt olivat laajalti tunnettuja ~\cite[12]{Strong58}.
 Uusien laitteistojen kehitys oli nopeaa ja tyypillisesti laitteistoja uusittiin
-viimeistään viiden vuoden välein (Ibid). Vaikka korkean tason ohjelmointikielten
+viimeistään viiden vuoden välein (ibid). Vaikka korkean tason ohjelmointikielten
 käyttö vähensi tarvetta sovellusten uudelleenohjelmoinnille, muodostui kääntäjien
 kehitys merkittäväksi ongelmaksi. Tehokkaan kääntäjän kehittämiseen kuluva
 aika oli samaa suuruusluokkaa laitteistojen käyttöiän kanssa,
-joten hyvien kääntäjien valmistuttua oli laitteisto usein jo vanhentunut (Ibid).
+joten hyvien kääntäjien valmistuttua oli laitteisto usein jo vanhentunut (ibid).
 Ongelmaa koitettiin välttää erilaisilla käännöstekniikoilla. Yleiseksi tavaksi
 muodostui ristiinkääntäminen uusille laitteistoille.
 
@@ -532,7 +562,7 @@ kääntäjien avulla kääntää mille tahansa laitteistolle.
 Idea tunnettiin alunperin nimellä UNCOL (UNiversal Compuiter Oriented Language) ~\cite[14]{Strong58}.
 UNCOL ei ollut niinkään suunniteltu ohjelmointikieli, vaan pikemminkin idea välikielestä,
 jonka avulla kääntäjiä voisi toteuttaa pienemmällä vaivalla. Siitä puhuttiin jo vuonna
-1954, eikä konseptin alkuperäistä keksijää tunneta (Ibid).
+1954, eikä konseptin alkuperäistä keksijää tunneta (ibid).
 
 Mikäli jonkinlainen UNCOL --- kaikkien kääntäjien tuntema välikieli --- olisi olemassa,
 vähenisi ristiinkääntämiseen tarvittavien kääntäjien määrä huomattavasti. Jos
@@ -561,12 +591,12 @@ määritellään matalan tason välikieli, jota hän kutsuu SML:ksi (Simple Machine La
 Kaikilla laitteilla toimivan välikielen tulisi olla täysin laitteistoriippumaton. 
 Laitteistoriippumattomalla kielellä tarkoitetaan, että se voidaan kääntää tehokkaasti
 mille tahansa laitteistolle ~\cite[1060]{Brown72}. Koska erilaisia laitteistoja
-on hyvin suuri määrä, ei mikään kieli ole täysin laitteistoriippumaton (Ibid).
+on hyvin suuri määrä, ei mikään kieli ole täysin laitteistoriippumaton (ibid).
 Näin ollen kaikille laitteistoille käännettävän välikielen toteutus on
 melko utopistista. Useat laitteistot ovat kuitenkin tarpeeksi samankaltaisia
 tehokkaan välikielen kehittämiseksi, mikäli tavoiteltujen kohdelaitteistojen
 määrää pienennetään. Suurin osa eniten käytetyistä tietokoneista toimii
-niin samankaltaisesti, että hyvä välikieli kykenee kattamaan niistä suurimman osan (Ibid).
+niin samankaltaisesti, että hyvä välikieli kykenee kattamaan niistä suurimman osan (ibid).
 
 
 %tähän väliin että speetjens ehdotti UMCOLia.
@@ -578,7 +608,7 @@ voisi välikieli olla myös korkean tason ohjelmointikieli, jonka kohdekielenä
 ei olisi mikään konekieli vaan kyseinen toinen korkean tason ohjelmointikieli ~\cite[1060]{Brown72}.
 Koska tällainen tekniikka tuottaa käytännössä aina huonotasoista koodia,
 käännetään välikielet lähes poikkeuksetta, vaikka olisivatkin korkean tasoisia
-ohjelmointikieliä, suoraan konekieliksi (Ibid).
+ohjelmointikieliä, suoraan konekieliksi (ibid).
 
 
 
@@ -778,11 +808,11 @@ pienemmällä vaivalla, mikäli alkuperäisen kääntäjän rakenne olisi eri tavalla to
 \subsection{Ketjuttamista helpottava kääntäjärakenne}
 Vielä 1970-luvulla kääntäjät kirjoitettiin suurimmaksi osaksi yhtä lähdekieltä ja laitteistoa varten ~\cite[38]{Guilan02}.
 1980-luvulla ruvettiin kehittämään enenevässä määrin kääntäjäkokonaisuuksia, jotka kykenevät 
-kääntämään useita eri lähdekieliä (Ibid). Tällaisissa systeemeissä kääntäjän sisäinen rakenne oli 
+kääntämään useita eri lähdekieliä (ibid). Tällaisissa systeemeissä kääntäjän sisäinen rakenne oli 
 jaettu lähdekielestä riippuvaiseen etuosaan (frontend) sekä näiden jakamaan takaosaan (backend).
 Tämän kaltainen rakenne vähensi tarvetta kirjoittaa uutta koodia ja näin ollen pienensi kääntäjien kehityksestä
 koituvia kustannuksia. 80-luvun lopulla oli jo hyväksytty ajatus siitä, että kääntäjien
-kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sekä kilpailukykyisempää (Ibid).
+kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sekä kilpailukykyisempää (ibid).
 
 %tää nyt ei ihan oo usealle eri kielelle mutta ehkä usealle eri laitteistolle
 Eräs tyypillinen tapa kääntäjien ohjelmoinnissa onkin jakaa sen sisäistä rakennetta sekä

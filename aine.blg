@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: aine.aux
 The style file: apalike.bst
 Database file #1: lahteet.bib
-You've used 22 entries,
+You've used 23 entries,
             1935 wiz_defined-function locations,
-            623 strings with 6695 characters,
-and the built_in function-call counts, 8181 in all, are:
-= -- 807
-> -- 280
+            629 strings with 6946 characters,
+and the built_in function-call counts, 8708 in all, are:
+= -- 849
+> -- 328
 < -- 22
-+ -- 108
-- -- 92
-* -- 643
-:= -- 1426
-add.period$ -- 71
-call.type$ -- 22
-change.case$ -- 149
-chr.to.int$ -- 22
-cite$ -- 22
-duplicate$ -- 333
-empty$ -- 602
-format.name$ -- 120
-if$ -- 1605
++ -- 126
+- -- 110
+* -- 694
+:= -- 1525
+add.period$ -- 74
+call.type$ -- 23
+change.case$ -- 162
+chr.to.int$ -- 23
+cite$ -- 23
+duplicate$ -- 347
+empty$ -- 625
+format.name$ -- 139
+if$ -- 1700
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 27
-newline$ -- 115
-num.names$ -- 66
-pop$ -- 141
+missing$ -- 29
+newline$ -- 120
+num.names$ -- 69
+pop$ -- 158
 preamble$ -- 1
-purify$ -- 156
+purify$ -- 170
 quote$ -- 0
-skip$ -- 253
+skip$ -- 262
 stack$ -- 0
-substring$ -- 577
-swap$ -- 41
+substring$ -- 589
+swap$ -- 42
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
+type$ -- 122
 warning$ -- 0
-while$ -- 72
+while$ -- 74
 width$ -- 0
-write$ -- 286
+write$ -- 298
