@@ -14,7 +14,7 @@
 %\renewcommand\@biblabel[1]{[#1]}
 %\makeatother
 
-\title{Otsikko}
+\title{}
 \author{Arttu Kilpinen}
 \date{\today}
 
@@ -22,7 +22,7 @@
 
 \numberofpagesinformation{\numberofpages\ sivua}
 \classification{\protect{\ \\
-Software and its engineering -> software notations and tools -> Compilers}}
+Software and its engineering $ \rightarrow $ software notations and tools $ \rightarrow $ Compilers}}
 
 \keywords{Historia, Kääntäjät, Symbolinen konekieli, Ohjelmointikielet, Ketjutus, Ristiinkääntäminen, Välikielet}
 
@@ -35,20 +35,19 @@ Software and its engineering -> software notations and tools -> Compilers}}
 
 Symboliset konekielet olivat ensimmäisiä laitteistojen ymmärtämistä konekielistä 
 poikkeavia ohjelmointikieliä. Niiden kääntäjät, assemblykääntäjät, kääntävät symbolisille
-konekielille kirjoitettuja ohjelmia konekielisiksi ohjelmiksi. Täsmällisten
-kuvausjärjestelmien kehitys sekä koodin generointi mahdollistivat
-tehokkaampien ohjelmointikielten käytön ohjelmoinnissa. Nykyisin käytössä olevat
-korkean tason ohjelmointikielet kehittyivät hiljalleen kuvausjärjestelmien
-kehittyessä ja syrjäyttivät symbolisella konekielillä ohjelmoinnin lähes
-kokonaan. 
+konekielille kirjoitettuja ohjelmia konekielisiksi ohjelmiksi. Nykyisin käytössä olevat
+korkean tason ohjelmointikielet kehittyivät hiljalleen ja syrjäyttivät
+symbolisella konekielillä ohjelmoinnin lähes kokonaan. 
 
 Ensimmäiset kääntäjät tehtiin tarkasti tietylle lähde- ja kohdekielelle.
-Myöhemmin yleistyi käytäntö, jossa käännös toteutetaan jonkin välikielen
+Myöhemmin yleistyi käytäntö, jossa käännetään jonkin välikielen
 kautta. Välikieliä käyttäen kääntäjän rakenne on jaettu välikielen
 käännöksestä vastaavaan etuosaan sekä konekielen tuottamisesta
-vastaavaan takaosaan. Kehittyneet kääntäjärakenteet mahdollistavat
-myös niiden ketjuttamisen uusille laitteistoille.
-  
+vastaavaan takaosaan.
+Välikielten ja ristiinkääntämisen kehitys
+helpotti myös kääntäjien ketjuttamista uusille
+laitteistoille.
+
 \end{abstract}
 
 \mytableofcontents
@@ -60,15 +59,24 @@ myös niiden ketjuttamisen uusille laitteistoille.
 %minkälaisessa yhteydessä tarkasteluun otettavat haasteet esiintyy.
 %kerro yleistajuisessa muodossa koko kirjoitelman kysymyksenasettelu juoni tulokset ja johtopäätökset.
 \section{Johdanto}
+% nopea johdanto ja määritelmät
+Kääntäjät ovat tietokoneohjelmia, jotka kääntävät lähdekielisen ohjelmakoodin
+kohdekieliseksi ohjelmaksi~\cite[1]{Bauer74}.
 Ohjelmointikielet sekä niitä ymmärtävät kääntäjät ja tulkit ovat keskeisessä asemassa
 ohjelmistotuotannossa. Kääntäjät mahdollistavat ohjelmien
 kirjoittamisen korkean tason ohjelmointikielillä sekä symbolisilla konekielillä.
 
+% Johdatus assykääntäjiin ja korkean tason kieliin
+Ennen korkean tason ohjelmointikielille kehitettyjä
+kääntäjiä oli käytössä vain symbolisia konekieliä ymmärtäviä ohjelmia,
+assemblykääntäjiä. Niiden avulla ohjelmoija kykeni käyttämään tekstuaalisia
+konekielisiä komentoja laitteiston ymmärtämien binääristen konekäskyjen sijaan.
+Näin ollen konekielinen ohjelmointi helpottui ja nopeutui. Myöhemmin symbolisten
+konekielten rinnalle kehittyi korkean tason ohjelmointikieliä. Symbolisista
+konekielistä poiketen niiden ohjelmointi oli laitteistoriippumatonta
+ja niiden kääntäminen oli huomattavasti monimutkaisempaa.
 
-%eiks tää nyt oo vähä irrallaan.
-Kääntäjät ovat tietokoneohjelmia, jotka kääntävät lähdekielisen ohjelmakoodin
-kohdekieliseksi ohjelmaksi~\citep[1]{Bauer74}.
-
+% ohjelmointikielten perustelut.
 Korkean tason ohjelmointikielten sekä symbolisten konekielten käyttö helpottavat ja nopeuttavat ohjelmointia.
 Niiden käyttäminen tekee ohjelmakoodista myös ymmärrettävämpää ja
 helpompilukuista. Yleisesti ottaen ohjelmointikielen ymmärrettävyys kasvaa abstraktiotason
@@ -76,48 +84,38 @@ kasvaessa. Esimerkiksi matemaattisesti tutulla tavalla kirjoitetut aritmeettiset
 ovat ymmärrettävämpiä kuin vastaava laskenta symbolisella konekielellä ohjelmoituna.
 Lisäksi useat korkean tason ohjelmointikielet mahdollistavat --- mikäli
 tarvittavat kääntäjät ovat olemassa --- saman ohjelmakoodin käyttämisen useissa eri
-laitteistoissa. Koska eri laitteistoissa on erilaiset käskykannat, poistuu korkean
-tason ohjelmointikieliä käyttämällä tarve uudelleenohjelmoinnille. 
+laitteistoissa. 
 
-Symboliset konekielet sekä korkean tason ohjelmointikielet ovat lähes yhtä vanhoja kuin 
-ohjelmointikin. 
-%% Symboliset konekielet sekä korkean tason ohjelmointikielet ovat lähes yhtä vanhoja kuin
-%% ohjelmointikin. Ensimmäiset korkean tason ohjelmointikielten kääntäjät puolestaan ovat
-%% ohjelmointikieliä huomattavasti nuorempia, sillä ohjelmointikielten teoriaa kehitettiin
-%% vuosia ennen kuin ensimmäiset kääntäjät valmistuivat. Esimerkiksi ensimmäisenä korkean
-%% tason ohjelmointikielenä pidetty Plankalkül kehitettiin jo vuonna 1945, mutta sitä
-%% ymmärtävä kääntäjä valmistui vasta vuosikymmenien päästä. % vuonna 1972~\cite[????]{Knuth76}. %EI LÖYDY??? 
-%% %vois laittaa et "yritettiin valmistaa" tms.
+% Tähän myös jotain introa käännöstekniikoista cross, bootstrap.
+% välikielet
+Laitteistojen monipuolistuessa kääntäjiä tarvittiin yhä enemmän.
+Ristiinkääntämisestä, jossa käännettävä ohjelma toimii eri laitteistolla kuin sitä käännetään,
+tuli suosittua. Ristiin kääntämisen helpottamiseksi kehitettiin
+välikieliä. Niiden avulla tarvittavan ohjelmoinnin määrä saatiin pienemmäksi.
 
-%% Ennen korkeatasoisille lausekielille kehitettyjä
-%% kääntäjiä oli pitkään käytössä vain symbolisia konekieliä ymmärtäviä ohjelmia, % pitkään?
-%% assemblykääntäjiä. Korkean tason ohjelmointikielten kehityttyä saatiin myös niitä
-%% tukevia kääntäjiä valmistettua. Vuonna 1952 valmistunut AUTOCODEn kääntäjä oli
-%% yksi ensimmäisiä kaupallisessa ohjelmistotuotannossa käytettyjä korkean tason kielen
-%% kääntäjiä~\cite[42]{Knuth76}. % vähän irrallaan tää autocode tässä..
+Kääntäjien monimutkaistuessa niiden kuvaamiseksi kehitettiin erilaisia kaavioita.
+Yleisimmin kätetty T-kaavio kuvaa kääntäjiä hyvin korkealla tasolla.
+Niitä käyttäen voidaan kuitenkin kuvata monimutkaisiakin
+rakenteita helpolla ja ymmärrettävällä tavalla.
 
-%vaatii muutosta start
-%Vaikka kääntäjien tuottama kohdekieli on usein laitteiston ymmärtämää konekieltä
-%tai symbolista konekieltä, on myös olemassa kääntäjiä, jotka tuottavat jotakin
-%korkean taso lausekieltä. 
-
-% Tähän myös jotain introa käännöstekniikoista cross, bootstrap, parsereista jne
-% pitäis saada puoltoista sivua tekstiä
+Ketjuttamisen, tekniikan jossa jonkin korkean tason ohjelmointikielen
+kääntäjä kääntää itsensä, avulla kääntäjiä voidaan kehittää samalla
+ohjelmointikielellä jota ne kääntävät. Yhdistämällä ristiinkääntämisen
+ja ketjuttamisen, voidaan kääntäjiä siirtää tehokkaasti
+laitteistojen välillä. 
 
 %rakenne
-Tässä tutkielmassa käsitellään kääntäjien ja ohjelmointikielten historiaa. Kääntäjien
-toteutusta käsitellään karkealla tasolla. Luvut kaksi ja kolme käsittelevät lähinnä historiaa.
-Ensin käsitellään symbolisia konekieliä sekä assemblykääntäjiä. Kolmannessa luvussa 
-käydään läpi korkean tason ohjelmointikielten historiaa noin kahden vuosikymmenen
-ajalta. Luvussa läpikäydään useita kuvausjärjestelmiä Turingin formalismita FORTRAN:n julkaisuun.
-Luvusta neljä alkaen painopisteenä on kääntäjien toteutus karkealla tasolla. Ensin käsitellään
-Ristiinkääntämistä ja välikieliä. Luvussa viisi tutustutaan T-kaavioihin, joita apuna käyttäen
-luvussa kuusi käsitellään ketjutusta sekä kääntäjien rakennetta.
+Luvussa~\ref{assy} käsitellään assemblykääntäjien historiaa sekä toimintaa.
+Korkean tason ohjelmointikielten historiaa esitetään luvussa~\ref{korkea}.
+Läpi käydään merkittävien kielten ja kääntäjien kehitystä muutaman vuosikymmenen ajalta.
+Luku~\ref{välikielet} käsittelee ristiinkääntämistä ja välikieliä.
+T-kaaviot esitetään luvussa~\ref{t} ja niiden avulla kuvataan kääntäjien
+rakennetta sekä ketjuttamista luvussa~\ref{ketjutus}.
 Kääntäjien tarkempi toteutus ja vaihejako, kuten syntaktinen ja semanttinen
 analyysi jäävät tämän tutkielman ulkopuolelle.
 
 
-\section{Symbolinen konekieli ja assemblykääntäjät}
+\section{Symbolinen konekieli ja assemblykääntäjät \label{assy}}
 Erään määritelmän mukaan assemblykääntäjä on kääntäjä, joka kääntää
 symbolisella konekielellä kirjoitettuja komentoja konekielisiksi komennoiksi~\cite[1]{Salomon93}.
 Koska jokaisella laitteistolla on oma konekielensä ja tämä konekieli on myös ohjelmointikieli,
@@ -127,57 +125,49 @@ on korvattu ihmisille helpommin muistettavilla sanoilla eli symboleilla.
 
 \subsection{Ensimmäiset assemblykääntäjät}
 Ennen symbolisten konekielten kehitystä ohjelmoitiin vain
-laitteistoriippuvaista tietyn prosessorin ymmärtämää konekieltä. Siitä huolimatta,
+laitteistoriippuvaisilla konekielillä. Siitä huolimatta,
 että käskykannat olivat nykyiseen verrattuna suhteellisen yksinkertaisia, oli ohjelmointi
 hidasta ja työlästä. Symbolisten konekielten kehitys helpotti ohjelmointityötä ja
 vähensi virheiden määrää.
 
-Ensimmäiseet assemblykääntäjät olivat niin sanottuja assemble-go kääntäjiä. Ainoa
-mitä ne osasivat tehdä oli lähdekoodin kääntäminen suoraan muistiin ja sen suorittaminen~\cite[2]{Salomon93}.
+Ensimmäiset assemblykääntäjät olivat niin sanottuja assemble-go-kääntäjiä,
+jotka osasivat ainoastaan lähdekoodin kääntämisen suoraan muistiin ja sen suorittamisen~\cite[2]{Salomon93}.
 Pian ymmärrettiin kuitenkin tarve kohdekoodin kirjoittamiseksi tiedostoon. Tämä mahdollisti
 ohjelmoinnin jakamisen useaan tiedostoon sekä aiemmin kirjoitettujen kirjastojen käyttämisen (ibid).
-
-EDSAC (electronic delay storage automatic calculator) oli yksi ensimmäisiä sähköisiä
-tietokoneita. Sen kehitettiin Cambridgen yliopistossa ja saatiin käyttövalmiiksi vuonna 1949~\cite[7]{Salomon93}.
-EDSAC:lle kehitettiin assemblykääntäjä Initial Order, joka toimi laitteiston lukumuistissa (ROM) (ibid).
-
 Koska ennen ensimmäisiä assemblykääntäjiä ei ollut mitään ohjelmointia
 helpottavia työkaluja, tuli ne ohjelmoida suoraan konekielellä.
 Myöhemmin kääntäjiä pystyttiin ohjelmoimaan aiempia kääntäjiä apuna käyttäen ja
 niihin oli helpompi lisätä ominaisuuksia.
 
-EDSAC:n kehittäjä Maurice Wilkes ehdotti myös tunnusten (label) sekä makrojen
-käyttöä symbolisten konekielten kääntäjiin~\cite[7]{Salomon93}. Tunnusten avulla,
-joita hän kutsui liukuviksi osoitteiksi, ohjelmoijan ei enää tarvitsisi
+EDSAC (electronic delay storage automatic calculator) oli yksi ensimmäisiä sähköisiä
+tietokoneita. Se kehitettiin Cambridgen yliopistossa ja saatiin käyttövalmiiksi vuonna 1949~\cite[7]{Salomon93}.
+EDSAC:lle kehitettiin assemblykääntäjä Initial Order, joka toimi laitteiston lukumuistissa (ROM) (ibid).
+EDSAC:n kehittäjä Maurice Wilkes ehdotti ensimmäisenä  tunnusten (label) sekä makrojen
+käyttöä symbolisten konekielten kääntäjiin~\cite[7]{Salomon93}. Tunnusten,
+joita hän kutsui liukuviksi osoitteiksi, avulla ohjelmoijan ei enää tarvitsisi
 pitää kirjaa koodirivien osoitteista.
 
-IMB 704/702 tietokoneet valmistuivat 1956. Niiden ensimmäinen assemblykääntäjä
+IBM 704/702 tietokoneet valmistuivat 1956. Niiden ensimmäinen assemblykääntäjä
 UASAP-1 oli alkuun hyvin yksinkertainen. Se kykeni kääntämään vain
-tekstuaalisia symbolisia konekäskyjä yksi yhteen, ennalta määrättyjen
+tekstuaalisia symbolisia konekäskyjä yksi yhteen ennalta määrättyjen
 sääntöjen perusteella~\cite[10]{Rosen64}. Myöhemmin UASAP:iin ohjelmoitiin tuki myös tunnusten
 ja makrojen käyttämiseksi~\cite[8]{Salomon93}.
-
-Melwin Conwayn julkaisema UNISAP kääntäjä oli ensimmäinen, joka mahdollisti %univacille
+Melwin Conwayn vuonna 1958 julkaisema UNIVAC:n assemblykääntäjä UNISAP oli ensimmäinen, joka mahdollisti
 kahden erilaisen tunnuksen käytön, paikallisen sekä globaalin~\cite[37]{Salomon93}.
 
-Vaikka korkean tason kielten kääntäjiä alettiin kehittää
-pian ensimmäisten assemblykääntäjien valmistuttua, pysyi symbolisilla
-konekielillä ohjelmointi pitkään suosiossa. 
-Nykyaikaiset korkean tason ohjelmointikielien kääntäjät tuottavat %lähde tähänkin
+Korkean tason kielten kääntäjiä alettiin kehittää
+pian ensimmäisten assemblykääntäjien valmistuttua,
+mutta symbolisilla konekielillä ohjelmointi pysyi pitkään suosiossa.
+Vaikka nykyaikaiset korkean tason ohjelmointikielien kääntäjät tuottavat %lähde tähänkin
 hyvin optimoitua koodia, on hyvän ohjelmoijan kirjoittama symbolinen
 konekieli silti usein tehokkaampaa. Tämän takia symbolisia %LÄHDE PYYDETTY
 konekieliä käytetään jonkin verran matalan tason ohjelmoinnin lisäksi
 suurta laskentatehoa vaativien ohjelmien optimointiin.
 
 \subsection{Assemblykääntäjien toiminta}
-%% -object file sivu 3
-%% - makrot jo 50 luvulla s 109 makrot on direktiivejä mutta monimutkaisia joten ajatellaan ominaisuuksina
-%% - s110
-%% -0 pass meinaa makrojen suoritusta. 121
-
 %avaus
 Assemblykääntäjät ymmärtävät jotakin symbolista konekieltä ja
-tuottaa tästä konekielisen ohjelman. %pitäs eka linkkaa
+tuottavat tästä konekielisen ohjelman. %pitäs eka linkkaa
 Symboliset konekielet ovat matalan tason laiteriippuvaisia ohjelmointikieliä.
 Niitä käännetään lähdekoodista yksinkertaisin, ennalta määrätyin ehdoin konekielelle.
 Jokaisella symbolisella konekäskyllä on siis yksiselitteinen vastine konekielellä, %pitäiskö vielä täsmentää että opcode eikä koko konekäsky
@@ -193,27 +183,31 @@ ohjelmaan jollain tavalla, esimerkiksi varaamalla tilaa muuttujina käytettäville
 muistipaikoille. Direktiivit pikemminkin suoritetaan kuin käännetään~\cite[13]{Salomon93}. 
 Jokainen lähdetiedoston rivi sisältää joko symbolisen konekäskyn tai direktiivin mikäli kääntäjä
 niitä tukee.
+%makrot vois ehkä yhdistää direktiivikappaleeseen.
+Jotkin assemblykääntäjät tukevat myös niin sanottuja makroja.
+Makrot ovat oikeastaan monimutkaisia direktiivejä, jotka ennen
+varsinaista koodin kääntöä käsitellään ja niistä tuotetaan
+symbolista konekieltä~\cite[109]{Salomon93}.
 
 %labelit
-Symbolisten konekieleten kääntäminen tapahtuu suurimmaksi osaksi yksi yhteen edellä kuvatulla
-tavalla. Poikkeuksen muodostaa tunnukset, jotka käsitellään ohjauskooditaulukosta
-poiketen dynaamisessa muistirakenteessa. Tunnukset ovat symbolisia nimiä muistipaikoille
-tai muuttujina käytetyt muistipaikat. Niiden arvot määräytyvät vasta käännöksen yhteydessä.
+Symbolisten konekielten kääntäminen tapahtuu suurimmaksi osaksi yksi yhteen edellä kuvatulla
+tavalla. Poikkeuksen muodostavat tunnukset, jotka käsitellään ohjauskooditaulukosta
+poiketen dynaamisessa muistirakenteessa. Tunnukset ovat symbolisia nimiä muistipaikoille.
+Niiden arvot määräytyvät vasta käännöksen yhteydessä.
 Tunnusten avulla muistipaikat voidaan nimetä eikä ohjelmoijan tarvitse pitää
-kirjaa konekäskyjen osoitteista. Tunnuksia voi myös käyttää muuttujien tapaan.
-Useissa ohjelmointikielissä on direktiivi, jolla voidaan varata muistia tietyn
-tunnuksen osoittamaan paikkaan. 
-%label ja konekäsky ero. staattinen-dynaaminen
+kirjaa konekäskyjen osoitteista. Tunnuksiin sidottuja muistipaikkoja voidaan myös käyttää muuttujina.
+Useissa ohjelmointikielissä on direktiivi, jolla voidaan varata muistia ja viitata
+siihen tunnuksen avulla.
 
 %selventävä kuvaesimerkki.
 Kuva~\ref{TTKesim} selventää symbolisten konekielten määrittelemien symbolien
-sekä ohjelmoijan määrittelemien tunnisteiden eron. Esimerkkikoodi on TTK91 
-virtuaaliprosessorille~\cite[]{Ttk91} tehty ohjelma, joka tulostaa käyttäjälle kokonaisluvut
-[0, 5]. Keltaisella pohjalla olevat symbolit ovat niin sanottuja tunnisteita,
+sekä ohjelmoijan määrittelemien tunnusten eron. Esimerkkikoodi on
+TTK91-virtuaaliprosessorille~\cite[]{Ttk91} tehty ohjelma, joka tulostaa käyttäjälle kokonaisluvut
+nollasta viiteen. Keltaisella pohjalla olevat symbolit ovat tunnuksia,
 joilla voi olla eri arvo käännöskerrasta ja kääntäjästä riippuen.
 Harmaalla pohjalla oleva koodi käännetään siis täysin ennalta määrätysti.
 Tunnukset määritellään käyttämällä niitä konekäskyn vasemmalle puolelle varatussa
-tunnuskentässä. Käyttö puolestaan tapahtuu kun tunnukseen viitataan konekäskyn operandina~\cite[17]{Salomon93}.
+tunnuskentässä. Käyttö puolestaan tapahtuu, kun tunnukseen viitataan konekäskyn operandina~\cite[17]{Salomon93}.
 
 \begin{figure}[H]
   \ \newline
@@ -224,15 +218,9 @@ tunnuskentässä. Käyttö puolestaan tapahtuu kun tunnukseen viitataan konekäskyn o
   \end{center}
 \end{figure}
 
-%literaalit sivu 43
 
-%makrot vois ehkä yhdistää direktiivikappaleeseen.
-Jotkin assemblykääntäjät tukevat myös niin sanottuja makroja.
-Makrot ovat oikeastaan monimutkaisia direktiivejä, jotka ennen
-varsinaista koodin kääntöä käsitellään ja niistä tuotetaan
-symbolista konekieltä~\cite[109]{Salomon93}. Makroilla on
 
-\section{Historiaa korkean tason kielten kääntäjistä}
+\section{Historiaa korkean tason kielten kääntäjistä \label{korkea}}
 
 %tähän joku luonnollinen siirtymä assyistä korkeaan
 Korkean tason ohjelmointikielellä tarkoitetaan tässä tutkielmassa ohjelmointikieltä,
@@ -245,7 +233,7 @@ siis muutakin, kuin mekaanista sanojen vaihtamista ennalta määrättyjen sääntöjen
 
 % Kerrotaan korkean tason kielten hyödyistä ja miksi niitä tarvitsee
 \subsection{Täsmällisten kuvausjärjestelmien kehitys}
-Tietojenkäsittelytieteessä on aina koitettu kuvailla ohjelmien suoritusta
+Tietojenkäsittelytieteessä kuvataan ohjelmien suoritusta
 ja algoritmeja täsmällisesti. Ennen formaaleja merkintätapoja ja korkean tason ohjelmointikieliä ainoa
 täsmällinen tapa algoritmien kuvaamiseksi oli niiden kirjoittaminen konekielellä.
 Alan Turingin tunnetussa julkaisussa~\cite[]{Turing36} esitettiin 
@@ -254,17 +242,16 @@ Sen yhteydessä määriteltiin myös matemaattinen formalismi, jolla automaatin
 toimintaa voitiin täsmällisesti kuvailla. Vaikka esitystapa oli vaikea ja esitelty
 automaatti hypoteettinen,
 se edusti Alonzo Churchin merkintätavan~\cite[]{Church36} ohella kehittyneintä formaalia
-kuvausta, 'kieltä', joka siihen aikaan oli olemassa.
+laskennan kuvausta, 'kieltä', joka siihen aikaan oli olemassa.
 
 %PLANKAKÜL
-Toisen maailmansodan jälkeen vuonna 1945 saksalainen Konrad Zuse aloitti
+Vuonna 1945 saksalainen Konrad Zuse aloitti
 tietokoneohjelmien kuvailuun tarkoitetun kielen Plankalkülin kehittämisen~\cite[8]{Knuth76}.
 Zusen sanoin Plankalkülin tarkoitus oli luoda puhtaasti formaali esitystapa
 mille tahansa laskentaongelmalle~\cite[10]{Knuth76}.
 Plankalkülissa voidaan määritellä aritmetiikan ja ohjausrakenteiden lisäksi
-rajaton määrä sisäkkäisiä tietorakenteita ja Zusen työhön viitataankin
+rajaton määrä sisäkkäisiä tietorakenteita, ja Zusen työhön viitataankin
 usein ensimmäisenä korkean tason ohjelmointikielenä.
-
 Vaikka kyseessä oli huomattavan edistyksellinen järjestelmä, se ei
 kuitenkaan vaikuttanut ohjelmointikielten kehitykseen juuri lainkaan,
 sillä artikkeli julkaistiin vasta vuonna 1972. Vaikka Plankalkülille toteutettiinkin
@@ -276,8 +263,8 @@ Samoihin aikoihin Zusen kanssa myös Yhdysvaltalaiset Herman Goldstine ja
 John von Neumann kehittivät laskennallista formalismia. Heidän ratkaisunsa
 algoritmien ja tietokoneohjelmien kuvaamiseen oli varsin erilainen.
 Von Neumann ja Goldstine esittivät ratkaisuksi lohkokaaviota (flow diagram),
-esitystapaa jossa ohjelmat kuvataan nuolien ja laatikoiden avulla~\cite[16]{Knuth76}.
-Lohkokaaviot esitellyt artikkeli~\cite{Goldstine47} saavutti suuren lukijakunnan
+esitystapaa, jossa ohjelmat kuvataan nuolien ja laatikoiden avulla~\cite[16]{Knuth76}.
+Lohkokaaviot esitellyt artikkeli~\cite[]{Goldstine47} saavutti suuren lukijakunnan
 ja sillä oli suuri vaikutus ohjelmointikielten kehitykseen~\cite[16]{Knuth76} .
 
 
@@ -312,13 +299,13 @@ Millekään aiemmin mainituista ohjelmointikielistä ei niiden julkaisun yhteydessä
 toteutettu kääntäjiä. Nämä kielet toimivat ohjelmoijien käsitteellisenä apuna auttaen
 ohjelmien suunnittelussa, mutta jättäen toteutuksen ihmisille. Tästä huolimatta
 ne olivat merkittäviä askeleita kohti parempia ohjelmointikieliä sekä
-niiden kääntäjiä. Ilman täsmällisiä esitystapoja ei koodin generointi eli
-varsinainen käännöksen tai tulkkauksen suorittaminen ikinä olisi voinut tulla mahdolliseksi.
+niiden kääntäjiä. Ilman täsmällisiä esitystapoja ei koodin generointi, eli
+varsinainen käännöksen tai tulkkauksen suorittaminen, ikinä olisi voinut tulla mahdolliseksi.
 
 % MAUCHLY 
-Ensimmäinen korkean tason ohjelmointikieli, joka toteutettiin oli Short Code .
-Sitä kehitti John W. Mauchly vuonna 1949 ja William F. Schmitt toteutti sille tulkin~\cite[23]{Knuth76}.
-Tulkki toimi alkuun BINAC-tietokoneella mutta se ohjelmoitiin myöhemmin myös UNIVAC:lle.
+Ensimmäinen korkean tason ohjelmointikieli joka toteutettiin oli Short Code.
+Sitä kehitti John W. Mauchly ja William F. Schmitt toteutti sille tulkin vuonna 1949~\cite[23]{Knuth76}.
+Tulkki toimi alkuun BINAC-tietokoneella, mutta se ohjelmoitiin myöhemmin myös UNIVAC:lle.
 Yksityiskohtia Short Coden toiminnasta ei ikinä julkaistu, joten sen tarkemmasta
 toiminnasta ei ole tietoa. Vuonna 1955 julkaistussa ohjelmoijille tarkoitetussa
 manuaalissa kerrotaan kuitenkin kuinka ohjelmaa voidaan käyttää. % RR55 Ei löydy
@@ -329,19 +316,19 @@ tulkkasi vastaavat toiminnot ajetulle laitteistolle.
 % RUTISHAUER & BÖHM
 1950-luvun alussa Heiniz Rutishauser ja Corrado Böhm työskentelivät Zürichin
 teknillisessä yliopistossa Sveitsissä. Vaikka he työskentelivät samassa paikassa
-ja saman aiheen parissa, eivät he työskennelleet yhdessä. Rutishauser julkaisi
+ja saman aiheen parissa, he tekivät töitä itsenäisesti. Rutishauser julkaisi
 vuonna 1952 artikkelin, jossa hän kuvasi hypoteettisen tietokoneen sekä siinä toimivan
 kääntäjän kehittämälleen ohjelmointikielelle~\cite[30]{Knuth76} . Julkaisu oli merkittävä, sillä
 siinä kuvattiin ensimmäistä kertaa menetelmä kääntäjien toteuttamisesta
 sekä koodin generoinnista (ibid). % mitä eroa curryn algoritmeihin nähden?? RU52
 
-Myös Corrando Böhm kehitti samaan aikaan itsenäisest ohjelmointikieltä sekä
+Myös Corrado Böhm kehitti samaan aikaan itsenäisesti ohjelmointikieltä sekä
 tämän kääntäjää. Hänen julkaisunsa oli Rutishauserin julkaisua vieläkin
-merkittävämpi, sillä hän oli toteuttanut kääntäjän omalla kielellänä~\cite[36]{Knuth76}.
+merkittävämpi, sillä hän oli toteuttanut kääntäjän omalla kielellään~\cite[36]{Knuth76}.
 Böhmin kieli ei kuitenkaan osannut käsitellä muita kuin positiivisia
 kokonaislukuja, joten sen käyttöarvo jäi melko pieneksi. Kääntäjien
 teorian kehityksen kannalta se oli kuitenkin korvaamaton. Böhmin kääntäjä
-kykeni tarkistamaan koodin syntaksia lineaarisessa ajassa kun Rutishauserin
+kykeni tarkistamaan koodin syntaksia lineaarisessa ajassa, kun Rutishauserin
 kääntäjä puolestaan toimi neliöisessä ajassa~\cite[40]{Knuth76}. Lisäksi Böhmin kääntäjä hallitsi matemaattisten
 operaattoreiden sidontajärjestyksen, sekä osasi käsitellä sulkeita aritmeettisissa 
 lausekkeissa. Böhm oli myös ensimmäinen, joka todisti 
@@ -349,7 +336,7 @@ matemaattisesti ohjelmointikielensä voivan laskea minkä tahansa laskettavan funk
 %rutishauser and böhm had had a considerable advantage over glennie in that they had designed theri own machine code
 
 
-% VITTU MITÄ PASKAA START
+% VITTU MITÄ PASKAA
 Vaikka Rutishauser ja Böhm olivat kumpikin valmistaneet %vittu oliko??
 omat kääntäjänsä, pidetään ensimmäisenä oikeana kääntäjänä silti
 Alick E. Glennien 1952 valmistamaa AUTOCODE-ohjelmistoa~\cite[42]{Knuth76}. Aiemmista kääntäjistä poiketen
@@ -359,12 +346,6 @@ käyttökelpoisten ohjelmien tekemiseen~\cite[42]{Knuth76}.
 
 %% --- vaikka olikin kokeneille ohjelmoijille tarkoitettu~\cite[Knuth74]
 %% --- käytettiin, kuten tarkoitus oli, oikeaan ohjelmointiin.
-
-%VITTU MITÄ PASKAA END
-
-%Murray käytti ensimmäisenä sanaa compiler
-
-% EHKÄ NÄMÄ VIELÄ OMIKSI LUVUIKSEEN
 
 %FORTRAN Tää koko fortran on aika perseestä kans..
 Vuoden 1954 alussa John Backus rupesi kehittämään kokoamansa kehittäjäryhmän kanssa
@@ -376,8 +357,8 @@ Ryhmän julkaisu alkoi painottamalla sitä tosiasiaa, että FORTRAN oli tehokas. Ai
 valita helpon ohjelmoinnin ja hitaan suorituksen tai työlään ohjelmoinnin ja nopean
 suorituksen väliltä, mutta julkaisun jälkeen FORTRAN tarjoaisi parhaat
 puolet molemmista~\cite[1]{IBM54}. %IB54 EN OO VIEL LUKENU MUT MENKÖÖ
-FORTRAN 0-dokumentissa on myös ensimmäinen yritys esittää ohjelmointikielen %mikä vittu on fortran 0 ;:DD
-kielioppi täsmällisesti. Tätä voidaan pitää Backuksen myöhemmin esittelemän kielioppimuodon
+FORTRAN 0-dokumentti sisältää myös ensimmäisen yrityksen esittää ohjelmointikielen %mikä vittu on fortran 0 ;:DD
+kielioppi täsmällisesti. Tätä voidaan pitää Backuksen myöhemmin esittämän kielioppimuodon
 Backus Naur Formin (BNF) edeltäjänä.
 %ei oltu vielä implementoitu. Työhen meni 2.5 vuotta!!!
 
@@ -390,7 +371,7 @@ Se oli esimerkiksi ensimmäinen ohjelmointikieli, jossa muuttujien nimet
 voivat olla useamman merkin pituisia~\cite[62]{Knuth76}. %entä ass kielten tunnukset t. wikla
 
 Ensimmäisen julkaisun jälkeen FORTRANissa oli kuitenkin useita ongelmia.
-Virheitä oli paljon ja eräs FORTRAN:n kehittäjistä, Saul Rosen, %OLIKO SAUL ROSEN kehittäjä!?
+Virheitä oli paljon, ja eräs FORTRAN:n kehittäjistä, Saul Rosen, %OLIKO SAUL ROSEN kehittäjä!?
 %OLIKO bugeja edes paljon vai viitattiinko tossa aikaan ennen julkaisua perkele?!
 sanoikin ettei uskonut FORTRAN:n ikinä tulevan toimimaan~\cite[4????]{Rosen64}.
 Vaikeuksista huolimatta FORTRAN:sta tuli hyvin suosittu ja sitä käytettiin
@@ -492,7 +473,7 @@ piirteet. Lisäksi taulukossa esitellään ohjelmointikielten nimet sekä päätekijät
 %%~\cite{Speetjens76}.
 
 %BURKSILLA OLI MYÖS INTERMEDIATE LANGUAGE!
-\section{Välikielet ja ristiinkääntäminen}
+\section{Välikielet ja ristiinkääntäminen \label{välikielet}}
 Jo 1950-luvun lopulla sekä käytettävissä olevien ohjelmointikielten että erilaisten laitteistojen
 määrä oli kasvanut merkittävästi. Korkean tason ohjelmointikielillä
 ohjelmoinnista oli tullut yleistä ja sen hyödyt olivat laajalti tunnettuja~\cite[12]{Strong58}.
@@ -514,14 +495,14 @@ sitä, että kohdelaitteisto on jokin muu kuin käännöstä suorittava laitteisto~\ci
 Ristiinkääntämisen mahdollistamiseksi tarvitaan siis kääntäjiä, jotka tuottavat konekieltä
 uudelle laitteistolle. Nämä ohjelmoidaan vanhalla laitteistolla jo olemassa olevia
 ohjelmointikieliä käyttäen. Täten saaduilla ristiinkääntäjillä pystytään kääntämään
-kääntäjiä, tai muita ohjelmia, jotka toimivat uudessa laitteistossa.
+kääntäjiä tai muita ohjelmia, jotka toimivat uudessa laitteistossa.
 
 %miten toi pilkku nyt menee?
 Ongelmana edellä mainitussa menetelmässä on suuri sekä kasvava joukko lähde- ja
 kohdekieliä. Jo yhden uuden kääntäjän toteuttaminen on varsin työlästä, joten uuden kääntäjän
-tekeminen kaikille halutuille laitteistoille vaatisi valtavasti aikaa ja resursseja.
+tekeminen kaikille halutuille laitteistoille vaatisi valtavasti resursseja.
 Oletetaan, että korkean tason ohjelmointikielten määrä on $N$ ja laitteistojen määrä on $M$.
-Tällöin tarvittavien kääntäjien määrä on $N \cdot M$ ja se kasvaa neliöisesti kohde- ja lähdekielien
+Tällöin tarvittavien kääntäjien määrä on $N \cdot M$, joka kasvaa neliöisesti kohde- ja lähdekielien
 kasvaessa. Kuva~\ref{nxm} esittää tilannetta jossa on kääntäjät kuudelle eri ohjelmointikielelle
 viiteen eri laitteistoon. 
 %loppuuko tää kappale vähän tönkösti?
@@ -544,7 +525,7 @@ toimimaan millä tahansa laitteistolla vain yhden uuden kääntäjän avulla. Uuden o
 kääntäjät kääntäisivät niitä kyseiselle välikielelle, josta se voitaisiin jo olemassa olevien
 kääntäjien avulla kääntää mille tahansa laitteistolle.
 
-Idea tunnettiin alunperin nimellä UNCOL (UNiversal Compuiter Oriented Language)~\cite[14]{Strong58}.
+Idea tunnettiin alun perin nimellä UNCOL (UNiversal Computer Oriented Language)~\cite[14]{Strong58}.
 UNCOL ei ollut niinkään suunniteltu ohjelmointikieli, vaan pikemminkin idea välikielestä,
 jonka avulla kääntäjiä voisi toteuttaa pienemmällä vaivalla. Siitä puhuttiin jo vuonna
 1954, eikä konseptin alkuperäistä keksijää tunneta (ibid).
@@ -591,7 +572,7 @@ konekielelle, voisi välikieli teoriassa olla hyvinkin korkeatasoinen. Jos jollek
 laitteistolle on olemassa hyvä jonkin korkean tason ohjelmointikielen kääntäjä,
 voisi välikieli olla myös korkean tason ohjelmointikieli, jonka kohdekielenä
 ei olisi mikään konekieli vaan kyseinen toinen korkean tason ohjelmointikieli~\cite[1060]{Brown72}.
-Koska tällainen tekniikka tuottaa käytännössä aina huonotasoista koodia,
+Koska tällainen tekniikka tuottaa käytännössä aina tehotonta koodia,
 käännetään välikielet lähes poikkeuksetta, vaikka olisivatkin korkean tasoisia
 ohjelmointikieliä, suoraan konekieliksi (ibid).
 
@@ -615,7 +596,7 @@ ohjelmointikieliä, suoraan konekieliksi (ibid).
 
 %Bootstrapping menetelmää käytetään usein myös ristiinkääntämisessä (cross compiling)
 %joten kyseinen luku käsittelee osittain myös sitä.
-\section{T-kaaviot}
+\section{Kääntäjien kuvaus: T-kaaviot \label{t}}
 
 Kääntäjien suunnittelussa ja mallintamisessa on käytetty useita erilaisia merkintätapoja.
 Käytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehdottama T-kaavio. 
@@ -662,8 +643,8 @@ eikä täten voi olla muu kuin laitteiston ymmärtämä konekieli.
 T-kaavio on melko yksinkertainen, joten siitä on kehitetty paranneltuja vaihtoehtoja.
 Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lisäämällä siihen ominaisuuksia~\cite[607-616]{Earley70}.
 Alkuperäisen T-kaavion kuvatessa vain kääntäjiä, Earleyn ja Sturgisin kaavioissa pystyy
-kuvaamaan myös tulkkeja. Lisäksi kaavioon sisällytettiin suoritusta kuvaava osa
-sekä sovellusohjelmaa kuvaava kaavio. Heidän kaavioissaan määritellään kuvan \ref{t-laajennos}
+kuvaamaan myös tulkkeja. Lisäksi niihin sisällytettiin suoritusta sekä sovellusohjelmaa kuvaava osa.
+Heidän kaavioissaan määritellään kuvan \ref{t-laajennos}
 mukaiset elementit.
 
 \begin{figure}[H]
@@ -680,14 +661,14 @@ Se kuvaa C-kielistä kääntäjää joka kääntää kieleltä A kielelle B. Suorakaiteen m
 kahdesta osasta koostuva kaavio kuvaa tulkkia, joka tulkkaa kieltä C ja toimii kielellä D.
 Jotta käännös voitaisiin suorittaa, tulee pohjimmaisen kielen olla suoritettavissa jollakin oikealla
 laitteistolla. Tätä suoritusta kuvaa yksiosainen kolmiomerkintä. Kolmion sisällä
-lukee millä konekielellä suoritus tapahtuu. Esimerkkikuvassa konekieli on D.
+lukee, millä konekielellä suoritus tapahtuu. Esimerkkikuvassa konekieli on D.
 Viimeinen kaavio tarkoittaa jotain sovellusohjelmaa tai määrittelemätöntä laskentaa.
 Kaavion sisällä lukee ohjelmointikieli, jolla sovellus on ohjelmoitu tai jolle se on käännetty.
 Esimerkkikuvassa kieli on D~\cite[282]{Mogensen10}.
 
 Kyseisiä kaavioita voi yhdistellä hyvinkin monimutkaisiksi rakenteiksi. Kuvan \ref{yhdistelma-t} esimerkissä on
 kaavio, joka kuvaa C++-kielisen ohjelman kääntämistä x86-konekielelle. Suoritus tapahtuu
-x86-laitteistolla ja käännöksen tekee Pythonilla toimiva kääntäjä, joka tulkataan x86-laitteistossa.
+x86-laitteistolla, ja käännöksen tekee Pythonilla toimiva kääntäjä, joka tulkataan x86-laitteistossa.
 Huomioitava T-kaavioiden käytössä on, että kaavioiden vierekkäisten osien kielten tulee täsmätä
 toisiinsa. Kuvan esimerkin käännös ei voi ottaa lähdeohjelmakseen muuta kuin C++:llä kirjoitetun ohjelman.
 
@@ -702,17 +683,17 @@ toisiinsa. Kuvan esimerkin käännös ei voi ottaa lähdeohjelmakseen muuta kuin C++
 
 
 %Tähän lukuun tulee osittain myös cross compiling juttuja. Cross compilingissä kerrotaan enemmän IL pohjaisesti
-\section{Kääntäjien rakenne ja ketjutus}
+\section{Kääntäjien rakenne ja ketjutus \label{ketjutus}}
 %tähän mennessä lähteinä lähinnä Mogensen ja Appel
 Koska kääntäjien ohjelmointi matalan tason ohjelmointikielillä on erittäin vaivalloista~\cite[281]{Mogensen10},
 suositaan niiden kehittämisessä korkean tason ohjelmointikielten käyttöä.
-Yksi vaihtoehto on ohjelmoida laitteistolle kääntäjä jollakin kyseiselle laitteistolle
+Yksi vaihtoehto on ohjelmoida kääntäjä jollakin kyseiselle laitteistolle
 jo olemassa olevalla ohjelmointikielellä. Tämä ei kuitenkaan aina ole mahdollista.
 Esimerkiksi, jos kyseessä on uusi prosessoriarkkitehtuuri, eikä tälle vielä ole kääntäjiä,
 on ohjelmointi tehtävä jollakin muulla tavalla.
+
 Kääntäjä, joka sekä kääntää että on suoritettavissa uudella laitteistolla voidaan
 toteuttaa ketjutukseksi (bootstrapping) kutsutulla tekniikalla~\cite[281]{Mogensen10}.
-
 Ketjutus on tekniikka, jonka ydinajatus on kääntää jokin kääntäjä sillä itsellään~\cite[281]{Mogensen10}.
 Tavanomaisen kääntäjän sanotaan olevan ketjutettu jos se kääntää itsensä~\cite[]{Appel94}.
 
@@ -732,18 +713,18 @@ toteuttaminen heti ensimmäisen vaiheen jälkeen erittäin työlästä. Toista vaihett
 suoritetaan useita kertoja siten, että kääntäjän tuntemaa ohjelmointikieltä kasvatetaan
 ja siitä käännetään uusi kääntäjä. Saadun kääntäjän avulla voidaan seuraava versio
 toteuttaa käyttäen uusia ominaisuuksia. Seuraavan version avulla tehdään jälleen
-seuraava versio ja niin edelleen.
+seuraava versio, ja niin edelleen.
 Huomioitavaa prosessissa on se, että kääntäjän uusi versio on kehitettävä aina käyttäen 
 vanhan version tuntemaa ohjelmointikieltä. 
 
-Kuva \ref{iterative-bootstrap} esittää edellä mainittua tilannetta. Ensimmäisessä vaiheessa kääntäjän ensimmäinen
+Kuva \ref{iterative-bootstrap} esittää edellä kuvattua tilannetta. Ensimmäisessä vaiheessa kääntäjän ensimmäinen
 versio ohjelmoidaan konekielellä (ML, "Machine Language") ja tämän jälkeen ohjelmointikieltä (PL, "Programming Language") laajennetaan iteratiivisesti, kunnes tavoiteltu kieli on saavutettu.
 
 \begin{figure}[H]
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=1.0]{iterative-bootstrap-from-scratch.png}
-		\caption{Iteratiivinen bootsträppäys ilman muita ohjelmointikieliä. \label{iterative-bootstrap}}
+		\caption{Iteratiivinen ketjutus ilman muita ohjelmointikieliä. \label{iterative-bootstrap}}
 		\label{kuvaesimerkki}
 	\end{center}
 \end{figure}
@@ -763,12 +744,12 @@ voidaan kielen PL kääntäjä ohjelmoida uudelle laitteistolle ristiinkääntämistä j
 seuraavalla tavalla. Ensin kielellä PL ohjelmoidaan sen itsensä kääntäjä uudelle laitteistolle.
 Tämä voidaan kääntää alkuperäisellä laitteistolla. Nyt kielelle PL on olemassa uudelle laitteistolle
 koodia tuottava kääntäjä, mutta sen suoritus tapahtuu edelleen vanhassa laitteistossa (ristiinkääntäminen).
-Nyt Kääntäjän uudella versiolla, jonka kohdekieli on ML2, käännettäessä oma lähdekoodinsa,
+Nyt kääntäjän uudella versiolla, jonka kohdekieli on ML2, käännettäessä oma lähdekoodinsa
 saadaan kääntäjä, joka sekä toimii että kääntää kielelle ML2.
 Kuva \ref{cross-bootstrapping} havainnollistaa tilannetta. Ensimmäisessä vaiheessa jo olemassa olevalla kääntäjällä
 käännetään uuden kääntäjän lähdekoodi, jolloin tulokseksi saadaan ristiinkääntäjä.
 Saadulla uudella kääntäjällä käännetään sen oma lähdekoodi, jolloin tuloksena on haluttu
-uudella laitteistolla toimiva ja sen konekieltä tuottava PL kielen kääntäjä.
+uudella laitteistolla toimiva ja sen konekieltä tuottava kielen PL kääntäjä.
 
 \begin{figure}[H]
 	\ \newline
@@ -783,7 +764,7 @@ uudella laitteistolla toimiva ja sen konekieltä tuottava PL kielen kääntäjä.
 %tässä vois jo mainita intermediate languagen ja puhua front ja backendeistä
 
 %ir bootstrap
-Edellämainittu esimerkki on toimiva, mutta se edellyttää kääntäjän kirjoittamisen kokonaan
+Edellä kuvattu esimerkki on toimiva, mutta se edellyttää kääntäjän kirjoittamisen kokonaan
 alusta loppuun asti sen omalla lähdekielellä. Koska korkean tason ohjelmointikielten
 kääntäjät voivat olla todella monimutkaisia ja koostua suuresta määrästä lähdekoodia,
 on tämänkaltainen prosessi varsin työläs. Vastaavan prosessin voi toteuttaa huomattavasti
@@ -816,14 +797,13 @@ kääntäjän käytetylle välikielelle, eikä koodin generointivaihetta tarvitse kirjo
 %antaako tää kappalevaihdos nyt ymmärtää että kuva 7 olisi ylemmän tilanteen kaltainen?
 Kuva \ref{compiler-complex} demonstroi usein käytettyä rakennetta~\cite[610]{Earley70}, jolla kääntäjän jatkokehitystä voidaan
 helpottaa huomattavasti. 
-
 Uuden ohjelmointikielen kääntäjän toteuttaminen kyseisen kääntäjän avulla on mahdollista
 vain yhden komponentin (punainen) uudelleenohjelmoinnilla. Vaihtamalla toisen vaiheen 
 ensimmäinen kääntäjä kääntämään uudelta lähdekieleltä (SL, "Source Language") välikielelle,
-vaihtuu myös seuraavissa komponenteissa olevat lähdekielet uuteen kieleen.
+vaihtuvat myös seuraavissa komponenteissa olevat lähdekielet uuteen kieleen.
 Uusi kääntäjä tulee toteuttaa samalla ohjelmointikielellä, jolla aiempi komponentti on
 toteutettu (CWL, "Compiler Writing Language").
-Esimerkiksi jos kyseisellä järjestelmällä halutaan toteuttaa
+Esimerkiksi, jos kyseisellä järjestelmällä halutaan toteuttaa
 konekielellä ML1 suoritettava C-kääntäjä, tulee ohjelmoida vain sellainen
 osa, joka on kirjoitettu kielellä CWL ja kääntää C-kieltä välikielelle IL. Sama pätee
 muihinkin toteutettaviin ohjelmointikieliin.
@@ -838,9 +818,9 @@ muihinkin toteutettaviin ohjelmointikieliin.
 \end{figure}
 
 Pelkkää välikieltä apuna käyttäen uuden ohjelmointikielen toteutus ei vaatisi näin
-monimutkaista rakennetta. Kyseinen rakenne mahdollistaa kuitenkin sekä tehokkaan ristiinkääntämisen,
+monimutkaista rakennetta. Kyseinen rakenne mahdollistaa kuitenkin sekä tehokkaan ristiinkääntämisen
 että itsensä ketjuttamisen uudelle laitteistolle. Jos kääntäjäkokonaisuuden halutaan
-kääntävän ymmärtämäänsä lähdekieltä uudelle laitteistolle jonka konekieli on ML2, joudutaan siihen
+kääntävän ymmärtämäänsä lähdekieltä uudelle laitteistolle jonka, konekieli on ML2, joudutaan siihen
 edelleen kirjoittamaan vain yksi uusi komponentti. Tämä osa kirjoitetaan kielellä CWL ja
 se kääntää välikieltä IL uuden laitteiston ymmärtämälle konekielelle ML2.  Kun kyseinen
 osa käännetään jo olemassa olevalla kääntäjällä, saadaan tulokseksi
@@ -855,7 +835,6 @@ Kuva \ref{bootstrap-complex} havainnollistaa tätä prosessia.
 Ensimmäisessä vaiheessa jo olemassaolevien
 komponenttien sekä uuden CWL:llä kirjoitetun välikielikääntäjän (keltainen) avulla
 tuotetaan seuraavissa vaiheissa tarvittavat komponentit.
-
 Näiden komponenttien avulla voidaan
 toisessa vaiheessa tuottaa ML2-konekielellä toimiva ja siihen kääntävä välikielikääntäjä.
 Kolmannessa vaiheessa tuotetaan ensimmäisessä vaiheessa saadun välikielikääntäjän
@@ -870,9 +849,10 @@ avulla ML2-kielellä toimiva CWL-kääntäjä, joka tuottaa välikieltä.
 	\end{center}
 \end{figure}
 
-Sijoittamalla toisessa ja kolmannessa vaiheessa saadut kääntäjät (sininen) alkuperäiseen %ei ihan! pitää vielä saada CWL,ML2,ML2
-ohjelmistoon, saadaan sekä ML2-kielellä toimivat, että sille kääntävät
-komponentit. Ainoa komponentti jota ei saada suoraan sijoittamalla on ensimmäisen vaiheen toinen komponentti.
+%laitetaan kuvaan ne vaiheet!!!!!!!
+Sijoittamalla toisessa ja kolmannessa vaiheessa saadut kääntäjät (sininen) alkuperäiseen 
+ohjelmistoon, saadaan sekä ML2-kielellä toimivat että sille kääntävät
+komponentit. Ainoa komponentti, jota ei saada suoraan sijoittamalla, on ensimmäisen vaiheen toinen komponentti.
 Uudella konekielellä toimivat kääntäjät CWL $ \rightarrow $ IL ja IL $ \rightarrow $ ML2 
 vastaavat kuitenkin yhdessä tätä komponenttia.
 
@@ -889,47 +869,48 @@ voidaan suorittaa jo aiemmin käytetyllä korkean tason ohjelmointikielellä~\cite[
 \section{Yhteenveto}
 
 
-
 %kääntäjän määritelmä, symbolinen konekieli
 Kääntäjällä tarkoitetaan tietokoneohjelmaa, joka kääntää lähdekielisen ohjelman
 kohdekieliseksi ohjelmaksi. Jokaisella laitteistolla on oma konekielensä, jota
 se kykenee suorittamaan. Aluksi ohjelmointi oli mahdollista vain tällä
-konekielellä, koska muita ohjelmointikieliä ei vielä ollut.
-Koska konekielen ohjelmointi oli työlästä ja virhealtista, kehitettiin
-avuksi symbolisia konekieliä, joissa tietyt binäärijonot oli korvattu
+konekielellä.
+Koska konekielinen ohjelmointi oli työlästä ja virhealtista, kehitettiin
+avuksi symbolisia konekieliä, joissa binääriset konekäskyt oli korvattu
 paremmin muistettavilla tekstuaalisilla symboleilla. Assemblykääntäjät
 tuottivat symbolisista konekielistä yksinkertaisten sääntöjen mukaan
 laitteiston ymmärtämää konekieltä.
 
 %korkean tason ohjelmointikieli, syntyi vahingossa, historia lyhyt tiivistelmä
 Korkean tason ohjelmointikielet kehittyivät ohjelmoijien tarpeesta kuvata
-tietokoneiden toimintaa korkeammalla abstraktiotasolla. Formaalien
-kuvausjärjestelmien eli korkean tason ohjelmointikielten kehittyessä
+tietokoneiden toimintaa konekieliä korkeammalla abstraktiotasolla. Formaalien
+kuvausjärjestelmien kehittyessä
 kokeiltiin myös konekielen tuottamista automaattisesti korkean
-tason kielen mukaan. Tämä automaattiseksi ohjelmoinniksi
+tason kielistä. Tämä automaattiseksi ohjelmoinniksi
 ja myöhemmin kääntämiseksi kutsuttu prosessi oli alkuun melko tehotonta.
-Moni tutkija pitikin sitä vain teoreettisena tutkimuksena, mutta
+Moni tutkija pitikin sitä vain mielenkiintoisena tutkimuksena, mutta
 potentiaali niiden tehokkaaseen käyttöön selvisi varsin nopeasti.
-Ohjelmointikielten ja käännöstekniikan kehittyessä generoidun koodin
-laatu parani, ja korkean tason ohjelmointikieliä ruvettiin kehittämään
-automaattisen koodin generoinnin takia. Viimeistään FORTRAN:n julkaisun jälkeen
-korkean tason ohjelmointikielten hyödyt olivat laajasti hyväksytty.
+Viimeistään FORTRAN:n julkaisun jälkeen
+korkean tason ohjelmointikielten hyödyt oli laajasti hyväksytty.
 
-%kääntäjien rakenne ja välikielet
-Ensimmäiset kääntäjät kehitettiin vartavasten tietyn lähde- ja
+%välikielet
+Ensimmäiset kääntäjät kehitettiin tietyn lähde- ja
 kohdekieliparin kääntämiseen. Kielten ja laitteistojen monipuolistuessa
 tarvittavien kääntäjien määrä lisääntyi. Syntyi ajatus universaalista
-lälikielestä, jonka avulla tarvittavien kääntäjien
-määrää voitaisiin pienentää ja ohjelmien tuottaminen uusille laitteistoille
-nopeutuisi. Vaikka mikään välikieli ei ikinä saanut universaalia asemaa,
-käytetään silti lähes kaikissa kääntäjissä jotakin välikieltä käännöksen välivaiheena.
+välikielestä, jonka avulla tarvittavien kääntäjien
+%ristiinkääntö
+määrää voitaisiin pienentää ja ohjelmien ristiinkääntäminen uusille laitteistoille
+nopeutuisi.
+Vaikka mikään välikieli ei ikinä saanut universaalia asemaa,
+käytetään silti lähes kaikissa nykyaikaisissa kääntäjissä jotakin välikieltä käännöksen välivaiheena.
 Tällaiset kääntäjät on jaettu etuosaan, joka kääntää lähdekielen välikielelle,
 sekä takaosaan, joka kääntää välikielen halutulle laitteistolle.
-Lisäksi useat kääntäjät toteutetaan rakenteella,
-joka mahdollistaa niiden ketjuttamisen uusille tietokoneille mahdollisimman
-vähällä uudelleenohjelmoinnilla.
+%bootstrapping
+Välikieliä ja ristiinkääntämistä käytetään apuna myös ketjutuksessa.
+Tällöin kääntäjän ketjuttaminen uudelle laitteistolle onnistuu
+mahdollisimman vähällä uudelleenohjelmoinnilla.
 
 
+%t kaaviot ???
 
 
 \newpage
