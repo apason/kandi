@@ -14,7 +14,7 @@
 %\renewcommand\@biblabel[1]{[#1]}
 %\makeatother
 
-\title{otsikko}
+\title{Kääntäjätekniikan historia ja kehittyminen}
 \author{Arttu Kilpinen}
 \date{\today}
 \level{Kandidaatintutkielma}
@@ -210,21 +210,21 @@ Harmaalla pohjalla oleva koodi käännetään siis täysin ennalta määrätysti.
 Tunnukset määritellään käyttämällä niitä konekäskyn vasemmalle puolelle varatussa
 tunnuskentässä. Käyttö puolestaan tapahtuu, kun tunnukseen viitataan konekäskyn operandina~\cite[17]{Salomon93}.
 
-\begin{figure}[H]
-  \ \newline
-  \centerline{\includegraphics[scale=0.5]{esimerkkiTTK.png}}
-  \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
-    \label{kuvaesimerkki}
-\end{figure}
-
 %% \begin{figure}[H]
 %%   \ \newline
-%%   \begin{center}
-%%     \includegraphics[scale=0.5]{esimerkkiTTK.png}
-%%     \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
+%%   \centerline{\includegraphics[scale=0.5]{esimerkkiTTK.png}}
+%%   \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
 %%     \label{kuvaesimerkki}
-%%   \end{center}
 %% \end{figure}
+
+\begin{figure}[H]
+  \ \newline
+  \begin{center}
+    \includegraphics[scale=0.5]{esimerkkiTTK.png}
+    \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
+    \label{kuvaesimerkki}
+  \end{center}
+\end{figure}
 
 
 
@@ -262,9 +262,7 @@ rajaton määrä sisäkkäisiä tietorakenteita, ja Zusen työhön viitataankin
 usein ensimmäisenä korkean tason ohjelmointikielenä.
 Vaikka kyseessä oli huomattavan edistyksellinen järjestelmä, se ei
 kuitenkaan vaikuttanut ohjelmointikielten kehitykseen juuri lainkaan,
-sillä artikkeli julkaistiin vasta vuonna 1972. Vaikka Plankalkülille toteutettiinkin
-kääntäjä, ei sitä juuri koskaan käytetty, koska silloin oli jo Plankalkülia
-huomattavasti kehittyneempiä ohjelmointikieliä. %err? oliks sitä kääntäjää nyt vai ei??
+sillä artikkeli julkaistiin vasta vuonna 1972.
 
 %LOHKOKAAVIO
 Samoihin aikoihin Zusen kanssa myös Yhdysvaltalaiset Herman Goldstine ja
@@ -277,7 +275,6 @@ ja sillä oli suuri vaikutus ohjelmointikielten kehitykseen~\cite[16]{Knuth76} .
 
 
 %CURRYN PASKA
-%CU50', CU48, CU50 %VITTU KOKO TÄÄ CURRY ON WIKLAN MIELEST PASKAA PISTETÄÄ UUSIKS
 Vuonna 1946 Marylandissa työskennellyt Haskell B. Curry kehitti ENIAC-tietokoneelle
 aikaansa nähden monimutkaista ohjelmaa. Curryn työ ENIAC:n
 parissa sai hänet ehdottamaan formalismia ohjelmistojen toiminnalle.
@@ -289,10 +286,13 @@ C-kielen paikallisiin tietorakenteisiin ja käännösyksiköihin perustuvaan
 suoritukseen. Curryn formalismi oli kuitenkin hieman luonnoton,
 sillä suoritusyksiköillä oli useita lopetuskohtia sekä nykykielistä poiketen
 useita aloituskohtia~\cite[21]{Knuth76}.
-Historiallisesti työ oli kuitenkin merkittävä, sillä se sisälsi algoritmeja
-joilla kuvauksesta pystyttiin tuottamaan konekieltä. Näitä rekursiivisia
---- vaikkakin toteuttamatta jääneitä --- algoritmeja voidaankin pitää ensimmäisinä %no oliks niit algoritmei edes??
-koodin generointiin tarkoitettuina algoritmeina. % tää kohta nyt on ihan vitun ripulia
+Historiallisesti työ oli kuitenkin merkittävä, sillä Curry kuvaili algoritmeja
+joilla hänen kehittämästään ohjelmointikielestä  pystyttiin tuottamaan konekieltä. Näitä rekursiivisia,
+vaikkakin toteuttamatta jääneitä, algoritmeja voidaankin pitää ensimmäisinä
+koodin generointiin tarkoitettuina algoritmeina~\cite[22]{Knuth76}.
+Curryn artikkeleita koodin generoinnista ei kuitenkaan ikinä
+julkaistu, joten niiden vaikutus ohjelmointikielten kehitykseen
+jäi vähäiseksi~\cite[20]{Knuth76}.
 
 %% -actually the main feature of interest in currys earlier work is not this programming language but rather the algorithms
 %% hediscussed for converting parts of it into machine language. he gave a recursive description of a procedure to convert
@@ -316,8 +316,8 @@ Sitä kehitti John W. Mauchly ja William F. Schmitt toteutti sille tulkin vuonna 
 Tulkki toimi alkuun BINAC-tietokoneella, mutta se ohjelmoitiin myöhemmin myös UNIVAC:lle.
 Yksityiskohtia Short Coden toiminnasta ei ikinä julkaistu, joten sen tarkemmasta
 toiminnasta ei ole tietoa. Vuonna 1955 julkaistussa ohjelmoijille tarkoitetussa
-manuaalissa kerrotaan kuitenkin kuinka ohjelmaa voidaan käyttää. % RR55 Ei löydy
-Short Code oli siis algebrallinen tulkki, joka osasi suorittaa aritmeettisia %mikä vittu on algebrallinen tulkki t. wikla
+manuaalissa kerrotaan kuitenkin kuinka ohjelmaa voidaan käyttää (ibid).
+Short Code oli siis tulkki, joka osasi suorittaa aritmeettisia
 laskutoimituksia ilman konekielistä ohjelmointia. Ohjelma luki syötettä ja
 tulkkasi vastaavat toiminnot ajetulle laitteistolle.
 
@@ -326,62 +326,53 @@ tulkkasi vastaavat toiminnot ajetulle laitteistolle.
 teknillisessä yliopistossa Sveitsissä. Vaikka he työskentelivät samassa paikassa
 ja saman aiheen parissa, he tekivät töitä itsenäisesti. Rutishauser julkaisi
 vuonna 1952 artikkelin, jossa hän kuvasi hypoteettisen tietokoneen sekä siinä toimivan
-kääntäjän kehittämälleen ohjelmointikielelle~\cite[30]{Knuth76} . Julkaisu oli merkittävä, sillä
+kääntäjän kehittämälleen ohjelmointikielelle~\cite[30]{Knuth76}. Julkaisu oli merkittävä, sillä
 siinä kuvattiin ensimmäistä kertaa menetelmä kääntäjien toteuttamisesta
-sekä koodin generoinnista (ibid). % mitä eroa curryn algoritmeihin nähden?? RU52
+sekä koodin generoinnista (ibid).
 
 Myös Corrado Böhm kehitti samaan aikaan itsenäisesti ohjelmointikieltä sekä
 tämän kääntäjää. Hänen julkaisunsa oli Rutishauserin julkaisua vieläkin
 merkittävämpi, sillä hän oli toteuttanut kääntäjän omalla kielellään~\cite[36]{Knuth76}.
-Böhmin kieli ei kuitenkaan osannut käsitellä muita kuin positiivisia
-kokonaislukuja, joten sen käyttöarvo jäi melko pieneksi. Kääntäjien
-teorian kehityksen kannalta se oli kuitenkin korvaamaton. Böhmin kääntäjä
+Böhmin kääntäjä
 kykeni tarkistamaan koodin syntaksia lineaarisessa ajassa, kun Rutishauserin
 kääntäjä puolestaan toimi neliöisessä ajassa~\cite[40]{Knuth76}. Lisäksi Böhmin kääntäjä hallitsi matemaattisten
 operaattoreiden sidontajärjestyksen, sekä osasi käsitellä sulkeita aritmeettisissa 
 lausekkeissa. Böhm oli myös ensimmäinen, joka todisti 
 matemaattisesti ohjelmointikielensä voivan laskea minkä tahansa laskettavan funktion~\cite[42]{Knuth76}.
-%rutishauser and böhm had had a considerable advantage over glennie in that they had designed theri own machine code
-
 
 % VITTU MITÄ PASKAA
-Vaikka Rutishauser ja Böhm olivat kumpikin valmistaneet %vittu oliko??
+Vaikka Rutishauser ja Böhm olivat kumpikin ohjelmoineet
 omat kääntäjänsä, pidetään ensimmäisenä oikeana kääntäjänä silti
-Alick E. Glennien 1952 valmistamaa AUTOCODE-ohjelmistoa~\cite[42]{Knuth76}. Aiemmista kääntäjistä poiketen
+Alick E. Glennien 1952 valmistamaa AUTOCODE-ohjelmistoa~\cite[42]{Knuth76}. Rutishauserin ja Böhmin kääntäjistä poiketen
 AUTOCODE ei toiminut hypoteettisella laitteistolla joten sen tuottama konekieli
-oli täten suoritettavissa. AUTOCODEa pystyttiin siis käyttämään oikeiden,
+oli täten suoritettavissa ~\cite[45]{Böhm76}. AUTOCODEa pystyttiin siis käyttämään oikeiden,
 käyttökelpoisten ohjelmien tekemiseen~\cite[42]{Knuth76}.
-
-%% --- vaikka olikin kokeneille ohjelmoijille tarkoitettu~\cite[Knuth74]
-%% --- käytettiin, kuten tarkoitus oli, oikeaan ohjelmointiin.
 
 %FORTRAN Tää koko fortran on aika perseestä kans..
 Vuoden 1954 alussa John Backus rupesi kehittämään kokoamansa kehittäjäryhmän kanssa
 automaattisen ohjelmoinnin järjestelmää. Järjestelmän oli tarkoitus olla hyvin
 kehittynyt, joten suureksi haasteeksi muodostui järjestelmän saaminen tarpeeksi
-tehokkaaksi. Loppuvuodesta 1954 kehittäjäryhmä julkaisi suunnitelman järjestelmästä 'The IBM %LÄHTEET t. wikla
+tehokkaaksi. Loppuvuodesta 1954 kehittäjäryhmä julkaisi suunnitelman järjestelmästä 'The IBM
 Mathematical FORmula TRANstating system' --- FORTRAN. 
 Ryhmän julkaisu alkoi painottamalla sitä tosiasiaa, että FORTRAN oli tehokas. Aiemmin ohjelmoijien tuli
 valita helpon ohjelmoinnin ja hitaan suorituksen tai työlään ohjelmoinnin ja nopean
 suorituksen väliltä, mutta julkaisun jälkeen FORTRAN tarjoaisi parhaat
-puolet molemmista~\cite[1]{IBM54}. %IB54 EN OO VIEL LUKENU MUT MENKÖÖ
-FORTRAN 0-dokumentti sisältää myös ensimmäisen yrityksen esittää ohjelmointikielen %mikä vittu on fortran 0 ;:DD
+puolet molemmista~\cite[1]{IBM54}. 
+Ensimmäinen FORTRAN-dokumentti sisältää myös ensimmäisen yrityksen esittää ohjelmointikielen
 kielioppi täsmällisesti. Tätä voidaan pitää Backuksen myöhemmin esittämän kielioppimuodon
-Backus Naur Formin (BNF) edeltäjänä.
-%ei oltu vielä implementoitu. Työhen meni 2.5 vuotta!!!
+Backus Naur Formin (BNF) edeltäjänä~\cite[63]{Knuth76}.
 
 Kun FORTRAN kaksi ja puoli vuotta myöhemmin saatiin toteutettua, oli se
-aikansa tehokkain sekä monipuolisin ohjelmointikieli. Se tuotti %siis fortranin kääntäjät. kankeesti sanottu.
+aikansa tehokkain sekä monipuolisin ohjelmointikieli. FORTRAN:n kääntäjällä tuotettiin
 suhteellisen tehokasta koodia ja kehittäjät sanoivat sen olevan lähes
 yhtä tehokasta kuin hyvän ohjelmoijan kirjoittama symbolinen konekieli~\cite[1]{IBM56}.
 FORTRANissa oli myös paljon ominaisuuksia, joita ei oltu aiemmin nähty.
 Se oli esimerkiksi ensimmäinen ohjelmointikieli, jossa muuttujien nimet
-voivat olla useamman merkin pituisia~\cite[62]{Knuth76}. %entä ass kielten tunnukset t. wikla
+voivat olla useamman merkin pituisia~\cite[62]{Knuth76}.
 
-Ensimmäisen julkaisun jälkeen FORTRANissa oli kuitenkin useita ongelmia.
-Virheitä oli paljon, ja eräs FORTRAN:n kehittäjistä, Saul Rosen, %OLIKO SAUL ROSEN kehittäjä!?
-%OLIKO bugeja edes paljon vai viitattiinko tossa aikaan ennen julkaisua perkele?!
-sanoikin ettei uskonut FORTRAN:n ikinä tulevan toimimaan~\cite[4????]{Rosen64}.
+Ensimmäisen julkaisun jälkeen FORTRAN:ssa oli kuitenkin useita ongelmia.
+Virheitä oli paljon ja moni epäili
+ettei FORTRAN ikinä tulisi toimimaan~\cite[4]{Rosen64}.
 Vaikeuksista huolimatta FORTRAN:sta tuli hyvin suosittu ja sitä käytettiin
 enemmän kuin oltiin osattu odottaa.
 
@@ -408,77 +399,12 @@ piirteet. Lisäksi taulukossa esitellään ohjelmointikielten nimet sekä päätekijät
 %% Almost to a ma nthey firmly believed that any mechanical coding method would fail to apply that versatile ...
 %% it was agreed compilers could only turn out code which would be intolerably less efficient than human coding.
 
-%% -57
-%% -paljon tuntemattomia projekteja sillä olivat niin edistyksellisiä ettei tutkimustuloksia ikinä julkaistu.
-
-%% -Alick glennie AUTOCODE 1952
-%% -yleisesti pidetään ensimmäisenä ``oikeana'' ``kunnon'' kääntäjänä.-
-%% - glennie sanoin 1953: to  make it easy one must make coding  comprehensible. this may be done only by improving the
-%% notation of programming., aikaisemmat notaatiot ovat ongelmallisia.
-%% ä- autocode was still very machine oriented.
-%% - autocode oli tärkeä askel eteenpäin  vaikka olikin machine oriented ja tarkoitettu kokeneille ohjelmoijille
-
-%% TÄHÄN MENNESSÄ kukaan ei ollut käyttänyt vielä termiä kääntäjä. terminä oli automaattinen koodausw (automatic coding)
-%% sitten sitä käytettiin
-
-
-%% -1954 John Backus työskenteli ibm tehdäkseen paremman systeemin automaattisesta ohjelmoinnista BA 76
-%% -suuri ongelma oli tehokkuus. Lähes kaikki alalla uskoivat että any mechanical coding method would fail apply that
-%% versatile ingenuity which each programmer felt he possessed and vonstantly neededi nhis gwork.
-%% it was agreed compilers could only turn out code which would be intolerably less efficient than human coding.
-
-%% -by november 1954 bakusin ryhmä oli speksannu the ibm mathematical formula translating system FORTRAN.
-
-%% ensimmäinen paragrafi IB 54 tähdensi että aiemmat systeemit olivat tarjonneet vaihtoehdoiksi helpon ohjelmoinnin ja
-%% hitaan suorituksen tai työlään ohjelmoinnin ja nopean suorituksen. mutta fortranilla molemmat olivat mahdollisia.
-
-%% fortran oli enswimmäinen kieli missä muuttujalla voi olla useamman merkin nimi.
-
-%% -fortran 0 dokumentti esitteli ensimmäisen yrityksen määritellä ohjelmointikielen syntaksi täsmällisesti. bakusin tärkeä huomio
-%% BA 95 mistä tuli BNF voidaan nähdä tulevan täältä.
-
-
-
-%% -assemblyien suosio pysyi esim koska esim x kääntäjän optimointi oli paska. vain 50% tehokas
-
-% ensimmäinen kääntäjä vasta 1975 Joachim Hohmann: Der Plankalkul im Vergleich mit algorithmischen Sprachen. Reihe Informatik und Operations Research, S. Toeche-Mittler Verlag, Darmstadt 1979, ISBN 3-87820-028-5161.
-% ensimmäinen 'useful' 'real' compiler, knuth 77 - sivu 42.
-%% \section{tekniikkaa}
-%% \subsection{bootstrapping}
-%% \subsection{cross compiling}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% However one could discuss how an existing compiler could propagate an image of itself to another machine.
-%% This technique popularly referred to as bootstrapping or cross compiling~\cite{Reynolds03}.
-
 %% A conventional C compiler, written in C, is said to be bootstrapped if it compiles itself.
 %% Now suppose a new version of the compiler source is weirren, that uses different registers for passing arguments.
 %% The old compiler can compile this source, yelding a new compiler. But Look! The executable version cc'
 %% of the new compiler uses the old parameter passing style, but generates code that uses the new style.
 %% onecan use the new compiler however to recompile all the libraries and the new version itself
 %% and get a new new executable thet both uses and generates the new parameter passing style~\cite{Appel94}.
-
-
-%% -intermediate language as a tool to reduce duplivaton of effort.
-%% -tämän takia cross compilation saanut paljon huomiota.
-%% -cc on prosessi of one machine accepting a source program as input and producing an object code thet is executable on another machine.
-%% -ongelma kääntäjien määrien kanssa, siksi IL.
-%% -Saanut alkunsa UNCOLsta
-%%~\cite{Speetjens76}.
 
 %BURKSILLA OLI MYÖS INTERMEDIATE LANGUAGE!
 \section{Välikielet ja ristiinkääntäminen \label{välikielet}}
@@ -518,10 +444,9 @@ viiteen eri laitteistoon.
 \begin{figure}[H]
 	\ \newline
 	\begin{center}
-          \hbox{\vspace{-5cm} \includegraphics[scale=1.0]{NxM.png}}
-%		\includegraphics[scale=1.0]{NxM.png}
-		\caption{Ristiinkääntäminen usealta lähdekieleltä usealle kohdekielelle.~\cite[378]{Steel61} \label{nxm}}
-		\label{kuvaesimerkki} % tää lähde on päin helvettiä? jr??
+	  \includegraphics[scale=1.0]{NxM.png}
+	  \caption{Ristiinkääntäminen usealta lähdekieleltä usealle kohdekielelle.~\cite[378]{Steel61} \label{nxm}}
+	  \label{kuvaesimerkki} % tää lähde on päin helvettiä? jr??
 	\end{center}
 \end{figure} 
 
