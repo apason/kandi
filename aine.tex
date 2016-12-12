@@ -72,6 +72,7 @@ Ennen korkean tason ohjelmointikielille kehitettyjä
 kääntäjiä oli käytössä vain symbolisia konekieliä ymmärtäviä ohjelmia,
 assemblykääntäjiä. Niiden avulla ohjelmoija kykeni käyttämään tekstuaalisia
 konekielisiä komentoja laitteiston ymmärtämien binääristen konekäskyjen sijaan.
+%TÄN LAUSEEN vois ottaa vittuun?
 Näin ollen konekielinen ohjelmointi helpottui ja nopeutui. Myöhemmin symbolisten
 konekielten rinnalle kehittyi korkean tason ohjelmointikieliä. Symbolisista
 konekielistä poiketen niiden ohjelmointi oli laitteistoriippumatonta
@@ -92,7 +93,7 @@ laitteistoissa.
 % välikielet
 Laitteistojen monipuolistuessa kääntäjiä tarvittiin yhä enemmän.
 Ristiinkääntämisestä, jossa käännettävä ohjelma toimii eri laitteistolla kuin sitä käännetään,
-tuli suosittua. Ristiin kääntämisen helpottamiseksi kehitettiin
+tuli suosittua. Ristiinkääntämisen helpottamiseksi kehitettiin
 välikieliä. Niiden avulla tarvittavan ohjelmoinnin määrä saatiin pienemmäksi~\cite[15]{Speetjens76}.
 
 Kääntäjien monimutkaistuessa niiden kuvaamiseksi kehitettiin erilaisia kaavioita.
@@ -198,7 +199,7 @@ poiketen dynaamisessa muistirakenteessa. Tunnukset ovat symbolisia nimiä muistip
 Niiden arvot määräytyvät vasta käännöksen yhteydessä.
 Tunnusten avulla muistipaikat voidaan nimetä eikä ohjelmoijan tarvitse pitää
 kirjaa konekäskyjen osoitteista. Tunnuksiin sidottuja muistipaikkoja voidaan myös käyttää muuttujina.
-Useissa assemblykääntäjissä on direktiivi, jolla voidaan varata muistia ja viitata
+Useissa assemblykääntäjissä onkin direktiivi, jolla voidaan varata muistia ja viitata
 siihen tunnuksen avulla.
 
 %selventävä kuvaesimerkki.
@@ -224,7 +225,7 @@ tunnuskentässä. Käyttö puolestaan tapahtuu, kun tunnukseen viitataan konekäskyn 
 
 %tähän joku luonnollinen siirtymä assyistä korkeaan
 Korkean tason ohjelmointikielellä tarkoitetaan tässä tutkielmassa ohjelmointikieltä,
-jossa lähdekieli ja siitä käännettävä konekieli ovat 
+jossa lähdekieli ja siitä käännettävä kohdekieli ovat 
 selkeästi eri abstraktiotasoilla.
 Toisin sanoen korkean tason ohjelmointikielellä viitataan kieleen, joka ei ole (symbolinen) konekieli.
 Korkean tason ohjelmointikielten kääntäminen edellyttää
@@ -241,8 +242,8 @@ määritelmä laskenta-automaatista, joka paremmin tunnetaan Turingin koneena.
 Sen yhteydessä määriteltiin myös matemaattinen formalismi, jolla automaatin
 toimintaa voitiin täsmällisesti kuvailla. Vaikka esitystapa oli vaikea ja esitelty
 automaatti hypoteettinen,
-se edusti Alonzo Churchin merkintätavan~\cite[]{Church36} ohella kehittyneintä formaalia
-laskennan kuvausta, 'kieltä', joka siihen aikaan oli olemassa.
+se edusti Alonzo Churchin lambdakalkyylin~\cite[]{Church36} ohella kehittyneintä formaalia
+laskennan kuvausta, joka siihen aikaan oli olemassa.
 
 %PLANKAKÜL
 Vuonna 1945 saksalainen Konrad Zuse aloitti
@@ -275,7 +276,7 @@ lohkomaisesta rakenteesta. Näitä itsenäisesti suoritettavia osia hän nimitti div
 Divisioonat tulisi rakentaa siten, että niiden laskenta olisi
 toisistaan riippumatonta. Tämän voisikin rinnastaa esimerkiksi
 C-kielen paikallisiin tietorakenteisiin ja käännösyksiköihin perustuvaan
-suoritukseen. Curryn formalismi oli kuitenkin hieman luonnoton,
+kääntämiseen. Curryn formalismi oli kuitenkin hieman luonnoton,
 sillä suoritusyksiköillä oli useita lopetuskohtia sekä nykykielistä poiketen
 useita aloituskohtia~\cite[21]{Knuth76}.
 Historiallisesti työ oli kuitenkin merkittävä, sillä Curry kuvaili algoritmeja
@@ -299,8 +300,8 @@ Millekään aiemmin mainituista ohjelmointikielistä ei niiden julkaisun yhteydessä
 toteutettu kääntäjiä. Nämä kielet toimivat ohjelmoijien käsitteellisenä apuna auttaen
 ohjelmien suunnittelussa, mutta jättäen toteutuksen ihmisille. Tästä huolimatta
 ne olivat merkittäviä askeleita kohti parempia ohjelmointikieliä sekä
-niiden kääntäjiä. Ilman täsmällisiä esitystapoja ei koodin generointi, eli
-varsinainen käännöksen tai tulkkauksen suorittaminen, ikinä olisi voinut tulla mahdolliseksi.
+niiden kääntäjiä. Ilman täsmällisiä esitystapoja ei varsinainen käännöksen tai
+tulkkauksen suorittaminen ikinä olisi voinut tulla mahdolliseksi.
 
 % MAUCHLY 
 Ensimmäinen korkean tason ohjelmointikieli joka toteutettiin oli Short Code.
@@ -350,7 +351,7 @@ Ryhmän julkaisu alkoi painottamalla sitä tosiasiaa, että FORTRAN oli tehokas. Ai
 valita helpon ohjelmoinnin ja hitaan suorituksen tai työlään ohjelmoinnin ja nopean
 suorituksen väliltä, mutta julkaisun jälkeen FORTRAN tarjoaisi parhaat
 puolet molemmista~\cite[1]{IBM54}. 
-Ensimmäinen FORTRAN-dokumentti sisältää myös ensimmäisen yrityksen esittää ohjelmointikielen
+Kyseinen FORTRAN-dokumentti sisältää myös ensimmäisen yrityksen esittää ohjelmointikielen
 kielioppi täsmällisesti. Tätä voidaan pitää Backuksen myöhemmin esittämän kielioppimuodon
 Backus Naur Formin (BNF) edeltäjänä~\cite[63]{Knuth76}.
 
@@ -424,7 +425,7 @@ ohjelmointikieliä käyttäen. Täten saaduilla ristiinkääntäjillä pystytään kääntäm
 kääntäjiä tai muita ohjelmia, jotka toimivat uudessa laitteistossa.
 
 %miten toi pilkku nyt menee?
-Ongelmana edellä mainitussa menetelmässä on suuri sekä kasvava joukko lähde- ja
+Ongelmana edellä kuvatussa menetelmässä on suuri sekä kasvava joukko lähde- ja
 kohdekieliä. Jo yhden uuden kääntäjän toteuttaminen on varsin työlästä, joten uuden kääntäjän
 tekeminen kaikille halutuille laitteistoille vaatisi valtavasti resursseja.
 Oletetaan, että korkean tason ohjelmointikielten määrä on $N$ ja laitteistojen määrä on $M$.
@@ -705,7 +706,7 @@ kääntämään useita eri lähdekieliä (ibid). Tällaisissa systeemeissä kääntäjän sis
 jaettu lähdekielestä riippuvaiseen etuosaan (frontend) sekä näiden jakamaan takaosaan (backend).
 Tämän kaltainen rakenne vähensi tarvetta kirjoittaa uutta koodia ja näin ollen pienensi kääntäjien kehityksestä
 koituvia kustannuksia. 80-luvun lopulla oli jo hyväksytty ajatus siitä, että kääntäjien
-kehitys usealle ohjelmointikielelle ja/tai laitteistolle  on tehokkaampaa sekä kilpailukykyisempää (ibid).
+kehitys usealle ohjelmointikielelle tai laitteistolle  on tehokkaampaa sekä kilpailukykyisempää (ibid).
 
 %tää nyt ei ihan oo usealle eri kielelle mutta ehkä usealle eri laitteistolle
 Eräs tyypillinen tapa kääntäjien ohjelmoinnissa onkin jakaa sen sisäistä rakennetta sekä
