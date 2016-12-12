@@ -23,7 +23,7 @@
 
 \numberofpagesinformation{\numberofpages\ sivua}
 \classification{\protect{\ \\
-Software and its engineering $ \rightarrow $ software notations and tools $ \rightarrow $ Compilers}}
+Software and its engineering $ \rightarrow $ Software notations and tools $ \rightarrow $ Compilers}}
 
 \keywords{Historia, K‰‰nt‰j‰t, Symbolinen konekieli, Ohjelmointikielet, Ketjutus, Ristiink‰‰nt‰minen, V‰likielet}
 
@@ -140,7 +140,7 @@ helpottavia tyˆkaluja, tuli ne ohjelmoida suoraan konekielell‰.
 Myˆhemmin k‰‰nt‰ji‰ pystyttiin ohjelmoimaan aiempia k‰‰nt‰ji‰ apuna k‰ytt‰en ja
 niihin oli helpompi lis‰t‰ ominaisuuksia.
 
-EDSAC (electronic delay storage automatic calculator) oli yksi ensimm‰isi‰ s‰hkˆisi‰
+EDSAC (Electronic Delay Storage Automatic Calculator) oli yksi ensimm‰isi‰ s‰hkˆisi‰
 tietokoneita. Se kehitettiin Cambridgen yliopistossa ja saatiin k‰yttˆvalmiiksi vuonna 1949~\cite[7]{Salomon93}.
 EDSAC:lle kehitettiin assemblyk‰‰nt‰j‰ Initial Order, joka toimi laitteiston lukumuistissa (ROM) (ibid).
 EDSAC:n kehitt‰j‰ Maurice Wilkes ehdotti ensimm‰isen‰  tunnusten (label) sek‰ makrojen
@@ -172,7 +172,7 @@ tuottavat t‰st‰ konekielisen ohjelman. %pit‰s eka linkkaa
 Symboliset konekielet ovat matalan tason laiteriippuvaisia ohjelmointikieli‰.
 Niit‰ k‰‰nnet‰‰n l‰hdekoodista yksinkertaisin, ennalta m‰‰r‰tyin ehdoin konekielelle.
 Jokaisella symbolisella konek‰skyll‰ on siis yksiselitteinen vastine konekielell‰, %pit‰iskˆ viel‰ t‰sment‰‰ ett‰ opcode eik‰ koko konek‰sky
-joten tietty symbolinen konekieli toimii vain tietyll‰ laitteistolla~\cite[2]{Salomon93}
+joten tietty symbolinen konekieli toimii vain tietyll‰ laitteistolla~\cite[2]{Salomon93}.
 Jokainen l‰hdetiedoston konek‰sky k‰‰nnet‰‰n staattisen ohjauskooditaulukon avulla,
 josta etsit‰‰n symbolista konek‰sky‰ vastaava laitteiston ymm‰rt‰m‰ bin‰‰rikoodi~\cite[17]{Salomon93}.
 
@@ -197,7 +197,7 @@ poiketen dynaamisessa muistirakenteessa. Tunnukset ovat symbolisia nimi‰ muistip
 Niiden arvot m‰‰r‰ytyv‰t vasta k‰‰nnˆksen yhteydess‰.
 Tunnusten avulla muistipaikat voidaan nimet‰ eik‰ ohjelmoijan tarvitse pit‰‰
 kirjaa konek‰skyjen osoitteista. Tunnuksiin sidottuja muistipaikkoja voidaan myˆs k‰ytt‰‰ muuttujina.
-Useissa ohjelmointikieliss‰ on direktiivi, jolla voidaan varata muistia ja viitata
+Useissa assemblyk‰‰nt‰jiss‰ on direktiivi, jolla voidaan varata muistia ja viitata
 siihen tunnuksen avulla.
 
 %selvent‰v‰ kuvaesimerkki.
@@ -243,7 +243,7 @@ siis muutakin, kuin mekaanista sanojen vaihtamista ennalta m‰‰r‰ttyjen s‰‰ntˆjen
 \subsection{T‰sm‰llisten kuvausj‰rjestelmien kehitys}
 Tietojenk‰sittelytieteess‰ kuvataan ohjelmien suoritusta
 ja algoritmeja t‰sm‰llisesti. Ennen formaaleja merkint‰tapoja ja korkean tason ohjelmointikieli‰ ainoa
-t‰sm‰llinen tapa algoritmien kuvaamiseksi oli niiden kirjoittaminen konekielell‰.
+t‰sm‰llinen tapa algoritmien kuvaamiseksi oli niiden kirjoittaminen konekielill‰.
 Alan Turingin tunnetussa julkaisussa~\cite[]{Turing36} esitettiin 
 m‰‰ritelm‰ laskenta-automaatista, joka paremmin tunnetaan Turingin koneena.
 Sen yhteydess‰ m‰‰riteltiin myˆs matemaattinen formalismi, jolla automaatin
@@ -266,7 +266,7 @@ sill‰ artikkeli julkaistiin vasta vuonna 1972.
 
 %LOHKOKAAVIO
 Samoihin aikoihin Zusen kanssa myˆs Yhdysvaltalaiset Herman Goldstine ja
-John von Neumann kehittiv‰t laskennallista formalismia. Heid‰n ratkaisunsa
+John von Neumann kehittiv‰t laskennan formalismia. Heid‰n ratkaisunsa
 algoritmien ja tietokoneohjelmien kuvaamiseen oli varsin erilainen.
 Von Neumann ja Goldstine esittiv‰t ratkaisuksi lohkokaaviota (flow diagram),
 esitystapaa, jossa ohjelmat kuvataan nuolien ja laatikoiden avulla~\cite[16]{Knuth76}.
@@ -345,15 +345,15 @@ Vaikka Rutishauser ja Bˆhm olivat kumpikin ohjelmoineet
 omat k‰‰nt‰j‰ns‰, pidet‰‰n ensimm‰isen‰ oikeana k‰‰nt‰j‰n‰ silti
 Alick E. Glennien 1952 valmistamaa AUTOCODE-ohjelmistoa~\cite[42]{Knuth76}. Rutishauserin ja Bˆhmin k‰‰nt‰jist‰ poiketen
 AUTOCODE ei toiminut hypoteettisella laitteistolla joten sen tuottama konekieli
-oli t‰ten suoritettavissa ~\cite[45]{Bˆhm76}. AUTOCODEa pystyttiin siis k‰ytt‰m‰‰n oikeiden,
+oli t‰ten suoritettavissa ~\cite[45]{Knuth76}. AUTOCODEa pystyttiin siis k‰ytt‰m‰‰n oikeiden,
 k‰yttˆkelpoisten ohjelmien tekemiseen~\cite[42]{Knuth76}.
 
 %FORTRAN T‰‰ koko fortran on aika perseest‰ kans..
 Vuoden 1954 alussa John Backus rupesi kehitt‰m‰‰n kokoamansa kehitt‰j‰ryhm‰n kanssa
-automaattisen ohjelmoinnin j‰rjestelm‰‰. J‰rjestelm‰n oli tarkoitus olla hyvin
+automaattisen ohjelmoinnin j‰rjestelm‰‰. Sen oli tarkoitus olla hyvin
 kehittynyt, joten suureksi haasteeksi muodostui j‰rjestelm‰n saaminen tarpeeksi
 tehokkaaksi. Loppuvuodesta 1954 kehitt‰j‰ryhm‰ julkaisi suunnitelman j‰rjestelm‰st‰ 'The IBM
-Mathematical FORmula TRANstating system' --- FORTRAN. 
+Mathematical FORmula TRANslating system' --- FORTRAN. 
 Ryhm‰n julkaisu alkoi painottamalla sit‰ tosiasiaa, ett‰ FORTRAN oli tehokas. Aiemmin ohjelmoijien tuli
 valita helpon ohjelmoinnin ja hitaan suorituksen tai tyˆl‰‰n ohjelmoinnin ja nopean
 suorituksen v‰lilt‰, mutta julkaisun j‰lkeen FORTRAN tarjoaisi parhaat
@@ -366,13 +366,13 @@ Kun FORTRAN kaksi ja puoli vuotta myˆhemmin saatiin toteutettua, oli se
 aikansa tehokkain sek‰ monipuolisin ohjelmointikieli. FORTRAN:n k‰‰nt‰j‰ll‰ tuotettiin
 suhteellisen tehokasta koodia ja kehitt‰j‰t sanoivat sen olevan l‰hes
 yht‰ tehokasta kuin hyv‰n ohjelmoijan kirjoittama symbolinen konekieli~\cite[1]{IBM56}.
-FORTRANissa oli myˆs paljon ominaisuuksia, joita ei oltu aiemmin n‰hty.
+FORTRAN:ssa oli myˆs paljon ominaisuuksia, joita ei oltu aiemmin n‰hty.
 Se oli esimerkiksi ensimm‰inen ohjelmointikieli, jossa muuttujien nimet
 voivat olla useamman merkin pituisia~\cite[62]{Knuth76}.
 
 Ensimm‰isen julkaisun j‰lkeen FORTRAN:ssa oli kuitenkin useita ongelmia.
 Virheit‰ oli paljon ja moni ep‰ili
-ettei FORTRAN ikin‰ tulisi toimimaan~\cite[4]{Rosen64}.
+ettei se ikin‰ tulisi toimimaan~\cite[4]{Rosen64}.
 Vaikeuksista huolimatta FORTRAN:sta tuli hyvin suosittu ja sit‰ k‰ytettiin
 enemm‰n kuin oltiin osattu odottaa.
 
@@ -532,14 +532,15 @@ ohjelmointikieli‰, suoraan konekieliksi (ibid).
 %Bootstrapping menetelm‰‰ k‰ytet‰‰n usein myˆs ristiink‰‰nt‰misess‰ (cross compiling)
 %joten kyseinen luku k‰sittelee osittain myˆs sit‰.
 \section{K‰‰nt‰jien kuvaus: T-kaaviot \label{t}}
-
 K‰‰nt‰jien suunnittelussa ja mallintamisessa on k‰ytetty useita erilaisia merkint‰tapoja.
 K‰ytetyin ja tunnetuin lienee Harvey Bratmanin 1961 ehdottama T-kaavio. 
-H‰n kehitti sen~\cite[]{Strong58}-julkaisussa eisteltyn UNCOL-kaavion korvaajaksi~\cite[]{Bratman61}. 
-%pit‰‰ viel‰ kehitt‰‰. mutta totta ettei voi vaan sanoa uncol kaavio ja olla viittaamatta mihink‰‰n.
+H‰n kehitti sen
+\emph{The Problem of Programming Communication with Changing Machines: A Proposed Solution}-julkaisussa
+esitetyn UNCOL-kaavion korvaajaksi~\cite[]{Bratman61}. 
+
 
 \subsection{Alkuper‰inen Bratman-kaavio}
-Harvey Bratmanin esittelem‰ kaavio kuvaa yksitt‰ist‰ k‰‰nt‰j‰‰. 
+Harvey Bratmanin esitt‰m‰ kaavio kuvaa yksitt‰ist‰ k‰‰nt‰j‰‰. 
 Siit‰ k‰y ilmi k‰‰nt‰j‰n ymm‰rt‰m‰ kohde- ja l‰hdekieli sek‰ kieli, jolla k‰‰nt‰j‰ toimii.
 Kaaviota kutsutaan Bratman-kaavioksi tai T-kaavioksi. J‰lkimm‰inen nimi tulee kaavion
 muodosta, jossa T-kirjaimen muotoisessa alueessa vasempaan p‰‰tyyn merkit‰‰n l‰hdekieli,
@@ -558,23 +559,21 @@ Kaavioita toisiinsa liitt‰m‰ll‰ voidaan havainnollistaa monimutkaisiakin k‰‰nt‰j
 suoritettavia toimintaketjuja. Kuvassa \ref{multi-t} oletetaan, ett‰ k‰ytˆss‰ on C-kielinen
 k‰‰nt‰j‰, joka k‰‰nt‰‰ Ada-kielt‰ x86-konekielelle. Lis‰ksi k‰ytˆss‰ on kuvan \ref{basic-t} 
 x86-arkkitehtuurilla toimiva C-k‰‰nt‰j‰, jonka kohdekieli on x86-konekieli.
-N‰iden kahden k‰‰nt‰j‰n avulla voidaan tuottaa x86-alustalla suoritettava Ada k‰‰nt‰j‰,
+N‰iden kahden k‰‰nt‰j‰n avulla voidaan tuottaa x86-alustalla suoritettava Ada-k‰‰nt‰j‰,
 jonka kohdekieli on x86. Kahden ensimm‰isen k‰‰nt‰j‰n yhteistyˆll‰ saadaan siis kolmas
 k‰‰nt‰j‰. Huomattavaa on, ett‰ kaavion alin k‰‰nt‰j‰ toimii aina jossakin todellisessa laitteistossa,
 eik‰ t‰ten voi olla muu kuin laitteiston ymm‰rt‰m‰ konekieli.
-
-%T‰h‰n v‰liin j‰‰ vittumaisesti tyhj‰‰ tilaa
 
 \begin{figure}[H]
   \ \newline
   \begin{center}
     \includegraphics[scale=0.5]{multi-T.png}
-    \caption{C-kielisen Ada-k‰‰nt‰j‰n ja x86:lla toimivan C k‰‰nt‰j‰n avulla voidaan tuottaa x86:lla toimiva ada-k‰‰nt‰j‰. \label{multi-t}}
+    \caption{C-kielisen Ada-k‰‰nt‰j‰n ja x86:lla toimivan C-k‰‰nt‰j‰n avulla voidaan tuottaa x86:lla toimiva Ada-k‰‰nt‰j‰. \label{multi-t}}
     \label{kuvaesimerkki}
   \end{center}
 \end{figure}
 
-\subsection{Earleyn ja Sturginsin merkint‰tapa}
+\subsection{Earleyn ja Sturgisin merkint‰tapa}
 T-kaavio on melko yksinkertainen, joten siit‰ on kehitetty paranneltuja vaihtoehtoja.
 Jay Earley ja Howard Sturgis laajensivat Bratmanin kaaviota lis‰‰m‰ll‰ siihen ominaisuuksia~\cite[607-616]{Earley70}.
 Alkuper‰isen T-kaavion kuvatessa vain k‰‰nt‰ji‰, Earleyn ja Sturgisin kaavioissa pystyy
@@ -605,7 +604,7 @@ Kyseisi‰ kaavioita voi yhdistell‰ hyvinkin monimutkaisiksi rakenteiksi. Kuvan \r
 kaavio, joka kuvaa C++-kielisen ohjelman k‰‰nt‰mist‰ x86-konekielelle. Suoritus tapahtuu
 x86-laitteistolla, ja k‰‰nnˆksen tekee Pythonilla toimiva k‰‰nt‰j‰, joka tulkataan x86-laitteistossa.
 Huomioitava T-kaavioiden k‰ytˆss‰ on, ett‰ kaavioiden vierekk‰isten osien kielten tulee t‰sm‰t‰
-toisiinsa. Kuvan esimerkin k‰‰nnˆs ei voi ottaa l‰hdeohjelmakseen muuta kuin C++:ll‰ kirjoitetun ohjelman.
+toisiinsa. Kuvan esimerkin k‰‰nnˆs ei voi ottaa l‰hdeohjelmakseen muuta kuin C++:lla kirjoitetun ohjelman.
 
 \begin{figure}[H]
 	\ \newline
@@ -659,7 +658,7 @@ versio ohjelmoidaan konekielell‰ (ML, "Machine Language") ja t‰m‰n j‰lkeen ohjel
 	\ \newline
 	\begin{center}
 		\includegraphics[scale=1.0]{iterative-bootstrap-from-scratch.png}
-		\caption{Iteratiivinen ketjutus ilman muita ohjelmointikieli‰. \label{iterative-bootstrap}}
+		\caption{Iteratiivinen ketjutus. \label{iterative-bootstrap}}
 		\label{kuvaesimerkki}
 	\end{center}
 \end{figure}
