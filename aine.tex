@@ -204,19 +204,12 @@ siihen tunnuksen avulla.
 %selvent‰v‰ kuvaesimerkki.
 Kuva~\ref{TTKesim} selvent‰‰ symbolisten konekielten m‰‰rittelemien symbolien
 sek‰ ohjelmoijan m‰‰rittelemien tunnusten eron. Esimerkkikoodi on
-TTK91-virtuaaliprosessorille~\cite[]{Ttk91} tehty ohjelma, joka tulostaa k‰ytt‰j‰lle kokonaisluvut
+TTK91-virtuaaliprosessorille ~\cite[]{Ttk91} tehty ohjelma, joka tulostaa k‰ytt‰j‰lle kokonaisluvut
 nollasta viiteen. Keltaisella pohjalla olevat symbolit ovat tunnuksia,
 joilla voi olla eri arvo k‰‰nnˆskerrasta ja k‰‰nt‰j‰st‰ riippuen.
 Harmaalla pohjalla oleva koodi k‰‰nnet‰‰n siis t‰ysin ennalta m‰‰r‰tysti.
 Tunnukset m‰‰ritell‰‰n k‰ytt‰m‰ll‰ niit‰ konek‰skyn vasemmalle puolelle varatussa
 tunnuskent‰ss‰. K‰yttˆ puolestaan tapahtuu, kun tunnukseen viitataan konek‰skyn operandina~\cite[17]{Salomon93}.
-
-%% \begin{figure}[H]
-%%   \ \newline
-%%   \centerline{\includegraphics[scale=0.5]{esimerkkiTTK.png}}
-%%   \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
-%%     \label{kuvaesimerkki}
-%% \end{figure}
 
 \begin{figure}[H]
   \ \newline
@@ -226,8 +219,6 @@ tunnuskent‰ss‰. K‰yttˆ puolestaan tapahtuu, kun tunnukseen viitataan konek‰skyn 
     \label{kuvaesimerkki}
   \end{center}
 \end{figure}
-
-
 
 \section{Historiaa korkean tason kielten k‰‰nt‰jist‰ \label{korkea}}
 
@@ -276,7 +267,7 @@ ja sill‰ oli suuri vaikutus ohjelmointikielten kehitykseen~\cite[16]{Knuth76} .
 
 
 %CURRYN PASKA
-Vuonna 1946 Marylandissa tyˆskennellyt Haskell B. Curry kehitti ENIAC-tietokoneelle
+Vuonna 1946 Marylandissa tyˆskennellyt Haskell B. Curry kehitti ENIAC:lle
 aikaansa n‰hden monimutkaista ohjelmaa. Curryn tyˆ ENIAC:n
 parissa sai h‰net ehdottamaan formalismia ohjelmistojen toiminnalle.
 H‰nen formalisminsa perustui uuteen ajatukseen ohjelman suorituksen
@@ -346,7 +337,7 @@ Vaikka Rutishauser ja Bˆhm olivat kumpikin ohjelmoineet
 omat k‰‰nt‰j‰ns‰, pidet‰‰n ensimm‰isen‰ oikeana k‰‰nt‰j‰n‰ silti
 Alick E. Glennien 1952 valmistamaa AUTOCODE-ohjelmistoa~\cite[42]{Knuth76}. Rutishauserin ja Bˆhmin k‰‰nt‰jist‰ poiketen
 AUTOCODE ei toiminut hypoteettisella laitteistolla joten sen tuottama konekieli
-oli t‰ten suoritettavissa ~\cite[45]{Knuth76}. AUTOCODEa pystyttiin siis k‰ytt‰m‰‰n oikeiden,
+oli t‰ten suoritettavissa ~\cite[45]{Knuth76}. AUTOCODE-kielt‰ pystyttiin siis k‰ytt‰m‰‰n oikeiden,
 k‰yttˆkelpoisten ohjelmien tekemiseen~\cite[42]{Knuth76}.
 
 %FORTRAN T‰‰ koko fortran on aika perseest‰ kans..
@@ -377,12 +368,12 @@ ettei se ikin‰ tulisi toimimaan~\cite[4]{Rosen64}.
 Vaikeuksista huolimatta FORTRAN:sta tuli hyvin suosittu ja sit‰ k‰ytettiin
 enemm‰n kuin oltiin osattu odottaa.
 
-Taulukko 1 tiivist‰‰ aiemmissa kappaleissa esiteltyjen ohjelmointikielten merkitt‰vimm‰t
-piirteet. Lis‰ksi taulukossa esitell‰‰n ohjelmointikielten nimet sek‰ p‰‰tekij‰t.
+Taulukko 1 tiivist‰‰ aiemmissa kappaleissa esitettyjen ohjelmointikielten merkitt‰vimm‰t
+piirteet. Lis‰ksi kerrotaan ohjelmointikielten nimet sek‰ p‰‰tekij‰t.
 
 \begin{table}[h!]
   \centering
-  \caption{Yhteenveto ohjelmointikielten kehityksest‰ ~\cite[93]{Knuth76}.} 
+  \caption{Yhteenvetotaulukko~\cite[93]{Knuth76}.} 
   \label{tab:table1}
   \begin{tabular}{| l | l | l |}
     \hline
@@ -482,6 +473,7 @@ tilanne v‰likielen avulla.
 	\end{center}
 \end{figure} 
 
+\newpage
 UNCOL:ksi on ehdotettu useita eri v‰likieli‰, mutta yhdest‰k‰‰n ei ole tullut
 niin k‰ytetty‰, ett‰ sit‰ voitaisiin sanoa universaaliksi. Er‰s UNCOL:ksi ehdotettu
 kieli oli Melvin Conwayn 1958 julkaisema v‰likieli. Conwayn julkaisussa
@@ -787,7 +779,8 @@ avulla ML2-kielell‰ toimiva CWL-k‰‰nt‰j‰, joka tuottaa v‰likielt‰.
 %laitetaan kuvaan ne vaiheet!!!!!!!
 Sijoittamalla toisessa ja kolmannessa vaiheessa saadut k‰‰nt‰j‰t (sininen) alkuper‰iseen 
 ohjelmistoon, saadaan sek‰ ML2-kielell‰ toimivat ett‰ sille k‰‰nt‰v‰t
-komponentit. Ainoa komponentti, jota ei saada suoraan sijoittamalla, on ensimm‰isen vaiheen toinen komponentti.
+komponentit. Ainoa komponentti, jota ei saada suoraan sijoittamalla, on
+alkuper‰isen k‰‰nt‰j‰n ensimm‰isen vaiheen toinen komponentti.
 Uudella konekielell‰ toimivat k‰‰nt‰j‰t CWL $ \rightarrow $ IL ja IL $ \rightarrow $ ML2 
 vastaavat kuitenkin yhdess‰ t‰t‰ komponenttia.
 
