@@ -3,17 +3,17 @@
 \contentsline {section}{\numberline {2}Symbolinen konekieli ja assemblyk\"a\"ant\"aj\"at }{2}
 \contentsline {subsection}{\numberline {2.1}Ensimm\"aiset assemblyk\"a\"ant\"aj\"at}{2}
 \contentsline {subsection}{\numberline {2.2}Assemblyk\"a\"ant\"ajien toiminta}{3}
-\contentsline {section}{\numberline {3}Historiaa korkean tason kielten k\"a\"ant\"ajist\"a }{5}
+\contentsline {section}{\numberline {3}Historiaa korkean tason kielten k\"a\"ant\"ajist\"a }{4}
 \contentsline {subsection}{\numberline {3.1}T\"asm\"allisten kuvausj\"arjestelmien kehitys}{5}
 \contentsline {subsection}{\numberline {3.2}Kohti ensimm\"aisi\"a k\"a\"ant\"aji\"a}{6}
 \contentsline {section}{\numberline {4}V\"alikielet ja ristiink\"a\"ant\"aminen }{8}
 \contentsline {subsection}{\numberline {4.1}Ristiink\"a\"ant\"aminen}{9}
-\contentsline {subsection}{\numberline {4.2}V\"alikielet}{10}
-\contentsline {section}{\numberline {5}K\"a\"ant\"ajien kuvaus: T-kaaviot }{12}
-\contentsline {subsection}{\numberline {5.1}Alkuper\"ainen Bratman-kaavio}{12}
-\contentsline {subsection}{\numberline {5.2}Earleyn ja Sturginsin merkint\"atapa}{13}
+\contentsline {subsection}{\numberline {4.2}V\"alikielet}{9}
+\contentsline {section}{\numberline {5}K\"a\"ant\"ajien kuvaus: T-kaaviot }{11}
+\contentsline {subsection}{\numberline {5.1}Alkuper\"ainen Bratman-kaavio}{11}
+\contentsline {subsection}{\numberline {5.2}Earleyn ja Sturginsin merkint\"atapa}{12}
 \contentsline {section}{\numberline {6}K\"a\"ant\"ajien rakenne ja ketjutus }{14}
-\contentsline {subsection}{\numberline {6.1}Iteratiivinen ketjutus}{15}
-\contentsline {subsection}{\numberline {6.2}Ketjutus olemassa olevien k\"a\"ant\"ajien avulla}{16}
+\contentsline {subsection}{\numberline {6.1}Iteratiivinen ketjutus}{14}
+\contentsline {subsection}{\numberline {6.2}Ketjutus olemassa olevien k\"a\"ant\"ajien avulla}{15}
 \contentsline {subsection}{\numberline {6.3}Ketjuttamista helpottava k\"a\"ant\"aj\"arakenne}{17}
-\contentsline {section}{\numberline {7}Yhteenveto}{21}
+\contentsline {section}{\numberline {7}Yhteenveto}{20}

@@ -14,9 +14,10 @@
 %\renewcommand\@biblabel[1]{[#1]}
 %\makeatother
 
-\title{}
+\title{otsikko}
 \author{Arttu Kilpinen}
 \date{\today}
+\level{Kandidaatintutkielma}
 
 \maketitle
 
@@ -211,12 +212,19 @@ tunnuskentässä. Käyttö puolestaan tapahtuu, kun tunnukseen viitataan konekäskyn 
 
 \begin{figure}[H]
   \ \newline
-  \begin{center}
-    \includegraphics[scale=0.5]{esimerkkiTTK.png}
-    \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
+  \centerline{\includegraphics[scale=0.5]{esimerkkiTTK.png}}
+  \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
     \label{kuvaesimerkki}
-  \end{center}
 \end{figure}
+
+%% \begin{figure}[H]
+%%   \ \newline
+%%   \begin{center}
+%%     \includegraphics[scale=0.5]{esimerkkiTTK.png}
+%%     \caption{TTK91-esimerkkikoodi. \label{TTKesim}}
+%%     \label{kuvaesimerkki}
+%%   \end{center}
+%% \end{figure}
 
 
 
@@ -382,17 +390,17 @@ piirteet. Lisäksi taulukossa esitellään ohjelmointikielten nimet sekä päätekijät
 
 \begin{table}[h!]
   \centering
-  \caption{Yhteenveto ohjelmointikielten ja kuvausjärjestelmien kehityksestä.} %tämä teksti pitää muuttaa
+  \caption{Yhteenveto ohjelmointikielten kehityksestä ~\cite[93]{Knuth76}.} 
   \label{tab:table1}
   \begin{tabular}{| l | l | l |}
     \hline
     \textbf K\textbf i\textbf e\textbf l\textbf i & \textbf K\textbf e\textbf h\textbf i\textbf t\textbf t\textbf ä\textbf j\textbf ä\textbf  & \textbf E\textbf n\textbf s\textbf i\textbf m\textbf m\textbf ä\textbf i\textbf n\textbf e\textbf n \\ \hline
     Plankalkül & Zuse & Ohjelmointikieli, Hierarkkinen data \\ \hline
-    Virtauskaaviot & Goldstine, & Hyväksytty ohjelmointimetodologia \\
+    Virtauskaaviot & Goldstine, & Hyväksytty ohjelmointimenetelmä \\
      & Von Neumann &  \\ \hline
     Short Code & Mauchly & Toteutettu korkean tason ohjelmointikieli \\ \hline
-    Formules & Böhm & Samalla kielellä kirjoitettu kääntäjä \\ \hline
-    AUTOCODE & Glennie & Käyttökelpoinen kääntäjä \\ \hline %LÄHDE? löytyy kurssisivulta mulle suositelluista lähteistä
+    Formules & Böhm & Kääntäjä omalla kielellään \\ \hline
+    AUTOCODE & Glennie & Käyttökelpoinen kääntäjä \\ \hline
     FORTRAN I & Backus & I/O formaatti, kommentit, globaali optimointi \\ \hline
   \end{tabular}
 \end{table}
@@ -510,7 +518,8 @@ viiteen eri laitteistoon.
 \begin{figure}[H]
 	\ \newline
 	\begin{center}
-		\includegraphics[scale=1.0]{NxM.png}
+          \hbox{\vspace{-5cm} \includegraphics[scale=1.0]{NxM.png}}
+%		\includegraphics[scale=1.0]{NxM.png}
 		\caption{Ristiinkääntäminen usealta lähdekieleltä usealle kohdekielelle.~\cite[378]{Steel61} \label{nxm}}
 		\label{kuvaesimerkki} % tää lähde on päin helvettiä? jr??
 	\end{center}
@@ -540,6 +549,7 @@ tilanne välikielen avulla.
 \begin{figure}[H]
 	\ \newline
 	\begin{center}
+%           \hbox{\vspace{-15cm} \includegraphics[scale=1.0]{N+M.png}}
 		\includegraphics[scale=1.0]{N+M.png}
 		\caption{Ristiinkääntäminen välikielillä.~\cite[378]{Steel61} \label{n+m}}
 		\label{kuvaesimerkki}
